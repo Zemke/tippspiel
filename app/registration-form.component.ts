@@ -1,6 +1,6 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit} from '@angular/core';
 import {TranslatePipe} from 'ng2-translate/ng2-translate';
-import {NgForm} from 'angular2/common';
+import {NgForm} from '@angular/common';
 import {User} from './user';
 import {MDL} from './material-design-lite-upgrade-element.directive';
 import {UserService} from './user.service';
@@ -14,8 +14,8 @@ import {UserService} from './user.service';
 export class RegistrationFormComponent implements OnInit {
   user = new User(1, '', '', '', '');
   submitted = false;
-  private users;
-  private errorMessage;
+  private users:User[];
+  private errorMessage:string;
 
   constructor(private userService:UserService) {
 

@@ -1,59 +1,29 @@
 <html>
-  <head>
-    <base href="/">
-    <title>Angular 2 QuickStart</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <title>Angular 2 QuickStart</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Material Design Lite -->
-    <link rel="stylesheet" href="/node_modules/material-design-lite/material.min.css">
-    <script src="/node_modules/material-design-lite/material.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="styles.css">
+        <!-- Material Design Lite -->
+        <link rel="stylesheet" href="/node_modules/material-design-lite/material.min.css">
+        <script src="/node_modules/material-design-lite/material.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <!-- 1. Load libraries -->
-    <!-- IE required polyfills, in this exact order -->
-    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+        <link rel="stylesheet" href="styles.css">
 
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-    <script src="node_modules/angular2/bundles/router.dev.js"></script>
-    <script src="node_modules/angular2/bundles/http.dev.js"></script>
-    <!-- 2. Configure SystemJS -->
-    <script>
-      System.config({
-        packages: {
-          app: {
-            format: 'register',
-            defaultExtension: 'js'
-          },
-            'ng2-translate': {'defaultExtension': 'js'},
-            'rxjs': {'defaultExtension': 'js'}
-        },
-        map: {
-          'ng2-translate': 'node_modules/ng2-translate',
-          'rxjs': 'node_modules/rxjs'
-        }
-      });
-      System.import('app/main')
-            .then(null, console.error.bind(console));
-    </script>
-    <style>
-      #view-source {
-        position: fixed;
-        display: block;
-        right: 0;
-        bottom: 0;
-        margin-right: 40px;
-        margin-bottom: 40px;
-        z-index: 900;
-      }
-    </style>
-  </head>
-  <!-- 3. Display the application -->
-  <body>
-    <soe-app>Loading...</soe-app>
-  </body>
+        <!-- Polyfill(s) for older browsers -->
+        <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+
+        <script src="node_modules/zone.js/dist/zone.js"></script>
+        <script src="node_modules/reflect-metadata/Reflect.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+        <script src="systemjs.config.js"></script>
+        <script>
+            System.import('app').catch(function(err){ console.error(err); });
+        </script>
+    </head>
+    <body>
+        <soe-app>Loading...</soe-app>
+    </body>
 </html>

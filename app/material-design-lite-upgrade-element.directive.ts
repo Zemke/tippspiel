@@ -1,5 +1,5 @@
-import {Directive, AfterViewInit} from 'angular2/core';
-declare var componentHandler;
+import {Directive, AfterViewInit} from '@angular/core';
+declare var componentHandler:any;
 
 @Directive({
   selector: '[mdl]'

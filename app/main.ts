@@ -1,5 +1,5 @@
-import {bootstrap} from 'angular2/platform/browser';
-import {HTTP_PROVIDERS, Http} from 'angular2/http';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {HTTP_PROVIDERS, Http} from '@angular/http';
 import {
     TRANSLATE_PROVIDERS,
     TranslateService,
@@ -7,13 +7,11 @@ import {
     TranslateLoader
 } from 'ng2-translate/ng2-translate';
 import {AppComponent} from './app.component';
-import {ROUTER_PROVIDERS} from 'angular2/router';
-import {provide} from 'angular2/core';
+import {provide} from '@angular/core';
 import 'rxjs/Rx';
 import {UserService} from './user.service';
 
 bootstrap(AppComponent, [
-  ROUTER_PROVIDERS,
   HTTP_PROVIDERS,
   TRANSLATE_PROVIDERS,
   provide(TranslateLoader, {
