@@ -13,3 +13,5 @@ _temp
 !karma*.js
 !protractor*.js
 !wallaby.js
+
+npm-debug.log
