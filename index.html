@@ -20,6 +20,7 @@
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
     <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
     <!-- 2. Configure SystemJS -->
     <script>
       System.config({
@@ -27,7 +28,13 @@
           app: {
             format: 'register',
             defaultExtension: 'js'
-          }
+          },
+            'ng2-translate': {'defaultExtension': 'js'},
+            'rxjs': {'defaultExtension': 'js'}
+        },
+        map: {
+          'ng2-translate': 'node_modules/ng2-translate',
+          'rxjs': 'node_modules/rxjs'
         }
       });
       System.import('app/main')
