@@ -9,6 +9,8 @@ import {
 import {AppComponent} from './app.component';
 import {ROUTER_PROVIDERS} from 'angular2/router';
 import {provide} from 'angular2/core';
+import 'rxjs/Rx';
+import {UserService} from './user.service';
 
 bootstrap(AppComponent, [
   ROUTER_PROVIDERS,
@@ -19,5 +21,6 @@ bootstrap(AppComponent, [
     deps: [Http]
   }),
   // use TranslateService here, and not TRANSLATE_PROVIDERS (which will define a default TranslateStaticLoader)
-  TranslateService
+  TranslateService,
+  UserService
 ]);
