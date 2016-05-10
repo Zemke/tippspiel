@@ -4,7 +4,7 @@ import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
 import {RegistrationComponent} from './registration.component';
 
 @Component({
-  selector: 'my-app',
+  selector: 'soe-app',
   templateUrl: 'app/app.component.html',
   directives: [ROUTER_DIRECTIVES],
   pipes: [TranslatePipe]
