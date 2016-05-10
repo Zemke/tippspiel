@@ -11,7 +11,7 @@ import {MDL} from './material-design-lite-upgrade-element.directive';
   pipes: [TranslatePipe]
 })
 export class RegistrationFormComponent {
-  model = new User(1, '', '');
+  user = new User(1, '', '', '', '');
   submitted = false;
 
   onSubmit() {
@@ -20,6 +20,6 @@ export class RegistrationFormComponent {
 
   // TODO: Remove this when we're done
   get diagnostic() {
-    return JSON.stringify(this.model);
+    return JSON.stringify(this.user);
   }
 }

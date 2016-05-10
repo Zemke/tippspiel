@@ -6,7 +6,10 @@
     },
     "registration": {
       "firstName": "Vorname",
-      "lastName": "Nachname"
+      "lastName": "Nachname",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "passwordConfirm": "Passwort bestätigen"
     }
   }
 }

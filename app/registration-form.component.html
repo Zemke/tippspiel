@@ -1,10 +1,49 @@
 <form mdl>
-    <div class="mdl-textfield mdl-js-textfield">
-        <input type="text" class="mdl-textfield__input" id="firstName" required>
-        <label class="mdl-textfield__label" for="firstName">{{ 'soe.registration.firstName' | translate }}</label>
-    </div>
-    <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="text" id="lastName" required>
-        <label class="mdl-textfield__label" for="lastName">{{ 'soe.registration.lastName' | translate }}</label>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <div class="mdl-textfield mdl-js-textfield">
+                <input type="text" class="mdl-textfield__input" id="firstName" [(ngModel)]="user.firstName" required>
+                <label class="mdl-textfield__label" for="firstName">
+                    {{ 'soe.registration.firstName' | translate }}
+                </label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="lastName" [(ngModel)]="user.lastName" required>
+                <label class="mdl-textfield__label" for="lastName">
+                    {{ 'soe.registration.lastName' | translate }}
+                </label>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col">
+            <div class="mdl-textfield mdl-js-textfield">
+                <input type="email" class="mdl-textfield__input" id="email" [(ngModel)]="user.email" required>
+                <label class="mdl-textfield__label" for="email">
+                    {{ 'soe.registration.email' | translate }}
+                </label>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col">
+            <div class="mdl-textfield mdl-js-textfield">
+                <input type="text" class="mdl-textfield__input" id="password" [(ngModel)]="user.password" required>
+                <label class="mdl-textfield__label" for="password">
+                    {{ 'soe.registration.password' | translate }}
+                </label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="passwordConfirm" required>
+                <label class="mdl-textfield__label" for="passwordConfirm">
+                    {{ 'soe.registration.passwordConfirm' | translate }}
+                </label>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                Register
+            </button>
+        </div>
     </div>
 </form>
+
+<pre>
+    {{ diagnostic }}
+</pre>
