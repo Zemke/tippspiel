@@ -1,6 +1,12 @@
 {
   "soe": {
     "title": "Betting Game",
-    "registration": "Registration"
+    "menu": {
+      "registration": "Registration"
+    },
+    "registration": {
+      "firstName": "First name",
+      "lastName": "Last name"
+    }
   }
 }

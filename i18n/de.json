@@ -1,6 +1,12 @@
 {
   "soe": {
     "title": "Tippspiel",
-    "registration": "Registration"
+    "menu": {
+      "registration": "Registration"
+    },
+    "registration": {
+      "firstName": "Vorname",
+      "lastName": "Nachname"
+    }
   }
 }
