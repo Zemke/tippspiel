@@ -2,10 +2,12 @@ import {Component} from 'angular2/core';
 import {TranslatePipe} from 'ng2-translate/ng2-translate';
 import {NgForm} from 'angular2/common';
 import {User} from './user';
+import {MDL} from './material-design-lite-upgrade-element.directive';
 
 @Component({
   selector: 'soe-registration-form',
   templateUrl: 'app/registration-form.component.html',
+  directives: [MDL],
   pipes: [TranslatePipe]
 })
 export class RegistrationFormComponent {
