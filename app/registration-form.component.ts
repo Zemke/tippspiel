@@ -16,6 +16,7 @@ export class RegistrationFormComponent {
 
   onSubmit() {
     this.submitted = true;
+    this.user = new User(1, '', '', '', '');
   }
 
   // TODO: Remove this when we're done
