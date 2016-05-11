@@ -1,21 +1,42 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TranslatePipe} from 'ng2-translate/ng2-translate';
-import {RegistrationFormComponent} from './registration-form.component';
+import {NgForm} from '@angular/common';
+import {User} from './user';
+import {MDL} from './material-design-lite-upgrade-element.directive';
+import {UserService} from './user.service';
 
 @Component({
-  selector: '<soe-registration></soe-registration>',
-  template: `
-    <div class="mdl-grid">
-      <div class="mdl-cell mdl-cell--12-col">
-        <div class="mdl-cell mdl-cell--12-col">
-          <h1>{{ 'soe.menu.login' | translate }}</h1>
-        </div>
-        <soe-registration-form></soe-registration-form>
-      </div>
-    </div>
-  `,
-  directives: [RegistrationFormComponent],
+  selector: 'soe-registration',
+  templateUrl: 'app/registration.component.html',
+  directives: [MDL],
   pipes: [TranslatePipe]
 })
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit {
+  user = new User(1, '', '', '', '');
+  submitted = false;
+  private users:User[];
+  private errorMessage:string;
+
+  constructor(private userService:UserService) {
+
+  }
+
+  ngOnInit() { this.getHeroes(); }
+
+  getHeroes() {
+    this.userService.getUsers()
+        .subscribe(
+            heroes => this.users = heroes,
+            error =>  this.errorMessage = <any>error);
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    this.user = new User(1, '', '', '', '');
+  }
+
+  // TODO: Remove this when we're done
+  get diagnostic() {
+    return JSON.stringify(this.user);
+  }
 }

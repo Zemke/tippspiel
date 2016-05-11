@@ -10,7 +10,7 @@
       "lastName": "Nachname",
       "email": "E-Mail",
       "password": "Passwort",
-      "passwordConfirm": "Passwort bestätigen"
+      "passwordConfirm": "Passwort bestätigen",
       "register": "Registrieren",
       "login": "Einloggen"
     }
