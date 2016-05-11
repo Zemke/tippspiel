@@ -14,6 +14,15 @@
       "passwordConfirm": "Passwort bestätigen",
       "register": "Registrieren",
       "login": "Einloggen"
+    },
+    "betting": {
+      "reason": {
+        "pointsFor": "{{value}} Punkte für",
+        "pointFor": "1 Punkt für",
+        "winner": "richtigen Sieger",
+        "goalDifference": "richtige Tordifferenc",
+        "result": "richtiges Ergebnis",
+      }
     }
   }
 }

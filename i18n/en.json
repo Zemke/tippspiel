@@ -14,6 +14,15 @@
       "passwordConfirm": "Confirm password",
       "register": "Register",
       "login": "Log in"
+    },
+    "betting": {
+      "reason": {
+        "pointsFor": "{{value}} points for",
+        "pointFor": "1 point for",
+        "winner": "right winner",
+        "goalDifference": "right goal difference",
+        "result": "right result"
+      }
     }
   }
 }
