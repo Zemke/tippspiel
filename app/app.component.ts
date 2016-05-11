@@ -3,6 +3,7 @@ import {Routes, Router, ROUTER_DIRECTIVES} from '@angular/router';
 import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
 import {RegistrationComponent} from './registration.component';
 import {LoginComponent} from './login.component';
+import {HomeComponent} from './home.component';
 
 @Component({
   selector: 'soe-app',
@@ -11,6 +12,7 @@ import {LoginComponent} from './login.component';
   directives: [ROUTER_DIRECTIVES]
 })
 @Routes([
+  {path: '/', component: HomeComponent},
   {path: '/registration', component: RegistrationComponent},
   {path: '/login', component: LoginComponent}
 ])
@@ -27,6 +29,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.router.navigate(['/registration'])
+    this.router.navigate(['/'])
   }
 }

@@ -3,7 +3,8 @@
     "title": "Betting Game",
     "menu": {
       "registration": "Registration",
-      "login": "Log in"
+      "login": "Log in",
+      "betting": "Place bets"
     },
     "registration": {
       "firstName": "First name",

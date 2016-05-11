@@ -3,7 +3,8 @@
     "title": "Tippspiel",
     "menu": {
       "registration": "Registration",
-      "login": "Einloggen"
+      "login": "Einloggen",
+      "betting": "Tipps abgeben"
     },
     "registration": {
       "firstName": "Vorname",
