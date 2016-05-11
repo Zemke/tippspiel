@@ -2,7 +2,8 @@
   "soe": {
     "title": "Tippspiel",
     "menu": {
-      "registration": "Registration"
+      "registration": "Registration",
+      "login": "Einloggen"
     },
     "registration": {
       "firstName": "Vorname",
@@ -10,6 +11,8 @@
       "email": "E-Mail",
       "password": "Passwort",
       "passwordConfirm": "Passwort bestätigen"
+      "register": "Registrieren",
+      "login": "Einloggen"
     }
   }
 }
