@@ -24,7 +24,7 @@ export class FixtureService {
     let body = res.json();
 
     if (body.fixtures) {
-      body.fixtures.map(fixture => {
+      body.fixtures.map((fixture:Fixture) => {
         delete fixture._links;
         return fixture;
       })
