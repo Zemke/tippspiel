@@ -1,6 +1,7 @@
 export class Fixture {
 
   constructor(public _links:Object,
+              public id:number,
               public date:Date,
               public status:string,
               public matchday:number,

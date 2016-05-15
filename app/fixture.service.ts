@@ -25,8 +25,10 @@ export class FixtureService {
 
     if (body.fixtures) {
       body.fixtures.map((fixture:any) => {
-        delete fixture._links;
+        var splitSelfLink = fixture._links.self.href.split('/');
+        fixture.id = splitSelfLink[splitSelfLink.length - 1];
         fixture.date = new Date(fixture.date);
+        delete fixture._links;
         return fixture;
       })
     }
