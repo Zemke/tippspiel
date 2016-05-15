@@ -3,33 +3,13 @@ import {TranslatePipe} from 'ng2-translate/ng2-translate';
 import {MDL} from './material-design-lite-upgrade-element.directive';
 import {FixtureService} from './fixture.service';
 import {Fixture} from './fixture';
+import {FeaturesListComponent, FixturesListComponent} from './fixtures-list.component';
 
 @Component({
   selector: 'soe-home',
   templateUrl: 'app/home.component.html',
-  directives: [MDL],
+  directives: [MDL, FixturesListComponent],
   pipes: [TranslatePipe]
 })
-export class HomeComponent implements OnInit {
-  fixtures:Fixture[];
-  errorMessage:any;
-
-  constructor(private fixtureService:FixtureService) {
-
-  }
-
-  ngOnInit() {
-    this.getFixtures()
-  }
-
-  getFixtures() {
-    this.fixtureService.getFixtures()
-        .subscribe(
-            fixtures => this.fixtures = fixtures,
-            error =>  this.errorMessage = <any>error);
-  }
-
-  get debugFixtures() {
-    return JSON.stringify(this.fixtures, null, 2);
-  }
+export class HomeComponent {
 }
