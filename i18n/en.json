@@ -16,6 +16,7 @@
       "login": "Log in"
     },
     "betting": {
+      "orderExplanation": "The games are ordered by time they take place.",
       "reason": {
         "pointsFor": "{{value}} points for",
         "pointFor": "1 point for",
