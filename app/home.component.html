@@ -20,7 +20,31 @@
     </div>
 </div>
 
+<ul class="demo-list-three mdl-list" mdl>
+    <li *ngFor="#fixture of fixtures" class="mdl-list__item mdl-list__item--three-line"
+        style="float: left;">
+        <span class="mdl-list__item-primary-content">
+            <span>
+              {{ fixture.homeTeamName }} - {{ fixture.awayTeamName }}
+            </span>
+            <span class="mdl-list__item-text-body">
+                {{ fixture.date | date:'fullDate' }},
+                {{ fixture.date | date:'shortTime' }}
+            </span>
+        </span>
+        <span class="mdl-list__item-secondary-content">
+            1-1
+        </span>
+        <div>
+            <div class="material-icons mdl-badge mdl-badge--overlap" id="res_done" data-badge="1">done</div>
+            <div class="mdl-tooltip" for="res_done">
+                {{ 'soe.betting.reason.pointFor' | translate }}<br>
+                {{ 'soe.betting.reason.winner' | translate }}
+            </div>
+        </div>
+    </li>
+</ul>
 
-<pre>
+<pre style="clear: both">
     {{ debugFixtures }}
 </pre>
