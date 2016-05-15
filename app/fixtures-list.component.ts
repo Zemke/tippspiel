@@ -3,11 +3,12 @@ import {TranslatePipe} from 'ng2-translate/ng2-translate';
 import {MDL} from './material-design-lite-upgrade-element.directive';
 import {FixtureService} from './fixture.service';
 import {Fixture} from './fixture';
+import {FixtureComponent} from './fixture.component';
 
 @Component({
   selector: 'soe-fixtures-list',
   templateUrl: 'app/fixtures-list.component.html',
-  directives: [MDL],
+  directives: [MDL, FixtureComponent],
   pipes: [TranslatePipe]
 })
 export class FixturesListComponent  implements OnInit {
