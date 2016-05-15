@@ -17,6 +17,7 @@
     },
     "betting": {
       "orderExplanation": "The games are ordered by time they take place.",
+      "submitBet": "Bet",
       "reason": {
         "pointsFor": "{{value}} points for",
         "pointFor": "1 point for",

@@ -17,6 +17,7 @@
     },
     "betting": {
       "orderExplanation": "Die Spiele sind geordnet nach der Zeit, in der sie stattfinden.",
+      "submitBet": "Tippen",
       "reason": {
         "pointsFor": "{{value}} Punkte für",
         "pointFor": "1 Punkt für",

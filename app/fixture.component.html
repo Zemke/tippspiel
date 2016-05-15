@@ -1,4 +1,4 @@
-<ul class="demo-list-three mdl-list bet-card">
+<ul class="demo-list-three mdl-list bet-card" mdl>
     <li class="mdl-list__item mdl-list__item--three-line">
         <span class="mdl-list__item-primary-content">
             <span>
@@ -12,9 +12,29 @@
             </span>
         </span>
         <span class="mdl-list__item-secondary-content">
-            1-1
+            <form #registrationForm="ngForm" class="bet-card">
+                <div class="mdl-textfield mdl-js-textfield bet-card">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="home"
+                           [disabled]="fixture.status != 'TIMED'">
+                    <label class="mdl-textfield__label" for="home">
+                        {{ fixture.homeTeamName.substr(0, 3).toUpperCase() }}
+                    </label>
+                </div>
+                -
+                <div class="mdl-textfield mdl-js-textfield bet-card">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="away"
+                           [disabled]="fixture.status != 'TIMED'">
+                    <label class="mdl-textfield__label" for="home">
+                        {{ fixture.awayTeamName.substr(0, 3).toUpperCase() }}
+                    </label>
+                </div>
+                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                        [disabled]="!registrationForm.form.valid" *ngIf="fixture.status == 'TIMED'">
+                    {{ 'soe.betting.submitBet' | translate }}
+                </button>
+            </form>
         </span>
-        <div>
+        <div *ngIf="fixture.status != 'TIMED'">
             <div class="material-icons mdl-badge mdl-badge--overlap" id="res_done" data-badge="1">done</div>
             <div class="mdl-tooltip" for="res_done">
                 {{ 'soe.betting.reason.pointFor' | translate }}<br>

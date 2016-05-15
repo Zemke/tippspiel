@@ -1,5 +1,19 @@
-.bet-card {
+ul.bet-card {
     float: left;
     border: 1px solid black;
     margin: 5px;
+    padding: 0;
+}
+
+.mdl-textfield.bet-card {
+    width: 40px;
+}
+
+.mdl-textfield.bet-card > label,
+.mdl-textfield.bet-card > input {
+    text-align: center;
+}
+
+form.bet-card {
+    margin-top: -10px;
 }
