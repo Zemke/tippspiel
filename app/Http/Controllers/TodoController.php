@@ -1,8 +1,8 @@
-<?php namespace Tippspiel\Http\Controllers;
+<?php namespace Todo\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Tippspiel\Http\Requests;
-use Tippspiel\Todo;
+use Todo\Http\Requests;
+use Todo\Todo;
 
 class TodoController extends Controller
 {

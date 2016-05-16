@@ -1,4 +1,4 @@
-<?php namespace Tippspiel\Http;
+<?php namespace Todo\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -15,7 +15,7 @@ class Kernel extends HttpKernel {
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		// 'Tippspiel\Http\Middleware\VerifyCsrfToken',
+		// 'Todo\Http\Middleware\VerifyCsrfToken',
 	];
 
 	/**
@@ -24,9 +24,9 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		'auth' => 'Tippspiel\Http\Middleware\Authenticate',
+		'auth' => 'Todo\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-		'guest' => 'Tippspiel\Http\Middleware\RedirectIfAuthenticated',
+		'guest' => 'Todo\Http\Middleware\RedirectIfAuthenticated',
 	];
 
 }

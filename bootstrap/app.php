@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
 	'Illuminate\Contracts\Http\Kernel',
-	'Tippspiel\Http\Kernel'
+	'Todo\Http\Kernel'
 );
 
 $app->singleton(
 	'Illuminate\Contracts\Console\Kernel',
-	'Tippspiel\Console\Kernel'
+	'Todo\Console\Kernel'
 );
 
 $app->singleton(
 	'Illuminate\Contracts\Debug\ExceptionHandler',
-	'Tippspiel\Exceptions\Handler'
+	'Todo\Exceptions\Handler'
 );
 
 /*

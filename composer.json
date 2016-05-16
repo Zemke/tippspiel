@@ -17,7 +17,7 @@
 			"database"
 		],
 		"psr-4": {
-			"Tippspiel\\": "app/"
+			"Todo\\": "app/"
 		}
 	},
 	"autoload-dev": {

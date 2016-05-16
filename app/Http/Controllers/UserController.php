@@ -1,10 +1,10 @@
-<?php namespace Tippspiel\Http\Controllers;
+<?php namespace Todo\Http\Controllers;
 
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Tippspiel\Http\Requests;
-use Tippspiel\User;
+use Todo\Http\Requests;
+use Todo\User;
 use Tymon\JWTAuth\JWTAuth;
 
 class UserController extends Controller

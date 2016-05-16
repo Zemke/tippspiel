@@ -1,4 +1,4 @@
-<?php namespace Tippspiel\Http\Controllers;
+<?php namespace Todo\Http\Controllers;
 
 class HomeController extends Controller {
 

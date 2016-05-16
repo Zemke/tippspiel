@@ -1,10 +1,10 @@
 <?php
 
-namespace Tippspiel\Http\Controllers\Auth;
+namespace Todo\Http\Controllers\Auth;
 
-use Tippspiel\User;
+use Todo\User;
 use Validator;
-use Tippspiel\Http\Controllers\Controller;
+use Todo\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller

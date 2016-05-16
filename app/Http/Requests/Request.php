@@ -1,4 +1,4 @@
-<?php namespace Tippspiel\Http\Requests;
+<?php namespace Todo\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

@@ -1,4 +1,4 @@
-<?php namespace Tippspiel\Http\Middleware;
+<?php namespace Todo\Http\Middleware;
 
 use Closure;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;

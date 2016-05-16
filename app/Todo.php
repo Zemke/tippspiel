@@ -1,4 +1,4 @@
-<?php namespace Tippspiel;
+<?php namespace Todo;
 
 use Illuminate\Database\Eloquent\Model;
 
