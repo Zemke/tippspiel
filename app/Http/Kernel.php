@@ -27,6 +27,7 @@ class Kernel extends HttpKernel {
 		'auth' => 'Todo\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'Todo\Http\Middleware\RedirectIfAuthenticated',
+        'cors' => 'Todo\Http\Middleware\Cors'
 	];
 
 }
