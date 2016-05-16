@@ -1,4 +1,4 @@
-<?php namespace Todo\Providers;
+<?php namespace Tippspiel\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider {
 	{
 		$this->app->bind(
 			'Illuminate\Contracts\Auth\Registrar',
-			'Todo\Services\Registrar'
+			'Tippspiel\Services\Registrar'
 		);
 	}
 

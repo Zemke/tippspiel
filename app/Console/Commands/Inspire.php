@@ -1,4 +1,4 @@
-<?php namespace Todo\Console\Commands;
+<?php namespace Tippspiel\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

@@ -1,4 +1,4 @@
-<?php namespace Todo\Providers;
+<?php namespace Tippspiel\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -12,7 +12,7 @@ class RouteServiceProvider extends ServiceProvider {
 	 *
 	 * @var string
 	 */
-	protected $namespace = 'Todo\Http\Controllers';
+	protected $namespace = 'Tippspiel\Http\Controllers';
 
 	/**
 	 * Define your route model bindings, pattern filters, etc.

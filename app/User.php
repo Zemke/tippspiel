@@ -1,4 +1,4 @@
-<?php namespace Todo;
+<?php namespace Tippspiel;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;

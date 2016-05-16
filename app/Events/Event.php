@@ -1,4 +1,4 @@
-<?php namespace Todo\Events;
+<?php namespace Tippspiel\Events;
 
 abstract class Event {
 

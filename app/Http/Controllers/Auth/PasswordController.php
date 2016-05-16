@@ -1,8 +1,8 @@
 <?php
 
-namespace Todo\Http\Controllers\Auth;
+namespace Tippspiel\Http\Controllers\Auth;
 
-use Todo\Http\Controllers\Controller;
+use Tippspiel\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

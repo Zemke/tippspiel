@@ -1,4 +1,4 @@
-<?php namespace Todo\Commands;
+<?php namespace Tippspiel\Commands;
 
 abstract class Command {
 

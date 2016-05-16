@@ -1,4 +1,4 @@
-<?php namespace Todo\Http\Middleware;
+<?php namespace Tippspiel\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

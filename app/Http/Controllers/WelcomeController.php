@@ -1,4 +1,4 @@
-<?php namespace Todo\Http\Controllers;
+<?php namespace Tippspiel\Http\Controllers;
 
 class WelcomeController extends Controller {
 

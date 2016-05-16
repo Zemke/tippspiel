@@ -1,4 +1,4 @@
-<?php namespace Todo\Providers;
+<?php namespace Tippspiel\Providers;
 
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
@@ -16,7 +16,7 @@ class BusServiceProvider extends ServiceProvider {
 		$dispatcher->mapUsing(function($command)
 		{
 			return Dispatcher::simpleMapping(
-				$command, 'Todo\Commands', 'Todo\Handlers\Commands'
+				$command, 'Tippspiel\Commands', 'Tippspiel\Handlers\Commands'
 			);
 		});
 	}
