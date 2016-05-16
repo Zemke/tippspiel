@@ -8,7 +8,8 @@ export class FixtureService {
   constructor(private http:Http) {
   }
 
-  private fixturesWebServiceUrl = 'app/fixtures.json'; // URL to JSON file
+  // private fixturesWebServiceUrl = 'app/fixtures.json'; // URL to JSON file
+  private fixturesWebServiceUrl = 'http://localhost:8080/api/fixtures'; // URL to JSON file
 
   getFixtures():Observable<Fixture[]> {
     return this.http.get(this.fixturesWebServiceUrl)
