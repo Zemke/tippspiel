@@ -17,13 +17,14 @@
     },
     "betting": {
       "orderExplanation": "The games are ordered by time they take place.",
-      "submitBet": "Bet",
+      "submitBet": "Place",
       "reason": {
         "pointsFor": "{{value}} points for",
         "pointFor": "1 point for",
         "winner": "right winner",
         "goalDifference": "right goal difference",
-        "result": "right result"
+        "result": "right result",
+        "pointsNone": "0 points, you failed"
       }
     }
   }

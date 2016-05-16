@@ -17,13 +17,14 @@
     },
     "betting": {
       "orderExplanation": "Die Spiele sind geordnet nach der Zeit, in der sie stattfinden.",
-      "submitBet": "Tippen",
+      "submitBet": "Abgeben",
       "reason": {
         "pointsFor": "{{value}} Punkte für",
         "pointFor": "1 Punkt für",
         "winner": "richtigen Sieger",
-        "goalDifference": "richtige Tordifferenc",
+        "goalDifference": "richtige Tordifferenz",
         "result": "richtiges Ergebnis",
+        "pointsNone": "0 Punkte, du hast versagt"
       }
     }
   }

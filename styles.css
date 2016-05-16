@@ -1,5 +1,6 @@
 ul.bet-card {
     float: left;
+    width: 550px;
     border: 1px solid black;
     margin: 5px;
     padding: 0;

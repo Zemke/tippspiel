@@ -6,7 +6,12 @@
 
 <soe-fixtures-list></soe-fixtures-list>
 
-<div mdl>
+<div style="margin-top: 50px; margin-bottom: 50px" mdl>
+    <div class="material-icons mdl-badge mdl-badge--overlap" id="res_block" data-badge="0">block</div>
+    <div class="mdl-tooltip" for="res_block">
+        {{ 'soe.betting.reason.pointsNone' | translate }}
+    </div>
+
     <div class="material-icons mdl-badge mdl-badge--overlap" id="res_done" data-badge="1">done</div>
     <div class="mdl-tooltip" for="res_done">
         {{ 'soe.betting.reason.pointFor' | translate }}<br>
