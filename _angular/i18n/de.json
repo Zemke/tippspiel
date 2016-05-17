@@ -26,6 +26,13 @@
         "result": "richtiges Ergebnis",
         "pointsNone": "0 Punkte, du hast versagt"
       }
+    },
+    "rest": {
+      "err": {
+        "noFixtures": "Upsi! Leider können wir gerade keine Begegnungen laden. Bitte komme später wieder.",
+        "generalError": "Och nö! Irgendwas ist schiefgelaufen. Bitte komme später wieder."
+      }
     }
+
   }
 }

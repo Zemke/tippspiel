@@ -38,9 +38,7 @@ export class FixtureService {
   }
 
   private handleError(error:any) {
-    // In a real world app, we might send the error to remote logging infrastructure
-    let errMsg = error.message || 'Server error';
-    console.error(errMsg); // log to console instead
+    let errMsg = error.trans || 'soe.rest.err.generalError';
     return Observable.throw(errMsg);
   }
 }
