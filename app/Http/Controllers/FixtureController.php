@@ -5,6 +5,7 @@ namespace Todo\Http\Controllers;
 use Cache;
 use Log;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 use Todo\Http\Requests;
 use Todo\Http\Controllers\Controller;
@@ -28,15 +29,30 @@ class FixtureController extends Controller
      */
     public function index()
     {
-        $fixtures = Cache::get('fixtures');
+        $fixturesFromCache = Cache::get('fixtures');
 
-        if (Fixture::isValidCache($fixtures)) {
-            LOG::info('Fixtures from cache');
-            return $fixtures;
+        if (Fixture::isValidCache($fixturesFromCache)) {
+            Log::info('Fixtures from cache');
+            return $fixturesFromCache;
         }
 
-        LOG::info('Fixtures from REST');
+        Log::info('Fixtures from REST');
+
         $fixtures = Fixture::rest();
+
+        if (!$fixtures) {
+            if (!$fixturesFromCache) {
+                Log::alert('Neither REST service nor cache provide any data.');
+                return new Response(array(
+                    'descr' => 'Neither REST service nor cache provide any data.',
+                    'trans' => 'soe.rest.err.noFixtures'),
+                    500);
+            } else {
+
+            }
+            return $fixturesFromCache;
+        }
+
         $fixtures['_timestamp'] = gmdate('Y-m-d H:i:s');
         Cache::forever('fixtures', $fixtures);
 
