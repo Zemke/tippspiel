@@ -47,8 +47,6 @@ class FixtureController extends Controller
                     'descr' => 'Neither REST service nor cache provide any data.',
                     'trans' => 'soe.rest.err.noFixtures'),
                     500);
-            } else {
-
             }
             return $fixturesFromCache;
         }
