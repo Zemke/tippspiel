@@ -12,6 +12,7 @@ import {provide} from '@angular/core';
 import {UserService} from './user.service';
 import 'rxjs/Rx';
 import {FixtureService} from './fixture.service';
+import {FixtureBetService} from './fixture-bet.service';
 
 bootstrap(AppComponent, [
   HTTP_PROVIDERS,
@@ -24,5 +25,6 @@ bootstrap(AppComponent, [
   // use TranslateService here, and not TRANSLATE_PROVIDERS (which will define a default TranslateStaticLoader)
   TranslateService,
   UserService,
-  FixtureService
+  FixtureService,
+  FixtureBetService
 ]);

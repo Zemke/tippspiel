@@ -1,4 +1,6 @@
 <ul class="demo-list-three mdl-list bet-card" mdl>
+    <pre>{{ debugFixture }}</pre>
+
     <li class="mdl-list__item mdl-list__item--three-line">
         <span class="mdl-list__item-primary-content">
             <span>
@@ -12,10 +14,10 @@
             </span>
         </span>
         <span class="mdl-list__item-secondary-content">
-            <form #registrationForm="ngForm" class="bet-card">
+            <form (ngSubmit)="onSubmit()" #betForm="ngForm" class="bet-card" novalidate>
                 <div class="mdl-textfield mdl-js-textfield bet-card">
                     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="home"
-                           [disabled]="fixture.status != 'TIMED'">
+                           [disabled]="fixture.status != 'TIMED'" [(ngModel)]="fixtureBet.home_goals">
                     <label class="mdl-textfield__label" for="home">
                         {{ fixture.homeTeamName.substr(0, 3).toUpperCase() }}
                     </label>
@@ -23,13 +25,13 @@
                 -
                 <div class="mdl-textfield mdl-js-textfield bet-card">
                     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="away"
-                           [disabled]="fixture.status != 'TIMED'">
+                           [disabled]="fixture.status != 'TIMED'" [(ngModel)]="fixtureBet.away_goals">
                     <label class="mdl-textfield__label" for="home">
                         {{ fixture.awayTeamName.substr(0, 3).toUpperCase() }}
                     </label>
                 </div>
                 <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
-                        [disabled]="!registrationForm.form.valid" *ngIf="fixture.status == 'TIMED'">
+                        [disabled]="!betForm.form.valid" *ngIf="fixture.status == 'TIMED'">
                     {{ 'soe.betting.submitBet' | translate }}
                 </button>
             </form>
