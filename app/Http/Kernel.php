@@ -16,7 +16,8 @@ class Kernel extends HttpKernel {
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
 		// 'Todo\Http\Middleware\VerifyCsrfToken',
-	];
+        'Barryvdh\Cors\HandleCors',
+    ];
 
 	/**
 	 * The application's route middleware.
@@ -26,8 +27,7 @@ class Kernel extends HttpKernel {
 	protected $routeMiddleware = [
 		'auth' => 'Todo\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-		'guest' => 'Todo\Http\Middleware\RedirectIfAuthenticated',
-        'cors' => 'Todo\Http\Middleware\Cors'
+		'guest' => 'Todo\Http\Middleware\RedirectIfAuthenticated'
 	];
 
 }

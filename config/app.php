@@ -151,6 +151,10 @@ return [
 		 */
 		'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
 
+        /*
+         * CORS
+         */
+        'Barryvdh\Cors\ServiceProvider',
 	],
 
 	/*
