@@ -41,4 +41,25 @@ class Fixture extends Model
 
         return true;
     }
+
+    public static function addUserBetsToFixtures($bets, $fixtures)
+    {
+        $fixturesCount = count($fixtures['fixtures']);
+
+        for ($i = 0; $i < $fixturesCount; $i++) {
+            $indexOfBet = array_search(
+                Fixture::extractFixtureId($fixtures['fixtures'][$i]), array_column($bets, 'fixture_id'));
+            if ($indexOfBet !== false) {
+                $fixtures['fixtures'][$i]['_bet'] = $bets[$indexOfBet];
+            }
+        }
+
+        return $fixtures;
+    }
+
+    private static function extractFixtureId($fixture)
+    {
+        $splitSelfLink = explode('/', $fixture['_links']['self']['href']);
+        return $splitSelfLink[count($splitSelfLink) - 1];
+    }
 }

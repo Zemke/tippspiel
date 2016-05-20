@@ -1,3 +1,4 @@
+import {FixtureBet} from './fixture-bet';
 export class Fixture {
 
   constructor(public _links:Object,
@@ -7,6 +8,7 @@ export class Fixture {
               public matchday:number,
               public homeTeamName:string,
               public awayTeamName:string,
-              public result:FixtureResult) {
+              public result:FixtureResult,
+              public _bet:FixtureBet) {
   }
 }

@@ -10,17 +10,10 @@ use Illuminate\Http\Response;
 use Todo\Http\Requests;
 use Todo\Http\Controllers\Controller;
 use Todo\Fixture;
+use Todo\Bet;
 
 class FixtureController extends Controller
 {
-    /**
-     * FixtureController constructor.
-     */ 
-    public function __construct()
-    {
-        $this->middleware('cors');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -53,6 +46,9 @@ class FixtureController extends Controller
 
         $fixtures['_timestamp'] = gmdate('Y-m-d H:i:s');
         Cache::forever('fixtures', $fixtures);
+
+        $userId = 1; // TODO
+        $fixtures = Fixture::addUserBetsToFixtures(Bet::where('user_id', $userId)->get()->toArray(), $fixtures);
 
         return $fixtures;
     }

@@ -1,7 +1,6 @@
 export class FixtureBet {
 
-  constructor(public id:number,
-              public fixtureId:number,
+  constructor(public fixture_id:number,
               public home_goals:number,
               public away_goals:number,
               public valuation:number,
