@@ -1,6 +1,4 @@
 <ul *ngIf="fixtureBet" class="demo-list-three mdl-list bet-card" mdl>
-    <pre>{{ debugFixture }}</pre>
-
     <li class="mdl-list__item mdl-list__item--three-line">
         <span class="mdl-list__item-primary-content">
             <span>
@@ -37,8 +35,7 @@
                 </button>
             </form>
         </span>
-        <soe-bet-result *ngIf="fixture.status != 'TIMED'" [valuation]="fixture._bet.valuation"
-                        [draw]="fixture.result.goalsHomeTeam === fixture.result.goalsAwayTeam">
+        <soe-bet-result *ngIf="fixture.status != 'TIMED'" [valuation]="fixture._bet.valuation">
         </soe-bet-result>
     </li>
 </ul>

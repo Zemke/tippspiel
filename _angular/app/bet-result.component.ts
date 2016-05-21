@@ -11,6 +11,4 @@ import {MDL} from './material-design-lite-upgrade-element.directive';
 export class BetResultComponent {
   @Input()
   valuation:number;
-  @Input()
-  draw:boolean;
 }
