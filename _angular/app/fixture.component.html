@@ -11,6 +11,7 @@
             <span class="mdl-list__item-text-body">
                 {{ fixture.date | date:'fullDate' }},
                 {{ fixture.date | date:'shortTime' }}
+                <span *ngIf="fixture.status === 'IN_PLAY'" class="live">LIVE</span>
             </span>
         </span>
         <span class="mdl-list__item-secondary-content">
@@ -36,12 +37,8 @@
                 </button>
             </form>
         </span>
-        <div *ngIf="fixture.status != 'TIMED'">
-            <div class="material-icons mdl-badge mdl-badge--overlap" id="res_done" data-badge="1">done</div>
-            <div class="mdl-tooltip" for="res_done">
-                {{ 'soe.betting.reason.pointFor' | translate }}<br>
-                {{ 'soe.betting.reason.winner' | translate }}
-            </div>
-        </div>
+        <soe-bet-result *ngIf="fixture.status != 'TIMED'" [valuation]="fixture._bet.valuation"
+                        [draw]="fixture.result.goalsHomeTeam === fixture.result.goalsAwayTeam">
+        </soe-bet-result>
     </li>
 </ul>

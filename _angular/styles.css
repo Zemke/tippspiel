@@ -18,3 +18,17 @@ ul.bet-card {
 form.bet-card {
     margin-top: -10px;
 }
+
+.live {
+    display: inline;
+    background-color: #5cb85c;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}

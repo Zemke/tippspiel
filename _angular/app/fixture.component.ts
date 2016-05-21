@@ -5,11 +5,12 @@ import {MDL} from './material-design-lite-upgrade-element.directive';
 import {Fixture} from './fixture';
 import {FixtureBetService} from './fixture-bet.service';
 import {FixtureBet} from './fixture-bet';
+import {BetResultComponent} from './bet-result.component';
 
 @Component({
   selector: 'soe-fixture',
   templateUrl: 'app/fixture.component.html',
-  directives: [MDL],
+  directives: [MDL, BetResultComponent],
   pipes: [TranslatePipe]
 })
 export class FixtureComponent implements OnInit {

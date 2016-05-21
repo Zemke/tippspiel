@@ -51,10 +51,39 @@ class Fixture extends Model
                 Fixture::extractFixtureId($fixtures['fixtures'][$i]), array_column($bets, 'fixture_id'));
             if ($indexOfBet !== false) {
                 $fixtures['fixtures'][$i]['_bet'] = $bets[$indexOfBet];
+                $fixtures['fixtures'][$i]['_bet']['valuation'] =
+                    Fixture::calcValuation($bets[$indexOfBet], $fixtures['fixtures'][$i]);
             }
         }
 
         return $fixtures;
+    }
+
+    private static function calcValuation($bet, $fixture)
+    {
+        // Exact result
+        if ($bet['home_goals'] === $fixture['result']['goalsHomeTeam']
+            && $bet['away_goals'] === $fixture['result']['goalsAwayTeam']) {
+            return 5;
+        }
+
+        // Goal difference
+        if (($fixture['result']['goalsHomeTeam'] - $fixture['result']['goalsAwayTeam']) === ($bet['home_goals'] - $bet['away_goals'])) {
+            return 3;
+        }
+
+        // Goal difference (draw)
+        if ($fixture['result']['goalsHomeTeam'] === $fixture['result']['goalsAwayTeam'] && $bet['home_goals'] === $bet['away_goals']) {
+            return 3;
+        }
+
+        //  Right winner
+        if (($fixture['result']['goalsHomeTeam'] > $fixture['result']['goalsAwayTeam'] && $bet['home_goals'] > $bet['away_goals'])
+            || ($fixture['result']['goalsHomeTeam'] < $fixture['result']['goalsAwayTeam'] && $bet['home_goals'] < $bet['away_goals'])) {
+            return 1;
+        }
+
+        return 0;
     }
 
     private static function extractFixtureId($fixture)
