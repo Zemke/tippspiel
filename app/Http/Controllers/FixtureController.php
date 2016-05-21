@@ -32,6 +32,8 @@ class FixtureController extends Controller
         Log::info('Fixtures from REST');
 
         $fixtures = Fixture::rest();
+        $userId = 1; // TODO
+        $userBets = Bet::where('user_id', $userId)->get()->toArray();
 
         if (!$fixtures) {
             if (!$fixturesFromCache) {
@@ -41,14 +43,13 @@ class FixtureController extends Controller
                     'trans' => 'soe.rest.err.noFixtures'),
                     500);
             }
-            return $fixturesFromCache;
+            return Fixture::addUserBetsToFixtures($userBets, $fixturesFromCache);
         }
 
         $fixtures['_timestamp'] = gmdate('Y-m-d H:i:s');
         Cache::forever('fixtures', $fixtures);
 
-        $userId = 1; // TODO
-        $fixtures = Fixture::addUserBetsToFixtures(Bet::where('user_id', $userId)->get()->toArray(), $fixtures);
+        $fixtures = Fixture::addUserBetsToFixtures($userBets, $fixtures);
 
         return $fixtures;
     }
