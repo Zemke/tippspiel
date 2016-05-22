@@ -29,7 +29,7 @@
     },
     "rest": {
       "err": {
-        "noFixtures": "Eww! !e cannot retrieve any fixtures at this time. Please, check back later.",
+        "noFixtures": "Eww! We cannot retrieve any fixtures at this time. Please, check back later.",
         "generalError": "Oh man! Something went wrong, we don’t know. Please, check back later."
       }
     }
