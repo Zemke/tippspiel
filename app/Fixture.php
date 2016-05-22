@@ -59,7 +59,7 @@ class Fixture extends Model
         return $fixtures;
     }
 
-    private static function calcValuation($bet, $fixture)
+    public static function calcValuation($bet, $fixture)
     {
         // Exact result
         if ($bet['home_goals'] === $fixture['result']['goalsHomeTeam']
