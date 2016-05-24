@@ -1,10 +1,15 @@
 <?php namespace Todo\Console\Commands;
 
+use Carbon\Carbon;
+use Log;
+
+use Todo\User;
+use Todo\Standing;
+
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use Todo\Standing;
 
 class Table extends Command {
 
@@ -29,7 +34,18 @@ class Table extends Command {
 	 */
 	public function handle()
 	{
-        Standing::table();
-	}
+        Log::info('Running table task.');
 
+        $now = Carbon::now('utc')->toDateTimeString();
+        $users = User::all()->toArray();
+        $standings = [];
+
+        foreach ($users as $user) {
+            $standing = Standing::calcForUser($user['id']);
+            $standings[] = $standing->attributesToArray();
+        }
+
+        Standing::truncate();
+        Standing::insert($standings);
+    }
 }
