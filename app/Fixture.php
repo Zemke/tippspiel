@@ -47,8 +47,8 @@ class Fixture extends Model
         $fixturesCount = count($fixtures['fixtures']);
 
         for ($i = 0; $i < $fixturesCount; $i++) {
-            $indexOfBet = array_search(
-                Fixture::extractFixtureId($fixtures['fixtures'][$i]), array_column($bets, 'fixture_id'));
+            $fixtureId = Fixture::extractFixtureId($fixtures['fixtures'][$i]);
+            $indexOfBet = array_search($fixtureId, array_column($bets, 'fixture_id'));
             if ($indexOfBet !== false) {
                 $fixtures['fixtures'][$i]['_bet'] = $bets[$indexOfBet];
                 $fixtures['fixtures'][$i]['_bet']['valuation'] =

@@ -15,10 +15,11 @@ class CreateStandingsTable extends Migration
         Schema::create('standings', function (Blueprint $table) {
             $table->integer('user_id');
             $table->integer('points');
-            $table->integer('5');
-            $table->integer('3');
-            $table->integer('1');
-            $table->integer('0');
+            $table->integer('p5');
+            $table->integer('p3');
+            $table->integer('p1');
+            $table->integer('p0');
+            $table->primary('user_id');
         });
     }
 

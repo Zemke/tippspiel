@@ -2,14 +2,24 @@
 
 namespace Todo;
 
-use Illuminate\Database\Eloquent\Model;
 use Cache;
+use Illuminate\Database\Eloquent\Model;
 
 class Standing extends Model
 {
-    protected $fillable = array('user_id', 'points', '5', '3', '1', '0');
+    protected $fillable = array('user_id', 'points', 'p5', 'p3', 'p1', 'p0');
 
-    public static function table()
+    protected $primaryKey = 'user_id';
+
+    const STARTING_STANDINGS = [
+        'points' => 0,
+        'p5' => 0,
+        'p3' => 0,
+        'p1' => 0,
+        'p0' => 0,
+    ];
+
+    public static function calcForUser($userId)
     {
         $fixtures = Cache::get('fixtures');
 
@@ -17,36 +27,33 @@ class Standing extends Model
             return;
         }
 
-        $users = User::all()->toArray();
         $bets = Bet::all();
         $standings = [];
 
-        foreach ($users as $key => $user) {
-            $betsAndFixturesOfUser = Fixture::addUserBetsToFixtures($bets->filter(function ($bet) use ($user) {
-                return $bet['user_id'] === $user['id'];
-            }), $fixtures);
+        $userBets = $bets->filter(function ($bet) use ($userId) {
+            return $bet['user_id'] === $userId;
+        })->toArray();
 
-            $standing = Standing::calcForTable($betsAndFixturesOfUser);
-            $standing['user_id'] = $user['id'];
+        $betsAndFixturesOfUser = Fixture::addUserBetsToFixtures(array_values($userBets), $fixtures);
 
-            $standings[] = new Standing($standing);
-        }
+        $betsAndFixturesOfUserFiltered = array_filter($betsAndFixturesOfUser['fixtures'], function ($val, $key) {
+            return array_key_exists('_bet', $val);
+        }, ARRAY_FILTER_USE_BOTH);
+
+        $standing = Standing::calcForTable($betsAndFixturesOfUserFiltered);
+
+        $standing['user_id'] = $userId;
+        return new Standing($standing);
     }
 
     private static function calcForTable($betsAndFixturesOfUser)
     {
-        $standing = [
-            'points' => 0,
-            '5' => 0,
-            '3' => 0,
-            '1' => 0,
-            '0' => 0,
-        ];
+        $standing = self::STARTING_STANDINGS;
 
         foreach ($betsAndFixturesOfUser as $key => $betAndFixture) {
-            $valuation = Fixture::calcValuation($betsAndFixturesOfUser['_bet'], $betsAndFixturesOfUser);
+            $valuation = Fixture::calcValuation($betAndFixture['_bet'], $betAndFixture);
             $standing['points'] += $valuation;
-            $standing['' + $valuation] += 1;
+            $standing['p' . $valuation] += 1;
         }
 
         return $standing;
