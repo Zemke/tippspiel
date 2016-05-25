@@ -32,3 +32,8 @@ form.bet-card {
     vertical-align: baseline;
     border-radius: .25em;
 }
+
+.mdl-layout__header .mdl-layout__drawer-button {
+    background-color: transparent;
+    padding-top: 9px;
+}
