@@ -28,6 +28,12 @@
         "pointsNone": "0 points, you failed"
       }
     },
+    "table": {
+      "head": {
+        "name": "Name",
+        "points": "Points"
+      }
+    },
     "rest": {
       "err": {
         "noFixtures": "Eww! We cannot retrieve any fixtures at this time. Please, check back later.",

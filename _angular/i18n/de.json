@@ -28,6 +28,12 @@
         "pointsNone": "0 Punkte, du hast versagt"
       }
     },
+    "table": {
+      "head": {
+        "name": "Name",
+        "points": "Punkte"
+      }
+    },
     "rest": {
       "err": {
         "noFixtures": "Upsi! Leider können wir gerade keine Begegnungen laden. Bitte komme später wieder.",

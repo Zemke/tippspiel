@@ -1,1 +1,24 @@
-Hey.
+<table *ngIf="standings" mdl class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+    <tr>
+        <th class="mdl-data-table__cell--non-numeric">{{ 'soe.table.head.name' | translate }}</th>
+        <th>{{ 'soe.table.head.points' | translate }}</th>
+        <th><soe-bet-result [valuation]="5"></soe-bet-result></th>
+        <th><soe-bet-result [valuation]="3"></soe-bet-result></th>
+        <th><soe-bet-result [valuation]="1"></soe-bet-result></th>
+        <th><soe-bet-result [valuation]="0"></soe-bet-result></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let standing of standings">
+        <td class="mdl-data-table__cell--non-numeric">
+            <strong>{{ standing.user.first_name }} {{ standing.user.last_name }}</strong>
+        </td>
+        <td><strong>{{ standing.points }}</strong></td>
+        <td>{{ standing.p5 }}</td>
+        <td>{{ standing.p3 }}</td>
+        <td>{{ standing.p1 }}</td>
+        <td>{{ standing.p0 }}</td>
+    </tr>
+    </tbody>
+</table>
