@@ -13,6 +13,7 @@ import {UserService} from './user.service';
 import 'rxjs/Rx';
 import {FixtureService} from './fixture.service';
 import {FixtureBetService} from './fixture-bet.service';
+import {StandingService} from './standing.service';
 
 bootstrap(AppComponent, [
   HTTP_PROVIDERS,
@@ -26,5 +27,6 @@ bootstrap(AppComponent, [
   TranslateService,
   UserService,
   FixtureService,
-  FixtureBetService
+  FixtureBetService,
+  StandingService
 ]);

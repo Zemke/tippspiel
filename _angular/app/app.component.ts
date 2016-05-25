@@ -4,6 +4,7 @@ import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
 import {RegistrationComponent} from './registration.component';
 import {LoginComponent} from './login.component';
 import {HomeComponent} from './home.component';
+import {StandingComponent} from './standing.component';
 
 @Component({
   selector: 'soe-app',
@@ -13,6 +14,7 @@ import {HomeComponent} from './home.component';
 })
 @Routes([
   {path: '/', component: HomeComponent},
+  {path: '/standings', component: StandingComponent},
   {path: '/registration', component: RegistrationComponent},
   {path: '/login', component: LoginComponent}
 ])

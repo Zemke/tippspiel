@@ -36,6 +36,7 @@ Route::resource('/api/todo', 'TodoController');
 Route::resource('/api/user', 'UserController');
 Route::resource('/api/fixtures', 'FixtureController');
 Route::resource('/api/bets', 'BetController');
+Route::resource('/api/standings', 'StandingController');
 
 // Catch all undefined routes. Always gotta stay at the bottom since order of routes matters.
 Route::any('{undefinedRoute}', function ($undefinedRoute) {

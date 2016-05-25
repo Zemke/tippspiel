@@ -4,7 +4,8 @@
     "menu": {
       "registration": "Registration",
       "login": "Einloggen",
-      "betting": "Tipps abgeben"
+      "betting": "Tipps abgeben",
+      "standings": "Tabelle"
     },
     "registration": {
       "firstName": "Vorname",

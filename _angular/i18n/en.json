@@ -4,7 +4,8 @@
     "menu": {
       "registration": "Registration",
       "login": "Log in",
-      "betting": "Place bets"
+      "betting": "Place bets",
+      "standings": "Standings"
     },
     "registration": {
       "firstName": "First name",
