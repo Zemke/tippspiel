@@ -2,10 +2,13 @@
 
 namespace Todo\Http\Controllers;
 
+use Log;
+
 use Illuminate\Http\Request;
 
 use Todo\Http\Requests;
 use Todo\Http\Controllers\Controller;
+use Todo\Standing;
 
 class StandingController extends Controller
 {
@@ -16,9 +19,9 @@ class StandingController extends Controller
      */
     public function index()
     {
-        return [
-            'hello', 'hello2'
-        ];
+        $builder = Standing::with('user');
+        Log::debug(print_R($builder->get(), true));
+        return $builder->get();
     }
 
     /**

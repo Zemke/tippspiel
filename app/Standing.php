@@ -19,6 +19,11 @@ class Standing extends Model
         'p0' => 0,
     ];
 
+    public function user()
+    {
+        return $this->belongsTo('Todo\User');
+    }
+
     public static function calcForUser($userId)
     {
         $fixtures = Cache::get('fixtures');
