@@ -23,13 +23,23 @@ export class StandingService {
     }
     let body = res.json();
 
-    if (body.standings) {
-      body.standings.map((standing:any) => {
-        return standing;
-      })
-    }
+    body.sort((s1, s2) => {
+      if (s1.points === s2.points) {
+        if (s1.p5 === s2.p5) {
+          return 0;
+        } else if (s1.p5 > s2.p5) {
+          return -1;
+        } else {
+          return 1;
+        }
+      } else if (s1.points > s2.points) {
+        return -1;
+      } else {
+        return 1
+      }
+    });
 
-    return body.standings || {};
+    return body || {};
   }
 
   private handleError(error:any) {
