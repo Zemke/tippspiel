@@ -29,7 +29,7 @@ class UserController extends Controller
     public function login()
     {
         $user = $this->user->authenticate(
-            $this->req->input('username'), $this->req->input('password'));
+            $this->req->input('email'), $this->req->input('password'));
         if (!$user) {
             return $this->res->json([
                 'code' => null,

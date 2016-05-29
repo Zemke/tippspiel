@@ -28,12 +28,12 @@ Route::get('/partials/{category}/{action}/{id}', function ($category, $action = 
 });
 
 // Additional RESTful routes.
-Route::post('/api/user/login', 'UserController@login');
-Route::get('/api/user/getByToken', 'UserController@getByToken');
+Route::post('/api/users/login', 'UserController@login');
+Route::get('/api/users/getByToken', 'UserController@getByToken');
 
 // Getting RESTful
 Route::resource('/api/todo', 'TodoController');
-Route::resource('/api/user', 'UserController');
+Route::resource('/api/users', 'UserController');
 Route::resource('/api/fixtures', 'FixtureController');
 Route::resource('/api/bets', 'BetController');
 Route::resource('/api/standings', 'StandingController');

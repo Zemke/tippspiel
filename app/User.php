@@ -41,13 +41,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     /**
      * Authenticate a user by username and password.
      *
-     * @param string $username The username
+     * @param string $email The email address
      * @param string $password Plain text password
      * @return bool|user The user if the password matches the user's stored password, false otherwise.
      */
-    public function authenticate($username, $password)
+    public function authenticate($email, $password)
     {
-        $user = User::where('username', $username)->first();
+        $user = User::where('email', $email)->first();
         if (!Hash::check($password, $user->password)) {
             return false;
         }
