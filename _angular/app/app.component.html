@@ -8,10 +8,10 @@
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
             <nav class="mdl-navigation mdl-layout--large-screen-only">
-                <a class="mdl-navigation__link" [routerLink]="['/']">
+                <a class="mdl-navigation__link" [routerLink]="['/bets']" *ngIf="!!user">
                     {{ 'soe.menu.betting' | translate}}
                 </a>
-                <a class="mdl-navigation__link" [routerLink]="['/standings']">
+                <a class="mdl-navigation__link" [routerLink]="['/']">
                     {{ 'soe.menu.standings' | translate}}
                 </a>
                 <a class="mdl-navigation__link" [routerLink]="['/login']" *ngIf="!user">
@@ -32,10 +32,10 @@
     <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">{{ 'soe.title' | translate }}</span>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" [routerLink]="['/']">
+            <a class="mdl-navigation__link" [routerLink]="['/bets']" *ngIf="!!user">
                 {{ 'soe.menu.betting' | translate}}
             </a>
-            <a class="mdl-navigation__link" [routerLink]="['/standings']">
+            <a class="mdl-navigation__link" [routerLink]="['/']">
                 {{ 'soe.menu.standings' | translate}}
             </a>
             <a class="mdl-navigation__link" [routerLink]="['/login']" *ngIf="!user">

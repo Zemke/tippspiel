@@ -15,8 +15,8 @@ import {User} from './user';
   directives: [ROUTER_DIRECTIVES]
 })
 @Routes([
-  {path: '/', component: HomeComponent},
-  {path: '/standings', component: StandingComponent},
+  {path: '/', component: StandingComponent},
+  {path: '/bets', component: HomeComponent},
   {path: '/registration', component: RegistrationComponent},
   {path: '/login', component: LoginComponent}
 ])
