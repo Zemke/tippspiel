@@ -17,7 +17,7 @@ export class FixtureComponent implements OnInit {
   @Input()
   fixture:Fixture;
   fixtureBet:FixtureBet;
-  errorMessage;
+  errorMessage:string;
 
   constructor(private fixtureBetService:FixtureBetService) {
 

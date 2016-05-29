@@ -23,7 +23,7 @@ export class StandingService {
     }
     let body = res.json();
 
-    body.sort((s1, s2) => {
+    body.sort((s1:any, s2:any) => {
       if (s1.points === s2.points) {
         if (s1.p5 === s2.p5) {
           return 0;
