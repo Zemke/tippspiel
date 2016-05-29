@@ -38,9 +38,11 @@ export class UserService {
   }
 
   private handleError(error:any) {
-    // In a real world app, we might send the error to remote logging infrastructure
-    let errMsg = error.message || 'Server error';
-    console.error(errMsg); // log to console instead
+    try {
+      var errMsg = JSON.parse(error._body).trans;
+    } catch (e) {
+      let errMsg = error.message || 'Server error';
+    }
     return Observable.throw(errMsg);
   }
 

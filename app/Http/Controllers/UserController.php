@@ -35,9 +35,8 @@ class UserController extends Controller
             $this->req->input('email'), $this->req->input('password'));
         if (!$user) {
             return $this->res->json([
-                'code' => null,
-                'message' => 'Login failed',
-                'description' => 'Wrong username/password.'
+                'descr' => 'Wrong credentials',
+                'trans' => 'soe.registration.wrongCredentials'
 
             ], Response::HTTP_UNPROCESSABLE_ENTITY);
         }

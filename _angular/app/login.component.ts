@@ -11,10 +11,8 @@ import {UserService} from './user.service';
   pipes: [TranslatePipe]
 })
 export class LoginComponent {
-  user:User = new User(1, '', '', '', '');
-  private response:string;
-  private errorMessage:string;
-  private success:boolean;
+  user:User = new User(1, '', '', '', '', '', '');
+  error:string;
 
   constructor(private userService:UserService) {
   }
@@ -22,7 +20,7 @@ export class LoginComponent {
   onSubmit() {
     this.userService.login(this.user.email, this.user.password)
         .subscribe(
-            response => localStorage.setItem('user_token', response.token),
-            error => {this.errorMessage = <any>error; this.success = false});
+            response => {localStorage.setItem('user_token', response.token); location.href = '/'},
+            error => this.error = error);
   }
 }

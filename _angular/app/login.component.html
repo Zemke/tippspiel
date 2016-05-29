@@ -1,7 +1,8 @@
 <div class="mdl-cell mdl-cell--12-col">
     <h1>{{ 'soe.menu.login' | translate }}</h1>
+    <div class="err" *ngIf="error">{{ error | translate }}</div>
 </div>
-<form (ngSubmit)="onSubmit()" #registrationForm="ngForm" mdl novalidate>
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm" mdl novalidate>
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--12-col">
             <div class="mdl-textfield mdl-js-textfield">
@@ -14,7 +15,7 @@
         </div>
         <div class="mdl-cell mdl-cell--12-col">
             <div class="mdl-textfield mdl-js-textfield">
-                <input type="text" class="mdl-textfield__input" id="password" [(ngModel)]="user.password"
+                <input type="password" class="mdl-textfield__input" id="password" [(ngModel)]="user.password"
                        ngControl="password" required>
                 <label class="mdl-textfield__label" for="password">
                     {{ 'soe.registration.password' | translate }}
@@ -23,7 +24,7 @@
         </div>
         <div class="mdl-cell mdl-cell--12-col">
             <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
-                    [disabled]="!registrationForm.form.valid">
+                    [disabled]="!loginForm.form.valid">
                 {{ 'soe.registration.login' | translate }}
             </button>
         </div>

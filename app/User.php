@@ -48,6 +48,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function authenticate($email, $password)
     {
         $user = User::where('email', $email)->first();
+
+        if (!$user) {
+            return false;
+        }
+
         if (!Hash::check($password, $user->password)) {
             return false;
         }
