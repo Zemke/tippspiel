@@ -11,6 +11,7 @@ use Todo\Http\Requests;
 use Todo\Http\Controllers\Controller;
 use Todo\Fixture;
 use Todo\Bet;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class FixtureController extends Controller
 {
@@ -32,7 +33,7 @@ class FixtureController extends Controller
         Log::info('Fixtures from REST');
 
         $fixtures = Fixture::rest();
-        $userId = 1; // TODO
+        $userId = JWTAuth::parseToken()->toUser()->id;
         $userBets = Bet::where('user_id', $userId)->get()->toArray();
 
         if (!$fixtures) {

@@ -10,6 +10,7 @@ use Illuminate\Http\Response;
 use Todo\Http\Requests;
 use Todo\Http\Controllers\Controller;
 use Todo\Bet;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class BetController extends Controller
 {
@@ -53,7 +54,7 @@ class BetController extends Controller
     public function store(Request $request)
     {
         $all = $this->request->all();
-        $all['user_id'] = 1;// TODO
+        $all['user_id'] = JWTAuth::parseToken()->toUser()->id;
 
         return Bet::updateOrCreate(
             array('user_id' => $all['user_id'], 'fixture_id' => $all['fixture_id']),

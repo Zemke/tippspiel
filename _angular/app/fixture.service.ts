@@ -2,17 +2,18 @@ import {Injectable} from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Fixture } from './Fixture';
 import {Observable} from 'rxjs/Observable';
+import {AuthHttp} from 'angular2-jwt/angular2-jwt';
 
 @Injectable()
 export class FixtureService {
-  constructor(private http:Http) {
+  constructor(private http:Http, private authHttp:AuthHttp) {
   }
 
   // private fixturesWebServiceUrl = 'app/fixtures.json'; // URL to JSON file
   private fixturesWebServiceUrl = 'http://localhost:8080/api/fixtures'; // URL to JSON file
 
   getFixtures():Observable<Fixture[]> {
-    return this.http.get(this.fixturesWebServiceUrl)
+    return this.authHttp.get(this.fixturesWebServiceUrl)
         .map(this.extractData)
         .catch(this.handleError);
   }
