@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {TranslatePipe} from 'ng2-translate/ng2-translate';
-import {NgForm} from '@angular/common';
 import {User} from './user';
 import {MDL} from './material-design-lite-upgrade-element.directive';
 import {UserService} from './user.service';
@@ -11,32 +10,20 @@ import {UserService} from './user.service';
   directives: [MDL],
   pipes: [TranslatePipe]
 })
-export class RegistrationComponent implements OnInit {
+export class RegistrationComponent {
   user = new User(1, '', '', '', '');
-  submitted = false;
   private users:User[];
   private errorMessage:string;
+  private success:boolean;
+  private response:any;
 
   constructor(private userService:UserService) {
-
-  }
-
-  ngOnInit() { this.getHeroes(); }
-
-  getHeroes() {
-    this.userService.getUsers()
-        .subscribe(
-            heroes => this.users = heroes,
-            error =>  this.errorMessage = <any>error);
   }
 
   onSubmit() {
-    this.submitted = true;
-    this.user = new User(1, '', '', '', '');
-  }
-
-  // TODO: Remove this when we're done
-  get diagnostic() {
-    return JSON.stringify(this.user);
+    this.userService.addUser(this.user.first_name, this.user.last_name, this.user.email, this.user.password)
+        .subscribe(
+            response => this.response = response,
+            error => {this.errorMessage = <any>error; this.success = false});
   }
 }

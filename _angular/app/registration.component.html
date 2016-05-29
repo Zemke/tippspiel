@@ -5,14 +5,14 @@
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--12-col">
             <div class="mdl-textfield mdl-js-textfield">
-                <input type="text" class="mdl-textfield__input" id="firstName" [(ngModel)]="user.firstName"
+                <input type="text" class="mdl-textfield__input" id="firstName" [(ngModel)]="user.first_name"
                        ngControl="firstName" required>
                 <label class="mdl-textfield__label" for="firstName">
                     {{ 'soe.registration.firstName' | translate }}
                 </label>
             </div>
             <div class="mdl-textfield mdl-js-textfield">
-                <input class="mdl-textfield__input" type="text" id="lastName" [(ngModel)]="user.lastName"
+                <input class="mdl-textfield__input" type="text" id="lastName" [(ngModel)]="user.last_name"
                        ngControl="lastName" required>
                 <label class="mdl-textfield__label" for="lastName">
                     {{ 'soe.registration.lastName' | translate }}

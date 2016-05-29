@@ -8,8 +8,8 @@ export class UserService {
   constructor(private http:Http) {
   }
 
-  private userWebServiceUrl = 'app/users.json'; // URL to JSON file
-  // private userWebServiceUrl = 'app/users';  // URL to web api
+  // private userWebServiceUrl = 'app/users.json'; // URL to JSON file
+  private userWebServiceUrl = 'http://localhost:8080/api/users';  // URL to web api
 
   getUsers():Observable<User[]> {
     return this.http.get(this.userWebServiceUrl)
@@ -17,9 +17,8 @@ export class UserService {
         .catch(this.handleError);
   }
 
-  addUser(name:string):Observable<User> {
-
-    let body = JSON.stringify({name});
+  addUser(first_name:string, last_name:string, email:string, password:string):Observable<User> {
+    let body = JSON.stringify({first_name, last_name, email, password});
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
 
@@ -34,7 +33,7 @@ export class UserService {
       throw new Error('Bad response status: ' + res.status);
     }
     let body = res.json();
-    return body.data || {};
+    return body || {};
   }
 
   private handleError(error:any) {
@@ -42,5 +41,15 @@ export class UserService {
     let errMsg = error.message || 'Server error';
     console.error(errMsg); // log to console instead
     return Observable.throw(errMsg);
+  }
+
+  login(email:string, password:string) {
+    let body = JSON.stringify({email, password});
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+
+    return this.http.post(this.userWebServiceUrl + '/login', body, options)
+        .map(this.extractData)
+        .catch(this.handleError);
   }
 }
