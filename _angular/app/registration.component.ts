@@ -31,7 +31,7 @@ export class RegistrationComponent {
 
     this.userService.addUser(this.user.first_name, this.user.last_name, this.user.email, this.user.password)
         .subscribe(
-            (response:any) => {localStorage.setItem('user_token', response.token); location.reload()},
+            (response:any) => {localStorage.setItem('user_token', response.token);  location.href = '/'},
             error => this.errMsg = <any>error);
   }
 }
