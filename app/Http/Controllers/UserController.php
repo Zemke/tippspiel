@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Todo\Http\Requests;
 use Todo\User;
+use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\JWTAuth;
 
 class UserController extends Controller
@@ -51,7 +52,11 @@ class UserController extends Controller
      */
     public function getByToken()
     {
-        return $this->jwtAuth->parseToken()->toUser();
+        try {
+            return $this->jwtAuth->parseToken()->toUser();
+        } catch (JWTException $e) {
+            abort(204);
+        }
     }
 
     /**

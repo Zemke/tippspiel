@@ -44,6 +44,10 @@ class Fixture extends Model
 
     public static function addUserBetsToFixtures($bets, $fixtures)
     {
+        if (empty($bets)) {
+            return $fixtures;
+        }
+
         $fixturesCount = count($fixtures['fixtures']);
 
         for ($i = 0; $i < $fixturesCount; $i++) {

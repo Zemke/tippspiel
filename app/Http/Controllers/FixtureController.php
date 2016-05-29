@@ -11,6 +11,7 @@ use Todo\Http\Requests;
 use Todo\Http\Controllers\Controller;
 use Todo\Fixture;
 use Todo\Bet;
+use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 class FixtureController extends Controller
@@ -33,8 +34,12 @@ class FixtureController extends Controller
         Log::info('Fixtures from REST');
 
         $fixtures = Fixture::rest();
-        $userId = JWTAuth::parseToken()->toUser()->id;
-        $userBets = Bet::where('user_id', $userId)->get()->toArray();
+        try {
+            $userId = JWTAuth::parseToken()->toUser()->id;
+            $userBets = Bet::where('user_id', $userId)->get()->toArray();
+        } catch (JWTException $e) {
+            $userBets = [];
+        }
 
         if (!$fixtures) {
             if (!$fixturesFromCache) {

@@ -5,7 +5,8 @@
       "registration": "Registration",
       "login": "Log in",
       "betting": "Place bets",
-      "standings": "Standings"
+      "standings": "Standings",
+      "logout": "Log out"
     },
     "registration": {
       "firstName": "First name",

@@ -5,7 +5,8 @@
       "registration": "Registration",
       "login": "Einloggen",
       "betting": "Tipps abgeben",
-      "standings": "Tabelle"
+      "standings": "Tabelle",
+      "logout": "Ausloggen"
     },
     "registration": {
       "firstName": "Vorname",

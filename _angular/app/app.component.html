@@ -14,11 +14,14 @@
                 <a class="mdl-navigation__link" [routerLink]="['/standings']">
                     {{ 'soe.menu.standings' | translate}}
                 </a>
-                <a class="mdl-navigation__link" [routerLink]="['/login']">
+                <a class="mdl-navigation__link" [routerLink]="['/login']" *ngIf="!user">
                     {{ 'soe.menu.login' | translate}}
                 </a>
-                <a class="mdl-navigation__link" [routerLink]="['/registration']">
+                <a class="mdl-navigation__link" [routerLink]="['/registration']" *ngIf="!user">
                     {{ 'soe.menu.registration' | translate}}
+                </a>
+                <a class="mdl-navigation__link" href="" (click)="logout()" *ngIf="!!user">
+                    {{ 'soe.menu.logout' | translate}}
                 </a>
             </nav>
         </div>
@@ -32,11 +35,14 @@
             <a class="mdl-navigation__link" [routerLink]="['/standings']">
                 {{ 'soe.menu.standings' | translate}}
             </a>
-            <a class="mdl-navigation__link" [routerLink]="['/login']">
+            <a class="mdl-navigation__link" [routerLink]="['/login']" *ngIf="!user">
                 {{ 'soe.menu.login' | translate}}
             </a>
-            <a class="mdl-navigation__link" [routerLink]="['/registration']">
+            <a class="mdl-navigation__link" [routerLink]="['/registration']" *ngIf="!user">
                 {{ 'soe.menu.registration' | translate}}
+            </a>
+            <a class="mdl-navigation__link" href="" (click)="logout()" *ngIf="!!user">
+                {{ 'soe.menu.logout' | translate}}
             </a>
         </nav>
     </div>
