@@ -20,8 +20,11 @@
                 <a class="mdl-navigation__link" [routerLink]="['/registration']" *ngIf="!user">
                     {{ 'soe.menu.registration' | translate}}
                 </a>
-                <a class="mdl-navigation__link" href="" (click)="logout()" *ngIf="!!user">
+                <a class="mdl-navigation__link pointer" (click)="logout()" *ngIf="!!user">
                     {{ 'soe.menu.logout' | translate}}
+                </a>
+                <a class="mdl-navigation__link pointer" (click)="switchLang()">
+                    DE/EN
                 </a>
             </nav>
         </div>
@@ -41,8 +44,11 @@
             <a class="mdl-navigation__link" [routerLink]="['/registration']" *ngIf="!user">
                 {{ 'soe.menu.registration' | translate}}
             </a>
-            <a class="mdl-navigation__link" href="" (click)="logout()" *ngIf="!!user">
+            <a class="mdl-navigation__link pointer" (click)="logout()" *ngIf="!!user">
                 {{ 'soe.menu.logout' | translate}}
+            </a>
+            <a class="mdl-navigation__link pointer" (click)="switchLang()">
+                DE/EN
             </a>
         </nav>
     </div>

@@ -22,7 +22,9 @@ import {User} from './user';
 ])
 export class AppComponent {
   user:User;
-  constructor(private router:Router, translate:TranslateService, private userService:UserService) {
+  userLang:string;
+
+  constructor(private router:Router, private translate:TranslateService, private userService:UserService) {
     this.doStuffForThei18nStuff(translate);
     this.getAuthenticatedUser();
   }
@@ -35,17 +37,31 @@ export class AppComponent {
   }
 
   private doStuffForThei18nStuff(translate:TranslateService) {
-    var userLang = navigator.language.split('-')[0]; // use navigator lang if available
-    userLang = /(de|en)/gi.test(userLang) ? userLang : 'de';
+    this.userLang = localStorage.getItem('lang');
 
-    // this language will be used as a fallback when a translation isn't found in the current language
-    translate.setDefaultLang('de');
+    if (this.userLang !== 'en' && this.userLang !== 'de') {
+      this.userLang = navigator.language.split('-')[0];
+      this.userLang = /(de|en)/gi.test(this.userLang) ? this.userLang : 'en';
+      localStorage.setItem('lang', this.userLang);
+    }
 
-    // the lang to use, if the lang isn't available, it will use the current loader to get them
-    translate.use(userLang);
+    translate.setDefaultLang('en');
+    translate.use(this.userLang);
   };
 
   logout() {
     localStorage.removeItem('user_token');
+    location.reload();
+  }
+
+  switchLang() {
+    if (this.userLang === 'en') {
+      this.userLang = 'de';
+    } else {
+      this.userLang = 'en';
+    }
+
+    this.translate.use(this.userLang);
+    localStorage.setItem('lang', this.userLang);
   }
 }
