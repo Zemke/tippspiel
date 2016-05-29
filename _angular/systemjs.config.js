@@ -33,6 +33,7 @@
     '@angular/testing',
     '@angular/upgrade',
     'ng2-translate',
+    'angular2-jwt',
   ];
 
   // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }

@@ -12,9 +12,9 @@ import {UserService} from './user.service';
 })
 export class LoginComponent {
   user:User = new User(1, '', '', '', '');
-  private response;
-  private errorMessage;
-  private success;
+  private response:string;
+  private errorMessage:string;
+  private success:boolean;
 
   constructor(private userService:UserService) {
   }

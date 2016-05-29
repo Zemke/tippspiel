@@ -14,6 +14,7 @@ import 'rxjs/Rx';
 import {FixtureService} from './fixture.service';
 import {FixtureBetService} from './fixture-bet.service';
 import {StandingService} from './standing.service';
+import {AuthHttp} from 'angular2-jwt/angular2-jwt';
 
 bootstrap(AppComponent, [
   HTTP_PROVIDERS,
@@ -22,6 +23,17 @@ bootstrap(AppComponent, [
   provide(TranslateLoader, {
     useFactory: (http:Http) => new TranslateStaticLoader(http, 'i18n', '.json'),
     deps: [Http]
+  }),
+  provide(AuthHttp, {
+    useFactory: (AuthHttp:AuthHttp) =>
+      new AuthHttp({
+        headerName: 'Authorization',
+        headerPrefix: 'Bearer',
+        tokenName: 'user_token',
+        tokenGetter: (() => localStorage.getItem('user_token')),
+        noJwtError: true
+      }),
+    deps: [AuthHttp]
   }),
   // use TranslateService here, and not TRANSLATE_PROVIDERS (which will define a default TranslateStaticLoader)
   TranslateService,
