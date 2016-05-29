@@ -20,7 +20,6 @@ class StandingController extends Controller
     public function index()
     {
         $builder = Standing::with('user');
-        Log::debug(print_R($builder->get(), true));
         return $builder->get();
     }
 

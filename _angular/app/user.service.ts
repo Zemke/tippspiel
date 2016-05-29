@@ -2,10 +2,11 @@ import {Injectable} from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {User} from './user';
 import {Observable} from 'rxjs/Observable';
+import {AuthHttp} from 'angular2-jwt/angular2-jwt';
 
 @Injectable()
 export class UserService {
-  constructor(private http:Http) {
+  constructor(private http:Http, private authHttp:AuthHttp) {
   }
 
   // private userWebServiceUrl = 'app/users.json'; // URL to JSON file
@@ -49,6 +50,15 @@ export class UserService {
     let options = new RequestOptions({headers: headers});
 
     return this.http.post(this.userWebServiceUrl + '/login', body, options)
+        .map(this.extractData)
+        .catch(this.handleError);
+  }
+
+  getUserByToken() {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+
+    return this.authHttp.get(this.userWebServiceUrl + '/getByToken', options)
         .map(this.extractData)
         .catch(this.handleError);
   }

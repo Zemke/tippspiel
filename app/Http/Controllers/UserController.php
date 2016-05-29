@@ -1,5 +1,7 @@
 <?php namespace Todo\Http\Controllers;
 
+use Log;
+
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -49,7 +51,7 @@ class UserController extends Controller
      */
     public function getByToken()
     {
-        return $this->jwtAuth->parseToken()->authenticate();
+        return $this->jwtAuth->parseToken()->toUser();
     }
 
     /**
