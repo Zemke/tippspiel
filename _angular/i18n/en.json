@@ -15,7 +15,10 @@
       "password": "Password",
       "passwordConfirm": "Confirm password",
       "register": "Register",
-      "login": "Log in"
+      "login": "Log in",
+      "wrongCredentials": "Uh oh! Wrong credentials!",
+      "emailUnmatch": "Your email addresses do not match.",
+      "passwordUnmatch": "Your passwords do not match."
     },
     "betting": {
       "orderExplanation": "The games are ordered by time they take place.",

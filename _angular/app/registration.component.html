@@ -1,5 +1,9 @@
 <div class="mdl-cell mdl-cell--12-col">
     <h1>{{ 'soe.menu.registration' | translate }}</h1>
+
+    <div class="err" *ngIf="emailUnmatch">{{'soe.registration.emailUnmatch' | translate }}</div>
+    <div class="err" *ngIf="passwordUnmatch">{{'soe.registration.passwordUnmatch' | translate }}</div>
+    <div class="err" *ngIf="errMsg">{{'soe.rest.err.generalError' | translate }}</div>
 </div>
 <form (ngSubmit)="onSubmit()" #registrationForm="ngForm" mdl novalidate>
     <div class="mdl-grid">
@@ -20,24 +24,32 @@
             </div>
         </div>
         <div class="mdl-cell mdl-cell--12-col">
-            <div class="mdl-textfield mdl-js-textfield">
+            <div class="mdl-textfield mdl-js-textfield" [ngClass]="{'is-invalid': emailUnmatch}">
                 <input type="email" class="mdl-textfield__input" id="email" [(ngModel)]="user.email" ngControl="email"
                        required>
                 <label class="mdl-textfield__label" for="email">
                     {{ 'soe.registration.email' | translate }}
                 </label>
             </div>
+            <div class="mdl-textfield mdl-js-textfield" [ngClass]="{'is-invalid': emailUnmatch}">
+                <input type="email" class="mdl-textfield__input" id="emailConfirm" [(ngModel)]="emailConfirm"
+                       ngControl="email" required>
+                <label class="mdl-textfield__label" for="email">
+                    {{ 'soe.registration.email' | translate }}
+                </label>
+            </div>
         </div>
         <div class="mdl-cell mdl-cell--12-col">
-            <div class="mdl-textfield mdl-js-textfield">
+            <div class="mdl-textfield mdl-js-textfield" [ngClass]="{'is-invalid': passwordUnmatch}">
                 <input type="text" class="mdl-textfield__input" id="password" [(ngModel)]="user.password"
                        ngControl="password" required>
                 <label class="mdl-textfield__label" for="password">
                     {{ 'soe.registration.password' | translate }}
                 </label>
             </div>
-            <div class="mdl-textfield mdl-js-textfield">
-                <input class="mdl-textfield__input" type="text" id="passwordConfirm" required>
+            <div class="mdl-textfield mdl-js-textfield" [ngClass]="{'is-invalid': passwordUnmatch}">
+                <input class="mdl-textfield__input" type="text" id="passwordConfirm" [(ngModel)]="passwordConfirm"
+                       required>
                 <label class="mdl-textfield__label" for="passwordConfirm">
                     {{ 'soe.registration.passwordConfirm' | translate }}
                 </label>

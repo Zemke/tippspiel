@@ -37,3 +37,11 @@ form.bet-card {
     background-color: transparent;
     padding-top: 9px;
 }
+
+div.err {
+    color: red;
+}
+
+a.pointer {
+    cursor: pointer;
+}
