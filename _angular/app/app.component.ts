@@ -51,7 +51,7 @@ export class AppComponent {
 
   logout() {
     localStorage.removeItem('user_token');
-    location.reload();
+    location.href = '/';
   }
 
   switchLang() {
