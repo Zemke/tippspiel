@@ -1,4 +1,10 @@
 <div mdl [ngSwitch]="valuation">
+    <div *ngSwitchWhen="(-1)">
+        <div class="material-icons mdl-badge mdl-badge--overlap" id="thumb_down" data-badge="0">thumb_down</div>
+        <div class="mdl-tooltip" for="thumb_down">
+            {{ 'soe.betting.reason.missed' | translate }}
+        </div>
+    </div>
     <div *ngSwitchWhen="0">
         <div class="material-icons mdl-badge mdl-badge--overlap" id="res_block" data-badge="0">block</div>
         <div class="mdl-tooltip" for="res_block">

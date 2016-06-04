@@ -29,7 +29,8 @@
         "winner": "richtigen Sieger",
         "goalDifference": "richtige Tordifferenz",
         "result": "richtiges Ergebnis",
-        "pointsNone": "0 Punkte, du hast versagt"
+        "pointsNone": "0 Punkte, du hast versagt",
+        "missed": "Du hast vergessen zu tippen :("
       }
     },
     "table": {

@@ -19,6 +19,7 @@ class CreateStandingsTable extends Migration
             $table->integer('p3');
             $table->integer('p1');
             $table->integer('p0');
+            $table->integer('missed');
             $table->primary('user_id');
         });
     }

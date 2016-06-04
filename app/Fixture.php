@@ -95,4 +95,14 @@ class Fixture extends Model
         $splitSelfLink = explode('/', $fixture['_links']['self']['href']);
         return $splitSelfLink[count($splitSelfLink) - 1];
     }
+
+    public static function isOver($fixture)
+    {
+        return $fixture['status'] === 'CANCELED' || $fixture['status'] === 'FINISHED';
+    }
+
+    public static function isFuture($fixture)
+    {
+        return $fixture['status'] === 'SCHEDULED' || $fixture['status'] === 'TIMED' || $fixture['status'] === 'POSTPONED';
+    }
 }

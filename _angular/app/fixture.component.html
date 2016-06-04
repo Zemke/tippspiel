@@ -35,7 +35,7 @@
                 </button>
             </form>
         </span>
-        <soe-bet-result *ngIf="fixture.status != 'TIMED'" [valuation]="fixture._bet ? fixture._bet.valuation : 0">
+        <soe-bet-result *ngIf="fixture.status != 'TIMED'" [valuation]="fixture._bet ? fixture._bet.valuation : -1">
         </soe-bet-result>
     </li>
 </ul>

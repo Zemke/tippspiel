@@ -29,7 +29,8 @@
         "winner": "right winner",
         "goalDifference": "right goal difference",
         "result": "right result",
-        "pointsNone": "0 points, you failed"
+        "pointsNone": "0 points, you failed",
+        "missed": "You forgot to bet :("
       }
     },
     "table": {

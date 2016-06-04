@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Standing extends Model
 {
-    protected $fillable = array('user_id', 'points', 'p5', 'p3', 'p1', 'p0');
+    protected $fillable = array('user_id', 'points', 'p5', 'p3', 'p1', 'p0', 'missed');
 
     protected $primaryKey = 'user_id';
 
@@ -46,6 +46,10 @@ class Standing extends Model
             return;
         }
 
+        $fixtures['fixtures'] = array_filter($fixtures['fixtures'], function ($fixture) {
+            return !Fixture::isFuture($fixture);
+        });
+
         $bets = Bet::all();
         $standings = [];
 
@@ -54,14 +58,22 @@ class Standing extends Model
         })->toArray();
 
         $betsAndFixturesOfUser = Fixture::addUserBetsToFixtures(array_values($userBets), $fixtures);
+        $missed = 0;
 
-        $betsAndFixturesOfUserFiltered = array_filter($betsAndFixturesOfUser['fixtures'], function ($val, $key) {
-            return array_key_exists('_bet', $val);
+        $betsAndFixturesOfUserFiltered = array_filter($betsAndFixturesOfUser['fixtures'], function ($val, $key) use (&$missed) {
+            $hasBet = array_key_exists('_bet', $val);
+
+            if (!$hasBet && Fixture::isOver($val)) {
+                $missed++;
+            }
+
+            return $hasBet;
         }, ARRAY_FILTER_USE_BOTH);
 
         $standing = Standing::calcForTable($betsAndFixturesOfUserFiltered);
 
         $standing['user_id'] = $userId;
+        $standing['missed'] = $missed;
         return new Standing($standing);
     }
 
