@@ -1,4 +1,4 @@
-<ul *ngIf="fixtureBet" class="demo-list-three mdl-list bet-card" mdl>
+<ul *ngIf="fixtureBet && fixture" class="demo-list-three mdl-list bet-card" mdl>
     <li class="mdl-list__item mdl-list__item--three-line">
         <span class="mdl-list__item-primary-content">
             <span>
@@ -16,7 +16,7 @@
             <form (ngSubmit)="onSubmit()" #betForm="ngForm" class="bet-card" novalidate>
                 <div class="mdl-textfield mdl-js-textfield bet-card">
                     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="home"
-                           [disabled]="fixture.status != 'TIMED'" [(ngModel)]="fixtureBet.home_goals">
+                           [disabled]="!inFuture" [(ngModel)]="fixtureBet.home_goals">
                     <label class="mdl-textfield__label" for="home">
                         {{ fixture.homeTeamName.substr(0, 3).toUpperCase() }}
                     </label>
@@ -24,18 +24,18 @@
                 -
                 <div class="mdl-textfield mdl-js-textfield bet-card">
                     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="away"
-                           [disabled]="fixture.status != 'TIMED'" [(ngModel)]="fixtureBet.away_goals">
+                           [disabled]="!inFuture" [(ngModel)]="fixtureBet.away_goals">
                     <label class="mdl-textfield__label" for="home">
                         {{ fixture.awayTeamName.substr(0, 3).toUpperCase() }}
                     </label>
                 </div>
                 <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
-                        [disabled]="!betForm.form.valid" *ngIf="fixture.status == 'TIMED'">
+                        [disabled]="!betForm.form.valid" *ngIf="inFuture">
                     {{ 'soe.betting.submitBet' | translate }}
                 </button>
             </form>
         </span>
-        <soe-bet-result *ngIf="fixture.status != 'TIMED'" [valuation]="fixture._bet ? fixture._bet.valuation : -1">
+        <soe-bet-result *ngIf="!inFuture" [valuation]="fixture._bet ? fixture._bet.valuation : -1">
         </soe-bet-result>
     </li>
 </ul>

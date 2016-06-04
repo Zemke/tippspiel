@@ -6,6 +6,7 @@ import {Fixture} from './fixture';
 import {FixtureBetService} from './fixture-bet.service';
 import {FixtureBet} from './fixture-bet';
 import {BetResultComponent} from './bet-result.component';
+import {FixtureService} from './fixture.service';
 
 @Component({
   selector: 'soe-fixture',
@@ -18,9 +19,9 @@ export class FixtureComponent implements OnInit {
   fixture:Fixture;
   fixtureBet:FixtureBet;
   errorMessage:string;
+  inFuture:boolean;
 
-  constructor(private fixtureBetService:FixtureBetService) {
-
+  constructor(private fixtureBetService:FixtureBetService, private fixtureService:FixtureService) {
   }
 
   ngOnInit () {
@@ -29,6 +30,8 @@ export class FixtureComponent implements OnInit {
     } else {
       this.fixtureBet = new FixtureBet(null, null, null, null, null, null, null)
     }
+
+    this.inFuture = this.fixtureService.inFuture(this.fixture);
   }
 
   onSubmit() {

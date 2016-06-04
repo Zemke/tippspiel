@@ -42,4 +42,13 @@ export class FixtureService {
     let errMsg = error.trans || 'soe.rest.err.generalError';
     return Observable.throw(errMsg);
   }
+
+  /**
+   * @see http://api.football-data.org/images/blog/state_diagram_fixture.png Fixture statuses flow
+   * @param fixture
+   * @returns {boolean}
+   */
+  inFuture(fixture:Fixture) {
+    return fixture.status === 'SCHEDULED' || fixture.status === 'TIMED' || fixture.status === 'POSTPONED';
+  }
 }
