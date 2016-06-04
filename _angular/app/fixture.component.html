@@ -35,7 +35,7 @@
                 </button>
             </form>
         </span>
-        <soe-bet-result *ngIf="!inFuture" [valuation]="fixture._bet ? fixture._bet.valuation : -1">
+        <soe-bet-result *ngIf="!inFuture" [id]="fixture.id" [valuation]="fixture._bet ? fixture._bet.valuation : -1">
         </soe-bet-result>
     </li>
 </ul>

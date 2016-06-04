@@ -1,33 +1,33 @@
 <div mdl [ngSwitch]="valuation">
     <div *ngSwitchWhen="(-1)">
-        <div class="material-icons mdl-badge mdl-badge--overlap" id="thumb_down" data-badge="0">thumb_down</div>
-        <div class="mdl-tooltip" for="thumb_down">
+        <div class="material-icons mdl-badge mdl-badge--overlap" [attr.id]="'thumb_down' + id" data-badge="0">thumb_down</div>
+        <div class="mdl-tooltip" [attr.for]="'thumb_down' + id">
             {{ 'soe.betting.reason.missed' | translate }}
         </div>
     </div>
     <div *ngSwitchWhen="0">
-        <div class="material-icons mdl-badge mdl-badge--overlap" id="res_block" data-badge="0">block</div>
-        <div class="mdl-tooltip" for="res_block">
+        <div class="material-icons mdl-badge mdl-badge--overlap" [attr.id]="'res_block' + id" data-badge="0">block</div>
+        <div class="mdl-tooltip" [attr.for]="'res_block' + id">
             {{ 'soe.betting.reason.pointsNone' | translate }}
         </div>
     </div>
     <div *ngSwitchWhen="1">
-        <div class="material-icons mdl-badge mdl-badge--overlap" id="res_done" data-badge="1">done</div>
-        <div class="mdl-tooltip" for="res_done">
+        <div class="material-icons mdl-badge mdl-badge--overlap" [attr.id]="'res_done' + id" data-badge="1">done</div>
+        <div class="mdl-tooltip" [attr.for]="'res_done' + id">
             {{ 'soe.betting.reason.pointFor' | translate }}<br>
             {{ 'soe.betting.reason.winner' | translate }}
         </div>
     </div>
     <div *ngSwitchWhen="3">
-        <div class="material-icons mdl-badge mdl-badge--overlap" id="res_done_all" data-badge="3">done_all</div>
-        <div class="mdl-tooltip" for="res_done_all">
+        <div class="material-icons mdl-badge mdl-badge--overlap" [attr.id]="'res_done_all' + id" data-badge="3">done_all</div>
+        <div class="mdl-tooltip" [attr.for]="'res_done_all' + id">
             {{ 'soe.betting.reason.pointsFor' | translate:{value:3} }}<br>
             {{ 'soe.betting.reason.goalDifference' | translate }}
         </div>
     </div>
     <div *ngSwitchWhen="5">
-        <div class="material-icons mdl-badge mdl-badge--overlap" id="res_grade" data-badge="5">grade</div>
-        <div class="mdl-tooltip" for="res_grade">
+        <div class="material-icons mdl-badge mdl-badge--overlap" [attr.id]="'res_grade' + id" data-badge="5">grade</div>
+        <div class="mdl-tooltip" [attr.for]="'res_grade' + id">
             {{ 'soe.betting.reason.pointsFor' | translate:{value:5} }}<br>
             {{ 'soe.betting.reason.result' | translate }}
         </div>
