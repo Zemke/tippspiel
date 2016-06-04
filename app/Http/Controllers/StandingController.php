@@ -19,6 +19,7 @@ class StandingController extends Controller
      */
     public function index()
     {
+        Standing::handleJob();
         $builder = Standing::with('user');
         return $builder->get();
     }

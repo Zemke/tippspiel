@@ -24,6 +24,20 @@ class Standing extends Model
         return $this->belongsTo('Todo\User');
     }
 
+    public static function handleJob()
+    {
+        $users = User::all()->toArray();
+        $standings = [];
+
+        foreach ($users as $user) {
+            $standing = Standing::calcForUser($user['id']);
+            $standings[] = $standing->attributesToArray();
+        }
+
+        Standing::truncate();
+        Standing::insert($standings);
+    }
+
     public static function calcForUser($userId)
     {
         $fixtures = Cache::get('fixtures');

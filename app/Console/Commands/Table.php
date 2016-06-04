@@ -35,17 +35,6 @@ class Table extends Command {
 	public function handle()
 	{
         Log::info('Running table task.');
-
-        $now = Carbon::now('utc')->toDateTimeString();
-        $users = User::all()->toArray();
-        $standings = [];
-
-        foreach ($users as $user) {
-            $standing = Standing::calcForUser($user['id']);
-            $standings[] = $standing->attributesToArray();
-        }
-
-        Standing::truncate();
-        Standing::insert($standings);
+        Standing::handleJob();
     }
 }
