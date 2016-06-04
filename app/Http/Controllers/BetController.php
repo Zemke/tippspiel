@@ -2,6 +2,7 @@
 
 namespace Todo\Http\Controllers;
 
+use ErrorException;
 use Log;
 
 use Illuminate\Http\Request;
@@ -56,10 +57,23 @@ class BetController extends Controller
         $all = $this->request->all();
         $all['user_id'] = JWTAuth::parseToken()->toUser()->id;
 
-        return Bet::updateOrCreate(
-            array('user_id' => $all['user_id'], 'fixture_id' => $all['fixture_id']),
-            $all
-        );
+        try {
+            return Bet::updateOrCreate(
+                array('user_id' => $all['user_id'], 'fixture_id' => $all['fixture_id']),
+                $all
+            );
+        } catch (ErrorException $e) {
+            $bet = Bet::where('user_id', $all['user_id'])->where('fixture_id', $all['fixture_id'])->first();
+            if (!$bet) {
+                Log::alert('A bet was not able to be saved because of ' + $e->getMessage());
+                return response()->json([
+                    'descr' => $e->getMessage(),
+                    'trans' => 'soe.betting.serverError'
+
+                ], Response::HTTP_INTERNAL_SERVER_ERROR);
+            }
+            return $bet;
+        }
     }
 
     /**
