@@ -44,7 +44,32 @@
         "noFixtures": "Upsi! Leider können wir gerade keine Begegnungen laden. Bitte komme später wieder.",
         "generalError": "Och nö! Irgendwas ist schiefgelaufen. Bitte komme später wieder."
       }
+    },
+    "team": {
+      "France": "Frankreich",
+      "Romania": "Romänien",
+      "Albania": "Albanien",
+      "Switzerland": "Schweiz",
+      "Wales": "Wales",
+      "Slovakia": "Slowakei",
+      "England": "England",
+      "Russia": "Russland",
+      "Turkey": "Türkei",
+      "Croatia": "Kroatien",
+      "Poland": "Polen",
+      "Northern Ireland": "Nordirland",
+      "Germany": "Deutschland",
+      "Ukraine": "Ukraine",
+      "Spain": "Spanien",
+      "Czech Republic": "Tschechische Republik",
+      "Republic of Ireland": "Republik Irland",
+      "Sweden": "Schweden",
+      "Belgium": "Belgien",
+      "Italy": "Italien",
+      "Austria": "Österreich",
+      "Hungary": "Ungarn",
+      "Portugal": "Portugal",
+      "Iceland": "Island"
     }
-
   }
 }

@@ -2,9 +2,9 @@
     <li class="mdl-list__item mdl-list__item--three-line">
         <span class="mdl-list__item-primary-content">
             <span>
-                {{ fixture.homeTeamName }}
+                {{ ('soe.team.' + fixture.homeTeamName | translate) }}
                 {{ fixture.result.goalsHomeTeam }}-{{ fixture.result.goalsAwayTeam }}
-                {{ fixture.awayTeamName }}
+                {{ ('soe.team.' + fixture.awayTeamName | translate) }}
             </span>
             <span class="mdl-list__item-text-body">
                 {{ fixture.date | date:'fullDate' }},
@@ -18,7 +18,7 @@
                     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="home"
                            [disabled]="!inFuture" [(ngModel)]="fixtureBet.home_goals">
                     <label class="mdl-textfield__label" for="home">
-                        {{ fixture.homeTeamName.substr(0, 3).toUpperCase() }}
+                        {{ ('soe.team.' + fixture.homeTeamName | translate).substr(0, 3).toUpperCase() }}
                     </label>
                 </div>
                 -
@@ -26,7 +26,7 @@
                     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="away"
                            [disabled]="!inFuture" [(ngModel)]="fixtureBet.away_goals">
                     <label class="mdl-textfield__label" for="home">
-                        {{ fixture.awayTeamName.substr(0, 3).toUpperCase() }}
+                        {{ ('soe.team.' + fixture.awayTeamName | translate).substr(0, 3).toUpperCase() }}
                     </label>
                 </div>
                 <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"

@@ -44,6 +44,32 @@
         "noFixtures": "Eww! We cannot retrieve any fixtures at this time. Please, check back later.",
         "generalError": "Oh man! Something went wrong, we don’t know. Please, check back later."
       }
+    },
+    "team": {
+      "France": "France",
+      "Romania": "Romania",
+      "Albania": "Albania",
+      "Switzerland": "Switzerland",
+      "Wales": "Wales",
+      "Slovakia": "Slovakia",
+      "England": "England",
+      "Russia": "Russia",
+      "Turkey": "Turkey",
+      "Croatia": "Croatia",
+      "Poland": "Poland",
+      "Northern Ireland": "Northern Ireland",
+      "Germany": "Germany",
+      "Ukraine": "Ukraine",
+      "Spain": "Spain",
+      "Czech Republic": "Czech Republic",
+      "Republic of Ireland": "Republic of Ireland",
+      "Sweden": "Sweden",
+      "Belgium": "Belgium",
+      "Italy": "Italy",
+      "Austria": "Austria",
+      "Hungary": "Hungary",
+      "Portugal": "Portugal",
+      "Iceland": "Iceland"
     }
   }
 }
