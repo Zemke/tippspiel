@@ -15,6 +15,7 @@ import {FixtureService} from './fixture.service';
 import {FixtureBetService} from './fixture-bet.service';
 import {StandingService} from './standing.service';
 import {AuthHttp, AuthConfig} from 'angular2-jwt/angular2-jwt';
+import {GeneralService} from './general.service';
 
 bootstrap(AppComponent, [
   HTTP_PROVIDERS,
@@ -41,5 +42,6 @@ bootstrap(AppComponent, [
   UserService,
   FixtureService,
   FixtureBetService,
-  StandingService
+  StandingService,
+  GeneralService
 ]);

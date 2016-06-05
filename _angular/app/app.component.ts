@@ -7,6 +7,7 @@ import {HomeComponent} from './home.component';
 import {StandingComponent} from './standing.component';
 import {UserService} from './user.service';
 import {User} from './user';
+import {GeneralService} from './general.service';
 
 @Component({
   selector: 'soe-app',
@@ -23,10 +24,14 @@ import {User} from './user';
 export class AppComponent {
   user:User;
   userLang:string;
+  version:string;
 
-  constructor(private router:Router, private translate:TranslateService, private userService:UserService) {
+  constructor(private router:Router, private translate:TranslateService, private userService:UserService, private generalService:GeneralService) {
     this.doStuffForThei18nStuff(translate);
     this.getAuthenticatedUser();
+    this.generalService.getShieldInfo().subscribe(
+        (res:any) => this.version = res.value
+    );
   }
 
   private getAuthenticatedUser() {
