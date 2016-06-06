@@ -46,6 +46,15 @@
         "generalError": "Och nö! Irgendwas ist schiefgelaufen. Bitte komme später wieder."
       }
     },
+    "toast": {
+      "success": "Läuft",
+      "error": "Mist!",
+      "warning": "Warning",
+      "betting": {
+        "saved": "Tipp wurde gespeichert.",
+        "failed": "Irgendwas lief schief."
+      }
+    },
     "team": {
       "France": "Frankreich",
       "Romania": "Romänien",

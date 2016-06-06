@@ -1,12 +1,12 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TranslatePipe} from 'ng2-translate/ng2-translate';
-import {NgForm} from '@angular/common';
+import {TranslatePipe, TranslateService} from 'ng2-translate/ng2-translate';
 import {MDL} from './material-design-lite-upgrade-element.directive';
 import {Fixture} from './fixture';
 import {FixtureBetService} from './fixture-bet.service';
 import {FixtureBet} from './fixture-bet';
 import {BetResultComponent} from './bet-result.component';
 import {FixtureService} from './fixture.service';
+import {ToastsManager} from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'soe-fixture',
@@ -24,7 +24,8 @@ export class FixtureComponent implements OnInit {
   private copyHome;
   private copyAway;
 
-  constructor(private fixtureBetService:FixtureBetService, private fixtureService:FixtureService) {
+  constructor(private fixtureBetService:FixtureBetService, private fixtureService:FixtureService,
+              private toastr:ToastsManager, private translateService:TranslateService) {
   }
 
   ngOnInit() {
@@ -46,8 +47,13 @@ export class FixtureComponent implements OnInit {
               this.copyHome = bet.home_goals;
               this.copyAway = bet.away_goals;
               this.checkUnsavedChanges();
+              this.toastr.success(this.translateService.instant('soe.toast.betting.saved'), this.translateService.instant('soe.toast.success'));
             },
-            error => this.errorMessage = <any>error);
+            error => {
+                this.toastr.error(
+                    this.translateService.instant('soe.toast.betting.failed'),
+                    this.translateService.instant('soe.toast.error'));
+            });
   }
 
   checkUnsavedChanges() {
@@ -55,7 +61,7 @@ export class FixtureComponent implements OnInit {
       this.unsavedChanges = false;
     } else {
       this.unsavedChanges = (Number(this.fixtureBet.home_goals) !== Number(this.copyHome)
-          || Number(this.fixtureBet.away_goals) !== Number(this.copyAway));
+      || Number(this.fixtureBet.away_goals) !== Number(this.copyAway));
     }
   }
 

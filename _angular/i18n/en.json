@@ -46,6 +46,15 @@
         "generalError": "Oh man! Something went wrong, we don’t know. Please, check back later."
       }
     },
+    "toast": {
+      "success": "Success",
+      "error": "Failed",
+      "warning": "Warning",
+      "betting": {
+        "saved": "Bet was saved.",
+        "failed": "Something went wrong."
+      }
+    },
     "team": {
       "France": "France",
       "Romania": "Romania",

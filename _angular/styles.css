@@ -45,3 +45,7 @@ div.err {
 a.pointer {
     cursor: pointer;
 }
+
+#toast-container {
+    margin-top: 60px;
+}

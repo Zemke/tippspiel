@@ -13,6 +13,7 @@
     '@angular':                   'node_modules/@angular',
     'ng2-translate':              'node_modules/ng2-translate',
     'angular2-jwt':               'node_modules/angular2-jwt',
+    'ng2-toastr':                 'node_modules/ng2-toastr',
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
@@ -34,6 +35,7 @@
     '@angular/upgrade',
     'ng2-translate',
     'angular2-jwt',
+    'ng2-toastr',
   ];
 
   // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
