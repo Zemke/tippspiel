@@ -1,6 +1,7 @@
 <table *ngIf="standings" mdl class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
     <thead>
     <tr>
+        <th>#</th>
         <th class="mdl-data-table__cell--non-numeric">{{ 'soe.table.head.name' | translate }}</th>
         <th>{{ 'soe.table.head.points' | translate }}</th>
         <th><soe-bet-result [valuation]="5"></soe-bet-result></th>
@@ -11,7 +12,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let standing of standings">
+    <tr *ngFor="let standing of standings; #rank = index">
+        <td>
+            <span [ngStyle]="{'color': (rank + 1 <= 3) ? '#DAA520' : ''}">
+                {{ rank + 1 }}
+            </span>
+        </td>
         <td class="mdl-data-table__cell--non-numeric">
             <strong>{{ standing.user.first_name }} {{ standing.user.last_name }}</strong>
         </td>
