@@ -20,13 +20,18 @@ export class FixtureComponent implements OnInit {
   fixtureBet:FixtureBet;
   errorMessage:string;
   inFuture:boolean;
+  unsavedChanges:boolean;
+  private copyHome;
+  private copyAway;
 
   constructor(private fixtureBetService:FixtureBetService, private fixtureService:FixtureService) {
   }
 
-  ngOnInit () {
+  ngOnInit() {
     if (this.fixture._bet) {
       this.fixtureBet = new FixtureBet(this.fixture._bet.fixture_id, this.fixture._bet.home_goals, this.fixture._bet.away_goals, null, null, null, null)
+      this.copyHome = this.fixture._bet.home_goals;
+      this.copyAway = this.fixture._bet.away_goals;
     } else {
       this.fixtureBet = new FixtureBet(null, null, null, null, null, null, null)
     }
@@ -37,7 +42,21 @@ export class FixtureComponent implements OnInit {
   onSubmit() {
     this.fixtureBetService.addFixtureBet(this.fixtureBet.home_goals, this.fixtureBet.away_goals, this.fixture.id, null)
         .subscribe(
-            error =>  this.errorMessage = <any>error);
+            (bet:FixtureBet) => {
+              this.copyHome = bet.home_goals;
+              this.copyAway = bet.away_goals;
+              this.checkUnsavedChanges();
+            },
+            error => this.errorMessage = <any>error);
+  }
+
+  checkUnsavedChanges() {
+    if (!this.fixtureBet.home_goals || !this.fixtureBet.away_goals) {
+      this.unsavedChanges = false;
+    } else {
+      this.unsavedChanges = (Number(this.fixtureBet.home_goals) !== Number(this.copyHome)
+          || Number(this.fixtureBet.away_goals) !== Number(this.copyAway));
+    }
   }
 
   get debugFixture() {

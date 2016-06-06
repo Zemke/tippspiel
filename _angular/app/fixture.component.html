@@ -16,7 +16,8 @@
             <form (ngSubmit)="onSubmit()" #betForm="ngForm" class="bet-card" novalidate>
                 <div class="mdl-textfield mdl-js-textfield bet-card">
                     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="home"
-                           [disabled]="!inFuture" [(ngModel)]="fixtureBet.home_goals">
+                           [disabled]="!inFuture" [(ngModel)]="fixtureBet.home_goals"
+                           (ngModelChange)="checkUnsavedChanges()">
                     <label class="mdl-textfield__label" for="home">
                         {{ ('soe.team.' + fixture.homeTeamName | translate).substr(0, 3).toUpperCase() }}
                     </label>
@@ -24,12 +25,14 @@
                 -
                 <div class="mdl-textfield mdl-js-textfield bet-card">
                     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="away"
-                           [disabled]="!inFuture" [(ngModel)]="fixtureBet.away_goals">
+                           [disabled]="!inFuture" [(ngModel)]="fixtureBet.away_goals"
+                           (ngModelChange)="checkUnsavedChanges()">
                     <label class="mdl-textfield__label" for="home">
                         {{ ('soe.team.' + fixture.awayTeamName | translate).substr(0, 3).toUpperCase() }}
                     </label>
                 </div>
                 <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                        [ngClass]="{'mdl-button--accent': unsavedChanges}"
                         [disabled]="!betForm.form.valid" *ngIf="inFuture">
                     {{ 'soe.betting.submitBet' | translate }}
                 </button>
