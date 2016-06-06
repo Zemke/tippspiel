@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {TranslatePipe} from 'ng2-translate/ng2-translate';
+import {TranslatePipe, TranslateService} from 'ng2-translate/ng2-translate';
 import {User} from './user';
 import {MDL} from './material-design-lite-upgrade-element.directive';
 import {UserService} from './user.service';
+import {ToastsManager} from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'soe-registration',
@@ -13,25 +14,33 @@ import {UserService} from './user.service';
 export class RegistrationComponent {
   user = new User(1, '', '', '', '', '', '');
   errMsg:string;
-  email:string;
-  password:string;
-  emailUnmatch:boolean;
-  passwordUnmatch:boolean;
+  emailConfirm:string;
+  passwordConfirm:string;
 
-  constructor(private userService:UserService) {
+  constructor(private userService:UserService, private toastr:ToastsManager,
+              private translateService:TranslateService) {
   }
 
   onSubmit() {
-    this.emailUnmatch = this.user.email !== this.email;
-    this.passwordUnmatch = this.user.password !== this.password;
-
-    if (!this.emailUnmatch || !this.passwordUnmatch) {
+    if (this.user.email !== this.emailConfirm) {
+      this.toastr.error(
+          this.translateService.instant('soe.registration.emailUnmatch'),
+          this.translateService.instant('soe.toast.error'));
+      return;
+    } else if (this.user.password !== this.passwordConfirm) {
+      this.toastr.error(
+          this.translateService.instant('soe.registration.passwordUnmatch'),
+          this.translateService.instant('soe.toast.error'));
       return;
     }
 
     this.userService.addUser(this.user.first_name, this.user.last_name, this.user.email, this.user.password)
         .subscribe(
             (response:any) => {localStorage.setItem('user_token', response.token);  location.href = '/payment'},
-            error => this.errMsg = <any>error);
+            error => {
+              this.toastr.error(
+                  this.translateService.instant('soe.toast.failed'),
+                  this.translateService.instant('soe.toast.error'));
+            });
   }
 }

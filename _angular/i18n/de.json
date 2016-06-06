@@ -51,9 +51,9 @@
       "success": "Läuft",
       "error": "Mist!",
       "warning": "Warning",
+      "failed": "Irgendwas lief schief.",
       "betting": {
-        "saved": "Tipp wurde gespeichert.",
-        "failed": "Irgendwas lief schief."
+        "saved": "Tipp wurde gespeichert."
       }
     },
     "team": {

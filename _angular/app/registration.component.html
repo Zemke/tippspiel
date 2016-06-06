@@ -1,9 +1,5 @@
 <div class="mdl-cell mdl-cell--12-col">
     <h1>{{ 'soe.menu.registration' | translate }}</h1>
-
-    <div class="err" *ngIf="emailUnmatch">{{'soe.registration.emailUnmatch' | translate }}</div>
-    <div class="err" *ngIf="passwordUnmatch">{{'soe.registration.passwordUnmatch' | translate }}</div>
-    <div class="err" *ngIf="errMsg">{{'soe.rest.err.generalError' | translate }}</div>
 </div>
 <form (ngSubmit)="onSubmit()" #registrationForm="ngForm" mdl novalidate>
     <div class="mdl-grid">

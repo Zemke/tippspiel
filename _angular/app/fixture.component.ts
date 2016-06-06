@@ -51,7 +51,7 @@ export class FixtureComponent implements OnInit {
             },
             error => {
                 this.toastr.error(
-                    this.translateService.instant('soe.toast.betting.failed'),
+                    this.translateService.instant('soe.toast.failed'),
                     this.translateService.instant('soe.toast.error'));
             });
   }

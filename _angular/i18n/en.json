@@ -51,9 +51,9 @@
       "success": "Success",
       "error": "Failed",
       "warning": "Warning",
+      "failed": "Something went wrong.",
       "betting": {
-        "saved": "Bet was saved.",
-        "failed": "Something went wrong."
+        "saved": "Bet was saved."
       }
     },
     "team": {
