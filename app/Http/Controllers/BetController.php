@@ -65,7 +65,8 @@ class BetController extends Controller
         } catch (ErrorException $e) {
             $bet = Bet::where('user_id', $all['user_id'])->where('fixture_id', $all['fixture_id'])->first();
             if (!$bet) {
-                Log::alert('A bet was not able to be saved because of ' + $e->getMessage());
+                $gameMsg = $all['home_goals'] . '-' . $all['away_goals'] . ' for fixture ' . $all['fixture_id'] . ' by user ' . $all['user_id'];
+                Log::alert('The bet ' . $gameMsg . ' was not able to be saved because "' . $e->getMessage() . '"');
                 return response()->json([
                     'descr' => $e->getMessage(),
                     'trans' => 'soe.betting.serverError'
