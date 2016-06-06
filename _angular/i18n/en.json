@@ -54,6 +54,9 @@
       "failed": "Something went wrong.",
       "betting": {
         "saved": "Bet was saved."
+      },
+      "login": {
+        "failed": "That didn’t work."
       }
     },
     "team": {

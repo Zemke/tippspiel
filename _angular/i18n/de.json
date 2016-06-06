@@ -54,6 +54,9 @@
       "failed": "Irgendwas lief schief.",
       "betting": {
         "saved": "Tipp wurde gespeichert."
+      },
+      "login": {
+        "failed": "Das hat nicht geklappt."
       }
     },
     "team": {
