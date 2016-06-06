@@ -8,6 +8,7 @@ import {StandingComponent} from './standing.component';
 import {UserService} from './user.service';
 import {User} from './user';
 import {GeneralService} from './general.service';
+import {PaymentComponent} from './payment.component';
 
 @Component({
   selector: 'soe-app',
@@ -19,7 +20,8 @@ import {GeneralService} from './general.service';
   {path: '/', component: StandingComponent},
   {path: '/bets', component: HomeComponent},
   {path: '/registration', component: RegistrationComponent},
-  {path: '/login', component: LoginComponent}
+  {path: '/login', component: LoginComponent},
+  {path: '/payment', component: PaymentComponent}
 ])
 export class AppComponent {
   user:User;

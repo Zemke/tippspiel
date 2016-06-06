@@ -6,7 +6,8 @@
       "login": "Einloggen",
       "betting": "Tipps abgeben",
       "standings": "Tabelle",
-      "logout": "Ausloggen"
+      "logout": "Ausloggen",
+      "payment": "Bezahlung"
     },
     "registration": {
       "firstName": "Vorname",
@@ -70,6 +71,14 @@
       "Hungary": "Ungarn",
       "Portugal": "Portugal",
       "Iceland": "Island"
+    },
+    "payment": {
+      "description": "Die Teilnahmegebühr beträgt {{fee}} €. Das Geld wird genutzt um die drei bestplatzierten des Tippspiels zu belohnen. Diese werden uns dann alle eine Runde Bier ausgeben. Das Geld wird also letztendlich in Bier investiert. Die endgültigen Preisgelder werden bekanntgegeben, sobald das Turnier anfängt. Es gibt drei Möglichkeiten die Teilnahmegebühr zu begleichen.",
+      "preferred": "Das ist die bevorzugte Bezahlmöglichkeit.",
+      "transaction": "Überweisung",
+      "transactionDescr": "Um per Banküberweisung zu bezahlen, musst du mir eine Mail schreiben und ich antworte mit meiner Bankverbindung.",
+      "cash": "Bar",
+      "cashDescr": "Bitte Barzahlung nur wenn nötig."
     }
   }
 }

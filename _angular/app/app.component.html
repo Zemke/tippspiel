@@ -21,6 +21,9 @@
                 <a class="mdl-navigation__link" [routerLink]="['/']">
                     {{ 'soe.menu.standings' | translate}}
                 </a>
+                <a class="mdl-navigation__link" [routerLink]="['/payment']">
+                    {{ 'soe.menu.payment' | translate}}
+                </a>
                 <a class="mdl-navigation__link" [routerLink]="['/login']" *ngIf="!user">
                     {{ 'soe.menu.login' | translate}}
                 </a>
@@ -44,6 +47,9 @@
             </a>
             <a class="mdl-navigation__link" [routerLink]="['/']">
                 {{ 'soe.menu.standings' | translate}}
+            </a>
+            <a class="mdl-navigation__link" [routerLink]="['/payment']">
+                {{ 'soe.menu.payment' | translate}}
             </a>
             <a class="mdl-navigation__link" [routerLink]="['/login']" *ngIf="!user">
                 {{ 'soe.menu.login' | translate}}

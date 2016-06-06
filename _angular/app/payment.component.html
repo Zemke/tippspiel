@@ -1,0 +1,42 @@
+{{ 'soe.payment.description' | translate:{fee:5} }}
+
+<ul class="mdl-list">
+    <li class="mdl-list__item mdl-list__item--three-line">
+        <span class="mdl-list__item-primary-content">
+            <a href="https://PayPal.me/Zemke/5" target="_blank">
+                <button style="width: 300px;"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    PayPal
+                </button>
+            </a>
+            <span class="mdl-list__item-text-body">
+                {{ 'soe.payment.preferred' | translate }}
+            </span>
+        </span>
+    </li>
+    <li class="mdl-list__item mdl-list__item--three-line">
+        <span class="mdl-list__item-primary-content">
+            <a href="mailto:florian.zemke@btc-ag.com">
+                <button style="width: 300px;"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    {{ 'soe.payment.transaction' | translate }}
+                </button>
+            </a>
+            <span class="mdl-list__item-text-body">
+                {{ 'soe.payment.transactionDescr' | translate }}
+            </span>
+        </span>
+    </li>
+    <li class="mdl-list__item mdl-list__item--three-line">
+        <span class="mdl-list__item-primary-content">
+            <button style="width: 300px;"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                    disabled="disabled">
+                {{ 'soe.payment.cash' | translate }}
+            </button>
+            <span class="mdl-list__item-text-body">
+                {{ 'soe.payment.cashDescr' | translate }}
+            </span>
+        </span>
+    </li>
+</ul>

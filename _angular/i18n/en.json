@@ -6,7 +6,8 @@
       "login": "Log in",
       "betting": "Place bets",
       "standings": "Standings",
-      "logout": "Log out"
+      "logout": "Log out",
+      "payment": "Payment"
     },
     "registration": {
       "firstName": "First name",
@@ -70,6 +71,14 @@
       "Hungary": "Hungary",
       "Portugal": "Portugal",
       "Iceland": "Iceland"
+    },
+    "payment": {
+      "description": "The participation fee amounts to €{{fee}}. The money will be used to award the three top-placed winners of the betting game who will then buy us a round of beer. So, ultimately the money will be invested in beer. The final money prizes will be announced once the tournament has started. There are three ways to settle up.",
+      "preferred": "This is the preferred payment method.",
+      "transaction": "Transaction",
+      "transactionDescr": "To pay with a bank transaction, you need to mail me and I will reply with my bank details.",
+      "cash": "Cash",
+      "cashDescr": "Cash only if necessary, please."
     }
   }
 }
