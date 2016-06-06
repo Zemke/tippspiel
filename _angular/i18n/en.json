@@ -7,7 +7,8 @@
       "betting": "Place bets",
       "standings": "Standings",
       "logout": "Log out",
-      "payment": "Payment"
+      "payment": "Payment",
+      "contact": "Contact"
     },
     "registration": {
       "firstName": "First name",
