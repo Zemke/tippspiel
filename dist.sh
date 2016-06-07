@@ -10,6 +10,6 @@ cp -r _angular/i18n/ public/i18n
 cp _angular/styles.css public/
 cp _angular/systemjs.config.js public/
 
-mkdir public/app
+mkdir -p public/app
 cp _angular/app/*.js public/app/
 cp _angular/app/*.html public/app/
