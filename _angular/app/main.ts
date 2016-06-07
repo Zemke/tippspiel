@@ -27,7 +27,7 @@ bootstrap(AppComponent, [
     deps: [Http]
   }),
   provide(AuthHttp, {
-    useFactory: (http) => {
+    useFactory: (http:any) => {
       return new AuthHttp(new AuthConfig({
         headerName: 'Authorization',
         headerPrefix: 'Bearer',

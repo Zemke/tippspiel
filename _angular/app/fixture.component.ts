@@ -21,8 +21,8 @@ export class FixtureComponent implements OnInit {
   errorMessage:string;
   inFuture:boolean;
   unsavedChanges:boolean;
-  private copyHome;
-  private copyAway;
+  private copyHome:any;
+  private copyAway:any;
 
   constructor(private fixtureBetService:FixtureBetService, private fixtureService:FixtureService,
               private toastr:ToastsManager, private translateService:TranslateService) {
