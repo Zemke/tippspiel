@@ -13,3 +13,5 @@ cp _angular/systemjs.config.js public/
 mkdir -p public/app
 cp _angular/app/*.js public/app/
 cp _angular/app/*.html public/app/
+
+echo "Done."
