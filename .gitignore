@@ -69,3 +69,9 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 composer.lock
+
+public/app/
+public/i18n/
+public/node_modules/
+public/styles.css
+public/systemjs.config.js
