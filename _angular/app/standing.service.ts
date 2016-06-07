@@ -8,7 +8,7 @@ export class StandingService {
   }
 
   // private standingsWebServiceUrl = 'app/standings.json'; // URL to JSON file
-  private standingsWebServiceUrl = 'http://localhost:8080/api/standings'; // URL to JSON file
+  private standingsWebServiceUrl = '/api/standings'; // URL to JSON file
 
   getStandings():Observable<any[]> {
     return this.http.get(this.standingsWebServiceUrl)

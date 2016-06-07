@@ -10,7 +10,7 @@ export class FixtureBetService {
   constructor(private http:Http, private authHttp:AuthHttp) {
   }
 
-  private fixturesWebServiceUrl = 'http://localhost:8080/api/bets'; // URL to JSON file
+  private fixturesWebServiceUrl = '/api/bets'; // URL to JSON file
 
   getFixtureBet():Observable<Fixture[]> {
     return this.http.get(this.fixturesWebServiceUrl)

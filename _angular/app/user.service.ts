@@ -10,7 +10,7 @@ export class UserService {
   }
 
   // private userWebServiceUrl = 'app/users.json'; // URL to JSON file
-  private userWebServiceUrl = 'http://localhost:8080/api/users';  // URL to web api
+  private userWebServiceUrl = '/api/users';  // URL to web api
 
   getUsers():Observable<User[]> {
     return this.http.get(this.userWebServiceUrl)
