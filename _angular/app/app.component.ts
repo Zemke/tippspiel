@@ -9,6 +9,7 @@ import {UserService} from './user.service';
 import {User} from './user';
 import {GeneralService} from './general.service';
 import {PaymentComponent} from './payment.component';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'soe-app',
@@ -28,11 +29,15 @@ export class AppComponent {
   userLang:string;
   version:string;
 
-  constructor(private router:Router, private translate:TranslateService, private userService:UserService, private generalService:GeneralService) {
+  constructor(private router:Router, private translate:TranslateService, private userService:UserService,
+              private generalService:GeneralService, private title:Title) {
     this.doStuffForThei18nStuff(translate);
     this.getAuthenticatedUser();
     this.generalService.getShieldInfo().subscribe(
         (res:any) => this.version = res.value
+    );
+    this.translate.get('soe.title').subscribe(
+        res => this.title.setTitle(res)
     );
   }
 
@@ -70,5 +75,8 @@ export class AppComponent {
 
     this.translate.use(this.userLang);
     localStorage.setItem('lang', this.userLang);
+    this.translate.get('soe.title').subscribe(
+        res => this.title.setTitle(res)
+    );
   }
 }

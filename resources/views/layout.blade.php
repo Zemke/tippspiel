@@ -2,7 +2,7 @@
     <head>
         <base href="/">
 
-        <title>Angular 2 QuickStart</title>
+        <title>Loading…</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
