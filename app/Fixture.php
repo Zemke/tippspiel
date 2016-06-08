@@ -35,7 +35,7 @@ class Fixture extends Model
         $now = strtotime(gmdate('Y-m-d H:i:s'));
         $differenceInSeconds = $now - $cachedTime;
 
-        if ($differenceInSeconds > 15) {
+        if ($differenceInSeconds > 2.5) {
             return false;
         }
 
