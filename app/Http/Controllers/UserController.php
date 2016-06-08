@@ -49,13 +49,9 @@ class UserController extends Controller
      *
      * @return Response
      */
-    public function getByToken()
-    {
-        try {
-            return $this->jwtAuth->parseToken()->toUser();
-        } catch (JWTException $e) {
-            abort(204);
-        }
+    public function getByToken() {
+	Log::debug(print_R($this->req->header(), true));
+        return $this->jwtAuth->parseToken()->toUser();
     }
 
     /**
