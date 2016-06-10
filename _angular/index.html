@@ -22,6 +22,11 @@
         <script src="node_modules/reflect-metadata/Reflect.js"></script>
         <script src="node_modules/systemjs/dist/system.src.js"></script>
 
+        <!-- https://github.com/angular/angular/issues/3333#issuecomment-188976442 -->
+        <script src="node_modules/intl/dist/Intl.min.js"></script>
+        <script src="node_modules/intl/locale-data/jsonp/en.js"></script>
+        <script src="node_modules/intl/locale-data/jsonp/de.js"></script>
+
         <script src="systemjs.config.js"></script>
         <script>
             System.import('app').catch(function(err){ console.error(err); });
