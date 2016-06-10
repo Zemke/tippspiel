@@ -22,7 +22,7 @@
                         {{ ('soe.team.' + fixture.homeTeamName | translate).substr(0, 3).toUpperCase() }}
                     </label>
                 </div>
-                -
+                <div class="bet-card firefox hyphen">-</div>
                 <div class="mdl-textfield mdl-js-textfield bet-card">
                     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="away"
                            [disabled]="!inFuture" [(ngModel)]="fixtureBet.away_goals"
@@ -31,7 +31,7 @@
                         {{ ('soe.team.' + fixture.awayTeamName | translate).substr(0, 3).toUpperCase() }}
                     </label>
                 </div>
-                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect bet-card firefox"
                         [ngClass]="{'mdl-button--accent': unsavedChanges}"
                         [disabled]="!betForm.form.valid" *ngIf="inFuture">
                     {{ 'soe.betting.submitBet' | translate }}

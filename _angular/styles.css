@@ -49,3 +49,17 @@ a.pointer {
 #toast-container {
     margin-top: 60px;
 }
+
+.bet-card.firefox.hyphen {
+    display: inline-block;
+}
+
+@-moz-document url-prefix() { /* Firefox */
+    .bet-card.firefox {
+        margin-top: -45px;
+    }
+}
+
+_:-ms-lang(x), .bet-card.firefox { /* IE and Edge */
+    margin-top: -45px;
+}
