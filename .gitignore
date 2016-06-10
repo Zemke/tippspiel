@@ -75,3 +75,5 @@ public/i18n/
 public/node_modules/
 public/styles.css
 public/systemjs.config.js
+
+resources/views
