@@ -3,6 +3,7 @@ import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Fixture } from './Fixture';
 import {Observable} from 'rxjs/Observable';
 import {AuthHttp} from 'angular2-jwt/angular2-jwt';
+import {API_ENDPOINT} from './api-endpoint';
 
 @Injectable()
 export class FixtureService {
@@ -10,7 +11,7 @@ export class FixtureService {
   }
 
   // private fixturesWebServiceUrl = 'app/fixtures.json'; // URL to JSON file
-  private fixturesWebServiceUrl = '/api/fixtures'; // URL to JSON file
+  private fixturesWebServiceUrl = API_ENDPOINT + 'api/fixtures'; // URL to JSON file
 
   getFixtures():Observable<Fixture[]> {
     return this.authHttp.get(this.fixturesWebServiceUrl)

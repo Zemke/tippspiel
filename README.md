@@ -5,3 +5,11 @@ This project is basing on two projects: [Zemke/starter-laravel-angular](Zemke/st
 ## `dist.sh`
 
 This copies the Angular parts in `_angular` into the PHP structure, so that you can use both worlds in one context. This could then be deployed.
+
+## API Endpoint
+
+```sh
+cp _angular/app/api-endpoint.ts.default _angular/app/api-endpoint.ts
+```
+
+And adjust the variable in `_angular/app/api-endpoint.ts` as you need. Like when you host your backend somewhere else, you would change `/` to `http://localhost:8080/`.

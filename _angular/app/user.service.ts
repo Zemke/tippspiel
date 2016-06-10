@@ -3,6 +3,7 @@ import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {User} from './user';
 import {Observable} from 'rxjs/Observable';
 import {AuthHttp} from 'angular2-jwt/angular2-jwt';
+import {API_ENDPOINT} from './api-endpoint';
 
 @Injectable()
 export class UserService {
@@ -10,7 +11,7 @@ export class UserService {
   }
 
   // private userWebServiceUrl = 'app/users.json'; // URL to JSON file
-  private userWebServiceUrl = '/api/users';  // URL to web api
+  private userWebServiceUrl = API_ENDPOINT + 'api/users';  // URL to web api
 
   getUsers():Observable<User[]> {
     return this.http.get(this.userWebServiceUrl)

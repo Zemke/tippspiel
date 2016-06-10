@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
+import {API_ENDPOINT} from './api-endpoint';
 
 @Injectable()
 export class StandingService {
@@ -8,7 +9,7 @@ export class StandingService {
   }
 
   // private standingsWebServiceUrl = 'app/standings.json'; // URL to JSON file
-  private standingsWebServiceUrl = '/api/standings'; // URL to JSON file
+  private standingsWebServiceUrl = API_ENDPOINT + 'api/standings'; // URL to JSON file
 
   getStandings():Observable<any[]> {
     return this.http.get(this.standingsWebServiceUrl)

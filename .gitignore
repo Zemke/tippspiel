@@ -77,3 +77,5 @@ public/styles.css
 public/systemjs.config.js
 
 resources/views
+
+_angular/app/api-endpoint.ts

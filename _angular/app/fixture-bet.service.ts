@@ -4,13 +4,14 @@ import {Fixture } from './Fixture';
 import {Observable} from 'rxjs/Observable';
 import {FixtureBet} from './fixture-bet';
 import {AuthHttp} from 'angular2-jwt/angular2-jwt';
+import {API_ENDPOINT} from './api-endpoint';
 
 @Injectable()
 export class FixtureBetService {
   constructor(private http:Http, private authHttp:AuthHttp) {
   }
 
-  private fixturesWebServiceUrl = '/api/bets'; // URL to JSON file
+  private fixturesWebServiceUrl = API_ENDPOINT + 'api/bets'; // URL to JSON file
 
   getFixtureBet():Observable<Fixture[]> {
     return this.http.get(this.fixturesWebServiceUrl)
