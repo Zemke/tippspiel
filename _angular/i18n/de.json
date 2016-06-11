@@ -24,7 +24,7 @@
     },
     "betting": {
       "orderExplanation": "Die Spiele sind geordnet nach der Zeit, in der sie stattfinden.",
-      "betsOf": "Tips von",
+      "betsOf": "Tipps von",
       "noBetsOfUser": "Bets of {{user.first_name}} {{user.last_name}} on games that have kicked-off will be shown here",
       "noBetsOfUser": "Tipps von {{user.first_name}} {{user.last_name}} auf Spielen, die angestoßen wurden, werden hier angezeigt.",
       "submitBet": "Abgeben",
