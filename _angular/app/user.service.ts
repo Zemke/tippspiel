@@ -65,4 +65,10 @@ export class UserService {
         .map(this.extractData)
         .catch(this.handleError);
   }
+
+  getUser(userId:number) {
+    return this.http.get(this.userWebServiceUrl + '/' + userId)
+        .map(this.extractData)
+        .catch(this.handleError);
+  }
 }

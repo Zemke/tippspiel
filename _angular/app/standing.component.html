@@ -19,7 +19,9 @@
             </span>
         </td>
         <td class="mdl-data-table__cell--non-numeric">
-            <strong>{{ standing.user.first_name }} {{ standing.user.last_name }}</strong>
+            <a [routerLink]="['/user-bets', standing.user.id]">
+                {{ standing.user.first_name }} {{ standing.user.last_name }}
+            </a>
         </td>
         <td><strong>{{ standing.points }}</strong></td>
         <td>{{ standing.p5 }}</td>

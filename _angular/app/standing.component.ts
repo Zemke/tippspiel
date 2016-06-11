@@ -3,11 +3,12 @@ import {TranslatePipe} from 'ng2-translate/ng2-translate';
 import {StandingService} from './standing.service';
 import {MDL} from './material-design-lite-upgrade-element.directive';
 import {BetResultComponent} from './bet-result.component';
+import {ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
   selector: 'soe-table',
   templateUrl: 'app/standing.component.html',
-  directives: [MDL, BetResultComponent],
+  directives: [MDL, BetResultComponent, ROUTER_DIRECTIVES],
   pipes: [TranslatePipe]
 })
 export class StandingComponent implements OnInit {

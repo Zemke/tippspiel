@@ -10,6 +10,7 @@ import {User} from './user';
 import {GeneralService} from './general.service';
 import {PaymentComponent} from './payment.component';
 import {Title} from '@angular/platform-browser';
+import {FixturesListComponent} from './fixtures-list.component';
 
 @Component({
   selector: 'soe-app',
@@ -19,6 +20,7 @@ import {Title} from '@angular/platform-browser';
 })
 @Routes([
   {path: '/', component: StandingComponent},
+  {path: '/user-bets/:userId', component: FixturesListComponent},
   {path: '/bets', component: HomeComponent},
   {path: '/registration', component: RegistrationComponent},
   {path: '/login', component: LoginComponent},

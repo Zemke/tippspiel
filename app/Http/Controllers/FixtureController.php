@@ -22,7 +22,7 @@ class FixtureController extends Controller
      * @see https://github.com/Zemke/tippspiel/issues/1 #1
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $fixturesFromCache = Cache::get('fixtures');
 
@@ -35,7 +35,7 @@ class FixtureController extends Controller
 
         $fixtures = Fixture::rest();
         try {
-            $userId = JWTAuth::parseToken()->toUser()->id;
+            $userId = isset($request->userId) ? $request->userId : JWTAuth::parseToken()->toUser()->id;
             $userBets = Bet::where('user_id', $userId)->get()->toArray();
         } catch (JWTException $e) {
             $userBets = [];

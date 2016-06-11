@@ -13,8 +13,10 @@ export class FixtureService {
   // private fixturesWebServiceUrl = 'app/fixtures.json'; // URL to JSON file
   private fixturesWebServiceUrl = API_ENDPOINT + 'api/fixtures'; // URL to JSON file
 
-  getFixtures():Observable<Fixture[]> {
-    return this.authHttp.get(this.fixturesWebServiceUrl)
+  getFixtures(userId?:number):Observable<Fixture[]> {
+    var userBetsUrl = !!userId ? '?userId=' + userId : '';
+
+    return this.authHttp.get(this.fixturesWebServiceUrl + userBetsUrl)
         .map(this.extractData)
         .catch(this.handleError);
   }

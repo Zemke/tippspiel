@@ -1,3 +1,11 @@
+<div class="mdl-cell mdl-cell--12-col" *ngIf="user">
+    <h1>{{ 'soe.betting.betsOf' | translate }}  {{ user.first_name }} {{ user.last_name }}</h1>
+    <div *ngIf="!fixtures || !fixtures.length">
+        {{ 'soe.betting.noBetsOfUser' | translate:{user: user} }}
+    </div>
+</div>
+
+
 {{ errorMessage | translate }}
 
 <soe-fixture [fixture]="fixture" *ngFor="let fixture of fixtures"></soe-fixture>
