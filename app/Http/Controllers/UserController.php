@@ -50,7 +50,6 @@ class UserController extends Controller
      * @return Response
      */
     public function getByToken() {
-	Log::debug(print_R($this->req->header(), true));
         return $this->jwtAuth->parseToken()->toUser();
     }
 
