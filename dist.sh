@@ -6,10 +6,13 @@ cd ../
 
 rm -r public/node_modules
 cp -r _angular/node_modules public/node_modules
+
+rm -r public/i18n
 cp -r _angular/i18n/ public/i18n
 
 cp _angular/styles.css public/
 cp _angular/systemjs.config.js public/
+cp _angular/text.js public/
 
 mkdir -p public/app
 cp _angular/app/*.js public/app/
