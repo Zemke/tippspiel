@@ -14,6 +14,7 @@
     'ng2-translate':              'node_modules/ng2-translate',
     'angular2-jwt':               'node_modules/angular2-jwt',
     'ng2-toastr':                 'node_modules/ng2-toastr',
+    'text':                       'text.js',
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
@@ -49,5 +50,21 @@
   };
 
   System.config(config);
+
+  // Cache Busting 
+  var systemLocate = System.locate;
+  System.locate = function (load) {
+    var System = this; // its good to ensure exact instance-binding
+    return Promise.resolve(systemLocate.call(this, load)).then(function (address) {
+
+      if (address.endsWith('.html.js')) {
+        //This feels a little hacky, not sure how to allow html files in the main config.
+        address = address.slice(0, -3);
+      }
+
+      return address + System.cacheBust;
+    });
+  };
+  System.cacheBust = '?v=1.1.0';
 
 })(this);

@@ -9,7 +9,7 @@ import {UserService} from './user.service';
 
 @Component({
   selector: 'soe-fixtures-list',
-  templateUrl: 'app/fixtures-list.component.html',
+  template: require('app/fixtures-list.component.html!text'),
   directives: [MDL, FixtureComponent],
   pipes: [TranslatePipe]
 })

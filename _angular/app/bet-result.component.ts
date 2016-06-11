@@ -4,7 +4,7 @@ import {MDL} from './material-design-lite-upgrade-element.directive';
 
 @Component({
   selector: 'soe-bet-result',
-  templateUrl: 'app/bet-result.component.html',
+  template: require('app/bet-result.component.html!text'),
   directives: [MDL],
   pipes: [TranslatePipe]
 })

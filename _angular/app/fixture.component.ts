@@ -10,7 +10,7 @@ import {ToastsManager} from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'soe-fixture',
-  templateUrl: 'app/fixture.component.html',
+  template: require('app/fixture.component.html!text'),
   directives: [MDL, BetResultComponent],
   pipes: [TranslatePipe]
 })

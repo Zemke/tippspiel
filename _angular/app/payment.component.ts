@@ -4,7 +4,7 @@ import {MDL} from './material-design-lite-upgrade-element.directive';
 
 @Component({
   selector: 'soe-payment',
-  templateUrl: 'app/payment.component.html',
+  template: require('app/payment.component.html!text'),
   directives: [MDL],
   pipes: [TranslatePipe]
 })

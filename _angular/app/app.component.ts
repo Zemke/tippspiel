@@ -14,7 +14,7 @@ import {FixturesListComponent} from './fixtures-list.component';
 
 @Component({
   selector: 'soe-app',
-  templateUrl: 'app/app.component.html',
+  template: require('app/app.component.html!text'),
   pipes: [TranslatePipe],
   directives: [ROUTER_DIRECTIVES]
 })

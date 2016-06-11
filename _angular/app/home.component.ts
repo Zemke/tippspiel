@@ -5,7 +5,7 @@ import {FixturesListComponent} from './fixtures-list.component';
 
 @Component({
   selector: 'soe-home',
-  templateUrl: 'app/home.component.html',
+  template: require('app/home.component.html!text'),
   directives: [MDL, FixturesListComponent],
   pipes: [TranslatePipe]
 })
