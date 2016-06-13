@@ -2,12 +2,11 @@
 
 namespace Todo\Http\Controllers;
 
-use Log;
-
+use Cache;
 use Illuminate\Http\Request;
-
+use Log;
+use Todo\Fixture;
 use Todo\Http\Requests;
-use Todo\Http\Controllers\Controller;
 use Todo\Standing;
 
 class StandingController extends Controller
@@ -19,9 +18,24 @@ class StandingController extends Controller
      */
     public function index()
     {
-        Standing::handleJob();
+        $standings = Cache::get('standings');
+
+        if (Fixture::isValidCache($standings)) {
+            Log::info('Standings from Cache');
+            return $standings;
+        } else {
+            Log::info('Standings from DB');
+            Standing::handleJob();
+        }
+
         $builder = Standing::with('user');
-        return $builder->get();
+        $standings = $builder->get();
+
+        $standings['_timestamp'] = gmdate('Y-m-d H:i:s');
+        Cache::forever('standings', $standings);
+
+        unset($standings['_timestamp']);
+        return $standings;
     }
 
     /**
