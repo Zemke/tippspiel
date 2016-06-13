@@ -26,11 +26,12 @@ class Standing extends Model
 
     public static function handleJob()
     {
+        $fixtures = Fixture::getEm();
         $users = User::all()->toArray();
         $standings = [];
 
         foreach ($users as $user) {
-            $standing = Standing::calcForUser($user['id']);
+            $standing = Standing::calcForUser($user['id'], $fixtures);
             $standings[] = $standing->attributesToArray();
         }
 
@@ -38,14 +39,8 @@ class Standing extends Model
         Standing::insert($standings);
     }
 
-    public static function calcForUser($userId)
+    public static function calcForUser($userId, $fixtures)
     {
-        $fixtures = Cache::get('fixtures');
-
-        if (!$fixtures) {
-            return;
-        }
-
         $fixtures['fixtures'] = array_filter($fixtures['fixtures'], function ($fixture) {
             return !Fixture::isFuture($fixture);
         });

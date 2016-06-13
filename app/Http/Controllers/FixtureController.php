@@ -24,16 +24,15 @@ class FixtureController extends Controller
      */
     public function index(Request $request)
     {
-        $fixturesFromCache = Cache::get('fixtures');
+        $fixtures = Fixture::getEm();
 
-        if (Fixture::isValidCache($fixturesFromCache)) {
-            Log::info('Fixtures from cache');
-            return $fixturesFromCache;
+        if (!$fixtures) {
+            return new Response(array(
+                'descr' => 'Neither REST service nor cache provide any data.',
+                'trans' => 'soe.rest.err.noFixtures'),
+                500);
         }
 
-        Log::info('Fixtures from REST');
-
-        $fixtures = Fixture::rest();
         try {
             $userId = isset($request->userId) ? $request->userId : JWTAuth::parseToken()->toUser()->id;
             $userBets = Bet::where('user_id', $userId)->get()->toArray();
@@ -41,23 +40,7 @@ class FixtureController extends Controller
             $userBets = [];
         }
 
-        if (!$fixtures) {
-            if (!$fixturesFromCache) {
-                Log::alert('Neither REST service nor cache provide any data.');
-                return new Response(array(
-                    'descr' => 'Neither REST service nor cache provide any data.',
-                    'trans' => 'soe.rest.err.noFixtures'),
-                    500);
-            }
-            return Fixture::addUserBetsToFixtures($userBets, $fixturesFromCache);
-        }
-
-        $fixtures['_timestamp'] = gmdate('Y-m-d H:i:s');
-        Cache::forever('fixtures', $fixtures);
-
-        $fixtures = Fixture::addUserBetsToFixtures($userBets, $fixtures);
-
-        return $fixtures;
+        return Fixture::addUserBetsToFixtures($userBets, $fixtures);
     }
 
     /**

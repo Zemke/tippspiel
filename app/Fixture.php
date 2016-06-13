@@ -3,10 +3,38 @@
 namespace Todo;
 
 use Log;
+use Cache;
 use Illuminate\Database\Eloquent\Model;
 
 class Fixture extends Model
 {
+    public static function getEm()
+    {
+        $fixturesFromCache = Cache::get('fixtures');
+
+        if (Fixture::isValidCache($fixturesFromCache)) {
+            Log::info('Fixtures from Cache');
+            return $fixturesFromCache;
+        }
+
+        $fixturesFromWebService = Fixture::rest();
+
+        if (!$fixturesFromWebService) {
+            if (!$fixturesFromCache) {
+                Log::alert('Neither REST service nor cache provide any data');
+                return null;
+            }
+            Log::info('Fixtures from Cache');
+            return $fixturesFromCache;
+        }
+
+        $fixturesFromWebService['_timestamp'] = gmdate('Y-m-d H:i:s');
+        Cache::forever('fixtures', $fixturesFromWebService);
+
+        Log::info('Fixtures from REST');
+        return $fixturesFromWebService;
+    }
+
     public static function rest()
     {
        $uri = 'http://api.football-data.org/v1/soccerseasons/424/fixtures';
@@ -25,13 +53,13 @@ class Fixture extends Model
         return json_decode($response, true);
     }
 
-    public static function isValidCache($fixtures)
+    public static function isValidCache($assocArrayWithUnderscoreTimestamp)
     {
-        if (!$fixtures) {
+        if (!$assocArrayWithUnderscoreTimestamp) {
             return false;
         }
 
-        $cachedTime  = strtotime($fixtures['_timestamp']);
+        $cachedTime  = strtotime($assocArrayWithUnderscoreTimestamp['_timestamp']);
         $now = strtotime(gmdate('Y-m-d H:i:s'));
         $differenceInSeconds = $now - $cachedTime;
 
