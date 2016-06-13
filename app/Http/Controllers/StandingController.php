@@ -22,6 +22,7 @@ class StandingController extends Controller
 
         if (Fixture::isValidCache($standings)) {
             Log::info('Standings from Cache');
+            unset($standings['_timestamp']);
             return $standings;
         } else {
             Log::info('Standings from DB');
