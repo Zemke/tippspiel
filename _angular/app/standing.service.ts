@@ -25,15 +25,20 @@ export class StandingService {
     let body = res.json();
 
     body.sort((s1:any, s2:any) => {
-      if (s1.points === s2.points) {
-        if (s1.p5 === s2.p5) {
+      var points1 = Number(s1.points);
+      var points2 = Number(s2.points);
+      var point5Valuation1 = Number(s1.p5);
+      var point5Valuation2 = Number(s2.p5);
+
+      if (points1 === points2) {
+        if (point5Valuation1 === point5Valuation2) {
           return 0;
-        } else if (s1.p5 > s2.p5) {
+        } else if (point5Valuation1 > point5Valuation2) {
           return -1;
         } else {
           return 1;
         }
-      } else if (s1.points > s2.points) {
+      } else if (points1 > points2) {
         return -1;
       } else {
         return 1
