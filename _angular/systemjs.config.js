@@ -65,6 +65,6 @@
       return address + System.cacheBust;
     });
   };
-  System.cacheBust = '?v=1.2.1';
+  System.cacheBust = '?v=1.3.0';
 
 })(this);
