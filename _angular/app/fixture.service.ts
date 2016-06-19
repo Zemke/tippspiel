@@ -55,12 +55,12 @@ export class FixtureService {
     return fixture.status === 'SCHEDULED' || fixture.status === 'TIMED' || fixture.status === 'POSTPONED';
   }
 
-  getFixturesOfAllUsers(fixtureId) {
+  getFixturesOfAllUsers(fixtureId:any) {
     return this.http.get(this.fixturesWebServiceUrl + '/allUsers?fixtureId=' + fixtureId)
         .map((res) => {
           let fixtures = res.json();
 
-          fixtures.map(fixture => {
+          fixtures.map((fixture:any) => {
             fixture.date = new Date(fixture.date);
             return fixture;
           });
