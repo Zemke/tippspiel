@@ -25,13 +25,17 @@
         }
       },
       "date": "2016-06-10T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "homeTeamName": "France",
       "awayTeamName": "Romania",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 2,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -50,13 +54,17 @@
         }
       },
       "date": "2016-06-11T13:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "homeTeamName": "Albania",
       "awayTeamName": "Switzerland",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        }
       }
     },
     {
@@ -75,13 +83,17 @@
         }
       },
       "date": "2016-06-11T16:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "homeTeamName": "Wales",
       "awayTeamName": "Slovakia",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 2,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -100,13 +112,17 @@
         }
       },
       "date": "2016-06-11T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "homeTeamName": "England",
       "awayTeamName": "Russia",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -125,13 +141,17 @@
         }
       },
       "date": "2016-06-12T13:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "homeTeamName": "Turkey",
       "awayTeamName": "Croatia",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        }
       }
     },
     {
@@ -150,13 +170,17 @@
         }
       },
       "date": "2016-06-12T16:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "homeTeamName": "Poland",
       "awayTeamName": "Northern Ireland",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -175,13 +199,17 @@
         }
       },
       "date": "2016-06-12T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "homeTeamName": "Germany",
       "awayTeamName": "Ukraine",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 2,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -200,13 +228,17 @@
         }
       },
       "date": "2016-06-13T13:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "homeTeamName": "Spain",
       "awayTeamName": "Czech Republic",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -225,13 +257,17 @@
         }
       },
       "date": "2016-06-13T16:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "homeTeamName": "Republic of Ireland",
       "awayTeamName": "Sweden",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -250,13 +286,17 @@
         }
       },
       "date": "2016-06-13T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "homeTeamName": "Belgium",
       "awayTeamName": "Italy",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 2,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        }
       }
     },
     {
@@ -275,13 +315,17 @@
         }
       },
       "date": "2016-06-14T16:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "homeTeamName": "Austria",
       "awayTeamName": "Hungary",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 2,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -300,13 +344,17 @@
         }
       },
       "date": "2016-06-14T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "homeTeamName": "Portugal",
       "awayTeamName": "Iceland",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -325,13 +373,17 @@
         }
       },
       "date": "2016-06-15T13:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 2,
       "homeTeamName": "Russia",
       "awayTeamName": "Slovakia",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 2,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 2
+        }
       }
     },
     {
@@ -350,13 +402,17 @@
         }
       },
       "date": "2016-06-15T16:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 2,
       "homeTeamName": "Romania",
       "awayTeamName": "Switzerland",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -375,13 +431,17 @@
         }
       },
       "date": "2016-06-15T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 2,
       "homeTeamName": "France",
       "awayTeamName": "Albania",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 2,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -400,13 +460,17 @@
         }
       },
       "date": "2016-06-16T13:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 2,
       "homeTeamName": "England",
       "awayTeamName": "Wales",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 2,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        }
       }
     },
     {
@@ -425,13 +489,17 @@
         }
       },
       "date": "2016-06-16T16:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 2,
       "homeTeamName": "Ukraine",
       "awayTeamName": "Northern Ireland",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 2,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -450,13 +518,17 @@
         }
       },
       "date": "2016-06-16T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 2,
       "homeTeamName": "Germany",
       "awayTeamName": "Poland",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -475,13 +547,17 @@
         }
       },
       "date": "2016-06-17T13:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 2,
       "homeTeamName": "Italy",
       "awayTeamName": "Sweden",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -500,13 +576,17 @@
         }
       },
       "date": "2016-06-17T16:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 2,
       "homeTeamName": "Czech Republic",
       "awayTeamName": "Croatia",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 2,
+        "goalsAwayTeam": 2,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        }
       }
     },
     {
@@ -525,13 +605,17 @@
         }
       },
       "date": "2016-06-17T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 2,
       "homeTeamName": "Spain",
       "awayTeamName": "Turkey",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 3,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 2,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -550,13 +634,17 @@
         }
       },
       "date": "2016-06-18T13:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 2,
       "homeTeamName": "Belgium",
       "awayTeamName": "Republic of Ireland",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 3,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -575,13 +663,13 @@
         }
       },
       "date": "2016-06-18T16:00:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": 2,
       "homeTeamName": "Iceland",
       "awayTeamName": "Hungary",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 0
       }
     },
     {
