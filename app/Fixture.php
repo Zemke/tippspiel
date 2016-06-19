@@ -38,7 +38,7 @@ class Fixture extends Model
     public static function rest()
     {
        $uri = 'http://api.football-data.org/v1/soccerseasons/424/fixtures';
-        // $uri = 'http://localhost:7070/fixtures.json';
+//         $uri = 'http://0.0.0.0:8080/fixtures.json';
         $reqPrefs['http']['method'] = 'GET';
         $reqPrefs['http']['header'] = 'X-Auth-Token: ' . env('FOOTBALL_DATA_ORG_KEY');
         $stream_context = stream_context_create($reqPrefs);
@@ -118,7 +118,7 @@ class Fixture extends Model
         return 0;
     }
 
-    private static function extractFixtureId($fixture)
+    public static function extractFixtureId($fixture)
     {
         $splitSelfLink = explode('/', $fixture['_links']['self']['href']);
         return $splitSelfLink[count($splitSelfLink) - 1];

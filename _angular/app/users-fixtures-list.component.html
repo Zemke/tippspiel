@@ -1,0 +1,5 @@
+<div *ngIf="fixturesByUsers" mdl>
+    <div *ngFor="let fixture of fixturesByUsers">
+        <soe-fixture [fixture]="fixture" [user]="fixture._bet"></soe-fixture>
+    </div>
+</div>

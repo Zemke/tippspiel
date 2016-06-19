@@ -54,4 +54,19 @@ export class FixtureService {
   inFuture(fixture:Fixture) {
     return fixture.status === 'SCHEDULED' || fixture.status === 'TIMED' || fixture.status === 'POSTPONED';
   }
+
+  getFixturesOfAllUsers(fixtureId) {
+    return this.http.get(this.fixturesWebServiceUrl + '/allUsers?fixtureId=' + fixtureId)
+        .map((res) => {
+          let fixtures = res.json();
+
+          fixtures.map(fixture => {
+            fixture.date = new Date(fixture.date);
+            return fixture;
+          });
+          
+          return fixtures;
+        })
+        .catch(this.handleError);
+  }
 }

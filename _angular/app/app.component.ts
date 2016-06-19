@@ -11,6 +11,7 @@ import {GeneralService} from './general.service';
 import {PaymentComponent} from './payment.component';
 import {Title} from '@angular/platform-browser';
 import {FixturesListComponent} from './fixtures-list.component';
+import {UsersFixturesListComponent} from './users-fixtures-list.component';
 
 @Component({
   selector: 'soe-app',
@@ -21,6 +22,7 @@ import {FixturesListComponent} from './fixtures-list.component';
 @Routes([
   {path: '/', component: StandingComponent},
   {path: '/user-bets/:userId', component: FixturesListComponent},
+  {path: '/fixture-bets/:fixtureId', component: UsersFixturesListComponent},
   {path: '/bets', component: HomeComponent},
   {path: '/registration', component: RegistrationComponent},
   {path: '/login', component: LoginComponent},

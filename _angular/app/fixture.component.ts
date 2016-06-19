@@ -7,16 +7,20 @@ import {FixtureBet} from './fixture-bet';
 import {BetResultComponent} from './bet-result.component';
 import {FixtureService} from './fixture.service';
 import {ToastsManager} from 'ng2-toastr/ng2-toastr';
+import {ROUTER_DIRECTIVES} from '@angular/router';
+import {User} from './user';
 
 @Component({
   selector: 'soe-fixture',
   template: require('app/fixture.component.html!text'),
-  directives: [MDL, BetResultComponent],
+  directives: [MDL, BetResultComponent, ROUTER_DIRECTIVES],
   pipes: [TranslatePipe]
 })
 export class FixtureComponent implements OnInit {
   @Input()
   fixture:Fixture;
+  @Input()
+  user:User;
   fixtureBet:FixtureBet;
   errorMessage:string;
   inFuture:boolean;

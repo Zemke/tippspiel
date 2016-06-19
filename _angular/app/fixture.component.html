@@ -1,15 +1,25 @@
 <ul *ngIf="fixtureBet && fixture" class="demo-list-three mdl-list bet-card" mdl>
     <li class="mdl-list__item mdl-list__item--three-line">
         <span class="mdl-list__item-primary-content">
-            <span>
+            <span *ngIf="inFuture">
                 {{ ('soe.team.' + fixture.homeTeamName | translate) }}
-                {{ fixture.result.goalsHomeTeam }}-{{ fixture.result.goalsAwayTeam }}
+                -
                 {{ ('soe.team.' + fixture.awayTeamName | translate) }}
             </span>
+            <a [routerLink]="['/fixture-bets', fixture.id]" *ngIf="!inFuture">
+                {{ ('soe.team.' + fixture.homeTeamName | translate) }}
+                <strong>
+                    {{ fixture.result.goalsHomeTeam }}-{{ fixture.result.goalsAwayTeam }}
+                </strong>
+                {{ ('soe.team.' + fixture.awayTeamName | translate) }}
+            </a>
             <span class="mdl-list__item-text-body">
                 {{ fixture.date | date:'fullDate' }},
                 {{ fixture.date | date:'shortTime' }}
-                <span *ngIf="fixture.status === 'IN_PLAY'" class="live">LIVE</span>
+                <span *ngIf="fixture.status === 'IN_PLAY'" class="live">LIVE</span><br>
+                <a [routerLink]="['/user-bets', user.id]" *ngIf="user">
+                    {{ user.first_name }} {{ user.last_name }}
+                </a>
             </span>
         </span>
         <span class="mdl-list__item-secondary-content">
@@ -31,14 +41,16 @@
                         {{ ('soe.team.' + fixture.awayTeamName | translate).substr(0, 3).toUpperCase() }}
                     </label>
                 </div>
-                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect bet-card firefox"
+                <button type="submit"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect bet-card firefox"
                         [ngClass]="{'mdl-button--accent': unsavedChanges}"
                         [disabled]="!betForm.form.valid" *ngIf="inFuture">
                     {{ 'soe.betting.submitBet' | translate }}
                 </button>
             </form>
         </span>
-        <soe-bet-result *ngIf="!inFuture" [id]="fixture.id" [valuation]="fixture._bet ? fixture._bet.valuation : -1">
+        <soe-bet-result *ngIf="!inFuture" [id]="fixture.id"
+                        [valuation]="fixture._bet ? fixture._bet.valuation : -1">
         </soe-bet-result>
     </li>
 </ul>

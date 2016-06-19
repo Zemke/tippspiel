@@ -2,8 +2,9 @@
 
 namespace Todo\Http\Controllers;
 
-use Cache;
-use Log;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -41,6 +42,33 @@ class FixtureController extends Controller
         }
 
         return Fixture::addUserBetsToFixtures($userBets, $fixtures);
+    }
+
+    public static function allUsers(Request $request)
+    {
+        $fixtureId = $request->fixtureId;
+        $fixtures = Fixture::getEm();
+
+        $fixtures['fixtures'] = array_filter($fixtures['fixtures'], function ($fixture) use ($fixtureId) {
+            return !Fixture::isFuture($fixture) && Fixture::extractFixtureId($fixture) == $fixtureId;
+        });
+        $fixtures['fixtures'] = array_values($fixtures['fixtures']);
+
+        $betsByUsers = DB::table('bets')
+            ->join('users', 'users.id', '=', 'bets.user_id')
+            ->groupBy('user_id')
+            ->where('fixture_id', $fixtureId)->get();
+        $fixtureBets = [];
+
+        foreach ($betsByUsers as $key => $val) {
+            $fixtureBets[$key] = Fixture::addUserBetsToFixtures([$betsByUsers[$key]], $fixtures);
+        }
+
+        $result = array_map(function ($fixture) use ($betsByUsers) {
+            return $fixture['fixtures'][0];
+        }, $fixtureBets);
+
+        return $result;
     }
 
     /**
