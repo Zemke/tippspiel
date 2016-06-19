@@ -62,6 +62,7 @@ export class FixtureService {
 
           fixtures.map((fixture:any) => {
             fixture.date = new Date(fixture.date);
+            fixture.id = fixtureId;
             return fixture;
           });
           
