@@ -13,6 +13,7 @@ class Kernel extends ConsoleKernel {
 	protected $commands = [
 		'Todo\Console\Commands\Inspire',
 		'Todo\Console\Commands\Table',
+		'Todo\Console\Commands\Test',
 	];
 
 	/**
@@ -25,8 +26,9 @@ class Kernel extends ConsoleKernel {
 	{
 		$schedule->command('inspire')
 				 ->hourly();
-		$schedule->command('table')
-				 ->everyMinute();
+//		$schedule->command('table')
+//				 ->everyMinute();
+        $schedule->command('test')->everyMinute();
 	}
 
 }
