@@ -1,4 +1,12 @@
 <div *ngIf="fixturesByUsers" mdl>
+    <h1>
+        {{ 'soe.betting.allBetsFor' | translate }}
+    </h1>
+    <h4>
+        {{ fixturesByUsers[0].homeTeamName | translate }}
+        {{ fixturesByUsers[0].result.goalsHomeTeam }}-{{ fixturesByUsers[0].result.goalsAwayTeam }}
+        {{ fixturesByUsers[0].awayTeamName | translate }}
+    </h4>
     <div *ngFor="let fixture of fixturesByUsers">
         <soe-fixture [fixture]="fixture" [user]="fixture._bet"></soe-fixture>
     </div>

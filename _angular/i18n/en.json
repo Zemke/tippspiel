@@ -27,6 +27,7 @@
       "betsOf": "Bets of",
       "noBetsOfUser": "Bets of {{user.first_name}} {{user.last_name}} on games that have been kicked-off will be shown here.",
       "submitBet": "Place",
+      "allBetsFor": "All bets for",
       "reason": {
         "pointsFor": "{{value}} points for",
         "pointFor": "1 point for",
