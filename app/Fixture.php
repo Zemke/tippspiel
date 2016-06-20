@@ -93,6 +93,9 @@ class Fixture extends Model
 
     public static function calcValuation($bet, $fixture)
     {
+        $bet['home_goals'] = (int)$bet['home_goals'];
+        $bet['away_goals'] = (int)$bet['away_goals'];
+
         // Exact result
         if ($bet['home_goals'] === $fixture['result']['goalsHomeTeam']
             && $bet['away_goals'] === $fixture['result']['goalsAwayTeam']) {
