@@ -1,6 +1,6 @@
 {
   "name": "tippspiel",
-  "version": "1.3.0",
+  "version": "1.3.2",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
