@@ -1,5 +1,6 @@
 <?php namespace Todo\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use Log;
 
 use Illuminate\Contracts\Routing\ResponseFactory;
@@ -42,6 +43,19 @@ class UserController extends Controller
         }
         $user['token'] = $this->jwtAuth->fromUser($user);
         return $this->res->json($user, Response::HTTP_OK);
+    }
+
+    public function teams(Request $request)
+    {
+        if ($request->method() == 'POST') {
+            $payload = $request->all();
+            User::where('id', $this->jwtAuth->parseToken()->toUser()->id)
+                ->update(['champ_bet' => $payload['id']]);
+            // TODO Error handling
+            return $payload;
+        }
+
+        return Storage::get('teams.json');
     }
 
     /**

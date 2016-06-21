@@ -31,6 +31,8 @@ Route::get('/partials/{category}/{action}/{id}', function ($category, $action = 
 Route::post('/api/users/login', 'UserController@login');
 Route::get('/api/users/getByToken', 'UserController@getByToken');
 Route::get('/api/fixtures/allUsers', 'FixtureController@allUsers');
+Route::post('/api/users/teams', 'UserController@teams');
+Route::get('/api/users/teams', 'UserController@teams');
 
 // Getting RESTful
 Route::resource('/api/todo', 'TodoController');

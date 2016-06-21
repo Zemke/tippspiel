@@ -12,12 +12,13 @@ import {PaymentComponent} from './payment.component';
 import {Title} from '@angular/platform-browser';
 import {FixturesListComponent} from './fixtures-list.component';
 import {UsersFixturesListComponent} from './users-fixtures-list.component';
+import {ChampBetComponent} from './champ-bet.component';
 
 @Component({
   selector: 'soe-app',
   template: require('app/app.component.html!text'),
   pipes: [TranslatePipe],
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES, ChampBetComponent]
 })
 @Routes([
   {path: '/', component: StandingComponent},

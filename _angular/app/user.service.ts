@@ -71,4 +71,24 @@ export class UserService {
         .map(this.extractData)
         .catch(this.handleError);
   }
+
+  getTeams() {
+    return this.http.get(this.userWebServiceUrl + '/teams')
+        .map(res => {
+          return res.json();
+        })
+        .catch(this.handleError);
+  }
+
+  postChampBet(champBet:any) {let body = JSON.stringify(champBet);
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+
+    return this.authHttp.post(this.userWebServiceUrl + '/teams', body, options)
+        .map(res => {
+          return res.json();
+        })
+        .catch(this.handleError);
+
+  }
 }

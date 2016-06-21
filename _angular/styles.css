@@ -63,3 +63,7 @@ a.pointer {
 _:-ms-lang(x), .bet-card.firefox { /* IE and Edge */
     margin-top: -45px;
 }
+
+img.flag {
+    height: 15px;
+}
