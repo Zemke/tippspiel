@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {DatePipe} from '@angular/common';
 import {TranslatePipe} from 'ng2-translate/ng2-translate';
 import {MDL} from './material-design-lite-upgrade-element.directive';
 import {UserService} from './user.service';
@@ -14,6 +15,9 @@ export class ChampBetComponent {
   champBet:any;
   submitting:boolean = false;
   saved:boolean;
+  private startOfFinalStage:Date = new Date('2016-06-25T13:00:00Z');
+  deadline:string = new DatePipe().transform(this.startOfFinalStage, 'fullDate')
+      + ', ' + new DatePipe().transform(this.startOfFinalStage, 'shortTime');
 
   constructor(private userService:UserService) {
     this.getTeams();

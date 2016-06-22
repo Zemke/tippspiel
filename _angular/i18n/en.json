@@ -26,6 +26,8 @@
       "orderExplanation": "The games are ordered by time they take place.",
       "betsOf": "Bets of",
       "noBetsOfUser": "Bets of {{user.first_name}} {{user.last_name}} on games that have been kicked-off will be shown here.",
+      "betForChamp": "Who will be champion of the Euro?",
+      "betForChampDescr": "Bet now for the champion of the Euro until the first game of the final stage on {{deadline}} and win 10 points.",
       "submitBet": "Place",
       "allBetsFor": "All bets for",
       "reason": {
