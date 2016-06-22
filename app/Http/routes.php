@@ -33,6 +33,7 @@ Route::get('/api/users/getByToken', 'UserController@getByToken');
 Route::get('/api/fixtures/allUsers', 'FixtureController@allUsers');
 Route::post('/api/users/teams', 'UserController@teams');
 Route::get('/api/users/teams', 'UserController@teams');
+Route::get('/api/users/champBet', 'UserController@champBet');
 
 // Getting RESTful
 Route::resource('/api/todo', 'TodoController');

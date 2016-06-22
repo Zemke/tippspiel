@@ -91,4 +91,13 @@ export class UserService {
         .catch(this.handleError);
 
   }
+
+  getChampBet() {
+    return this.authHttp.get(this.userWebServiceUrl + '/champBet')
+        .map(res => {
+          return res.json();
+        })
+        .catch(this.handleError);
+
+  }
 }

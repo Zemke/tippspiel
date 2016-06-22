@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
@@ -59,4 +60,22 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $user;
     }
 
+    public static function getTeamObjByTeamId($teamId)
+    {
+        $teamsFile = Storage::get('teams.json');
+
+        if (!$teamsFile) {
+            return null;
+        }
+
+        $teams = json_decode($teamsFile, true);
+
+        foreach ($teams as $index => $team) {
+            if ($team['id'] === $teamId) {
+                return $team;
+            }
+        }
+
+        return null;
+    }
 }

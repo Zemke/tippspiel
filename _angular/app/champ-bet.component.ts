@@ -21,7 +21,7 @@ export class ChampBetComponent {
 
   constructor(private userService:UserService) {
     this.getTeams();
-    // TODO Initialize select box if the user has already placed a bit for this.
+    this.userService.getChampBet().subscribe(champBet => this.champBet = champBet);
   }
 
   private getTeams() {

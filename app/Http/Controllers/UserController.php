@@ -58,6 +58,17 @@ class UserController extends Controller
         return Storage::get('teams.json');
     }
 
+    public function champBet()
+    {
+        $user = User::find($this->jwtAuth->parseToken()->toUser()->id);
+        $teamId = $user['champ_bet'];
+
+        if (!$teamId) {
+            return null;
+        }
+        return User::getTeamObjByTeamId($teamId);
+    }
+
     /**
      * Get a user by the token from the header.
      *
