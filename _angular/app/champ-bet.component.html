@@ -20,7 +20,7 @@
                 <span *ngIf="submitting">
                     Saving…
                 </span>
-                <img [attr.src]="champBet.crestUrl" class="flag" *ngIf="!!champBet"
+                <img [attr.src]="champBet.crestUrl" class="flag" *ngIf="!!champBet && !submitting"
                      [attr.title]="('soe.team.' + champBet.name | translate)"
                      [attr.alt]="('soe.team.' + champBet.name | translate)">
             </div>
