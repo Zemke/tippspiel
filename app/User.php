@@ -71,7 +71,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         $teams = json_decode($teamsFile, true);
 
         foreach ($teams as $index => $team) {
-            if ($team['id'] === $teamId) {
+            if ($team['id'] === (int)$teamId) {
                 return $team;
             }
         }
