@@ -8,22 +8,6 @@
     "crestUrl": "https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg"
   },
   {
-    "id": 811,
-    "name": "Romania",
-    "code": "ROU",
-    "shortName": null,
-    "squadMarketValue": null,
-    "crestUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Romania.svg"
-  },
-  {
-    "id": 1065,
-    "name": "Albania",
-    "code": "ALB",
-    "shortName": null,
-    "squadMarketValue": null,
-    "crestUrl": "https://upload.wikimedia.org/wikipedia/commons/3/36/Flag_of_Albania.svg"
-  },
-  {
     "id": 788,
     "name": "Switzerland",
     "code": "SUI",
@@ -54,22 +38,6 @@
     "shortName": null,
     "squadMarketValue": null,
     "crestUrl": "https://upload.wikimedia.org/wikipedia/en/b/be/Flag_of_England.svg"
-  },
-  {
-    "id": 808,
-    "name": "Russia",
-    "code": "RUS",
-    "shortName": null,
-    "squadMarketValue": null,
-    "crestUrl": "https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg"
-  },
-  {
-    "id": 803,
-    "name": "Turkey",
-    "code": "TUR",
-    "shortName": null,
-    "squadMarketValue": null,
-    "crestUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg"
   },
   {
     "id": 799,
@@ -104,14 +72,6 @@
     "crestUrl": "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg"
   },
   {
-    "id": 790,
-    "name": "Ukraine",
-    "code": "UKR",
-    "shortName": null,
-    "squadMarketValue": null,
-    "crestUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg"
-  },
-  {
     "id": 760,
     "name": "Spain",
     "code": "ESP",
@@ -120,28 +80,12 @@
     "crestUrl": "https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg"
   },
   {
-    "id": 798,
-    "name": "Czech Republic",
-    "code": "CZE",
-    "shortName": null,
-    "squadMarketValue": null,
-    "crestUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_Czech_Republic.svg"
-  },
-  {
     "id": 806,
     "name": "Republic of Ireland",
     "code": "IRL",
     "shortName": null,
     "squadMarketValue": null,
     "crestUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg"
-  },
-  {
-    "id": 792,
-    "name": "Sweden",
-    "code": "SWE",
-    "shortName": null,
-    "squadMarketValue": null,
-    "crestUrl": "https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg"
   },
   {
     "id": 805,
@@ -160,15 +104,7 @@
     "crestUrl": "https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg"
   },
   {
-    "id": 816,
-    "name": "Austria",
-    "code": "AUT",
-    "shortName": null,
-    "squadMarketValue": null,
-    "crestUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg"
-  },
-  {
-    "id": 827,
+`    "id": 827,
     "name": "Hungary",
     "code": "HUN",
     "shortName": null,
