@@ -1,4 +1,4 @@
-<div mdl class="mdl-grid" id="bet-champ">
+<div mdl *ngIf="teams" class="mdl-grid" id="bet-champ">
     <div class="mdl-cell mdl-cell--12-col">
         {{ 'soe.betting.betForChampDescr' | translate:{deadline: deadline} }}
     </div>
