@@ -65,6 +65,6 @@
       return address + System.cacheBust;
     });
   };
-  System.cacheBust = '?v=1.4.0'; // This is only the latest version that has HTML and JS changes whose cached files you want to bust. This is necessarily the current release!
+  System.cacheBust = '?v=1.4.1'; // This is only the latest version that has HTML and JS changes whose cached files you want to bust. This is necessarily the current release!
 
 })(this);
