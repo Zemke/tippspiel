@@ -30,7 +30,7 @@ export class ChampBetComponent {
     this.userService.getTeams().subscribe(teams => this.teams = teams);
   }
   
-  onChange(champBet) {
+  onChange(champBet:any) {
     this.submitting = true;
     this.userService.postChampBet(champBet).subscribe(teams => {
       this.champBet = champBet;
