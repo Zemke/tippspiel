@@ -1,31 +1,29 @@
-<div mdl>
+<div mdl class="mdl-grid">
     <div class="mdl-cell mdl-cell--12-col">
         {{ 'soe.betting.betForChampDescr' | translate:{deadline: deadline} }}
     </div>
     <form (ngSubmit)="onSubmit()" #champBetForm="ngForm" mdl novalidate>
-        <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--12-col">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input"
-                           [attr.value]="!!champBet ? ('soe.team.' + champBet.name | translate) : ''"
-                           type="text" id="country" readonly/>
-                    <label class="mdl-textfield__label" for="country">
-                        {{ !!champBet ? ('soe.team.' + champBet.name | translate) : ('soe.betting.betForChamp' | translate) }}
-                    </label>
-                    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="country">
-                        <li *ngFor="let team of teams" (click)="onChange(team)" class="mdl-menu__item">
-                            {{ 'soe.team.' + team.name | translate }}
-                            <img [attr.src]="team.crestUrl" class="flag">
-                        </li>
-                    </ul>
-                </div>
+        <div class="mdl-cell mdl-cell--12-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input"
+                       [attr.value]="!!champBet ? ('soe.team.' + champBet.name | translate) : ''"
+                       type="text" id="country" readonly/>
+                <label class="mdl-textfield__label" for="country">
+                    {{ !!champBet ? ('soe.team.' + champBet.name | translate) : ('soe.betting.betForChamp' | translate) }}
+                </label>
+                <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="country">
+                    <li *ngFor="let team of teams" (click)="onChange(team)" class="mdl-menu__item">
+                        {{ 'soe.team.' + team.name | translate }}
+                        <img [attr.src]="team.crestUrl" class="flag">
+                    </li>
+                </ul>
+            </div>
                 <span *ngIf="submitting">
                     Saving…
                 </span>
-                <img [attr.src]="champBet.crestUrl" class="flag" *ngIf="!!champBet && !submitting"
-                     [attr.title]="('soe.team.' + champBet.name | translate)"
-                     [attr.alt]="('soe.team.' + champBet.name | translate)">
-            </div>
+            <img [attr.src]="champBet.crestUrl" class="flag" *ngIf="!!champBet && !submitting"
+                 [attr.title]="('soe.team.' + champBet.name | translate)"
+                 [attr.alt]="('soe.team.' + champBet.name | translate)">
         </div>
     </form>
 </div>

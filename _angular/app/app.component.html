@@ -74,7 +74,7 @@
         <div class="page-content">
             <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--12-col">
-                    <soe-champ-bet></soe-champ-bet>
+                    <soe-champ-bet *ngIf="!!user"></soe-champ-bet>
 
                     <!-- Routed views go here -->
                     <!-- Magic insertion in 3, 2, 1...  -->
