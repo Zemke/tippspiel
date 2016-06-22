@@ -26,7 +26,7 @@
       "orderExplanation": "Die Spiele sind geordnet nach der Zeit, in der sie stattfinden.",
       "betsOf": "Tipps von",
       "noBetsOfUser": "Tipps von {{user.first_name}} {{user.last_name}} auf Spielen, die angestoßen wurden, werden hier angezeigt.",
-      "betForChamp": "Wer wird Europameister?",
+      "betForChamp": "Wähle Mannschaft",
       "betForChampDescr": "Tippe jetzt den Europameister bis zum ersten Spiel der Endrunde am {{deadline}} und gewinnne 10 Punkte.",
       "submitBet": "Abgeben",
       "allBetsFor": "Alle Tipps für",
