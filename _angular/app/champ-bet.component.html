@@ -1,10 +1,10 @@
-<div mdl class="mdl-grid">
+<div mdl class="mdl-grid" id="bet-champ">
     <div class="mdl-cell mdl-cell--12-col">
         {{ 'soe.betting.betForChampDescr' | translate:{deadline: deadline} }}
     </div>
     <form (ngSubmit)="onSubmit()" #champBetForm="ngForm" mdl novalidate>
         <div class="mdl-cell mdl-cell--12-col">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 150px;">
                 <input class="mdl-textfield__input"
                        [attr.value]="!!champBet ? ('soe.team.' + champBet.name | translate) : ''"
                        type="text" id="country" readonly/>
@@ -18,9 +18,9 @@
                     </li>
                 </ul>
             </div>
-                <span *ngIf="submitting">
-                    Saving…
-                </span>
+            <span *ngIf="submitting">
+                Saving…
+            </span>
             <img [attr.src]="champBet.crestUrl" class="flag" *ngIf="!!champBet && !submitting"
                  [attr.title]="('soe.team.' + champBet.name | translate)"
                  [attr.alt]="('soe.team.' + champBet.name | translate)">

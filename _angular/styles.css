@@ -67,3 +67,9 @@ _:-ms-lang(x), .bet-card.firefox { /* IE and Edge */
 img.flag {
     height: 15px;
 }
+
+div#bet-champ {
+    border: 1px solid red;
+    padding: 0;
+    margin: 20px 0;
+}
