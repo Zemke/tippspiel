@@ -51,7 +51,6 @@ class UserController extends Controller
             $payload = $request->all();
             User::where('id', $this->jwtAuth->parseToken()->toUser()->id)
                 ->update(['champ_bet' => $payload['id']]);
-            // TODO Error handling
             return $payload;
         }
 

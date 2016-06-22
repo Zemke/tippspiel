@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
 import {DatePipe} from '@angular/common';
-import {TranslatePipe} from 'ng2-translate/ng2-translate';
+import {TranslatePipe, TranslateService} from 'ng2-translate/ng2-translate';
 import {MDL} from './material-design-lite-upgrade-element.directive';
 import {UserService} from './user.service';
+import {ToastsManager} from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'soe-champ-bet',
@@ -19,7 +20,8 @@ export class ChampBetComponent {
   deadline:string = new DatePipe().transform(this.startOfFinalStage, 'fullDate')
       + ', ' + new DatePipe().transform(this.startOfFinalStage, 'shortTime');
 
-  constructor(private userService:UserService) {
+  constructor(private userService:UserService, private toastr:ToastsManager,
+              private translateService:TranslateService) {
     this.getTeams();
     this.userService.getChampBet().subscribe(champBet => this.champBet = champBet);
   }
@@ -34,11 +36,15 @@ export class ChampBetComponent {
       this.champBet = champBet;
       this.saved = true;
       this.submitting = false;
-      // TODO Toast
+      this.toastr.success(
+          this.translateService.instant('soe.toast.betting.saved'),
+          this.translateService.instant('soe.toast.success'));
     }, err => {
       this.saved = false;
       this.submitting = false;
-      // TODO Toast
+      this.toastr.error(
+          this.translateService.instant('soe.toast.failed'),
+          this.translateService.instant('soe.toast.error'));
     });
   }
 }
