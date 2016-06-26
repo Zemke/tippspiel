@@ -162,3 +162,7 @@ and (orientation: portrait) {
         padding-right: 15px !important;
     }
 }
+
+.mdl-layout__content {
+    flex: 1 0 auto;
+}
