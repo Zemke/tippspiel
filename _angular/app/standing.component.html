@@ -21,7 +21,7 @@
     <tbody>
     <tr *ngFor="let standing of standings; let rank = index" class="standings">
         <td>
-            <span [ngStyle]="{'color': (rank + 1 <= 3) ? '#DAA520' : ''}">
+            <span [ngStyle]="{'color': (rank + 1 == 1) ? '#DAA520' : ''}">
                 {{ rank + 1 }}
             </span>
         </td>
