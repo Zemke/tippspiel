@@ -74,10 +74,46 @@ div#bet-champ {
     margin: 20px 0;
 }
 
-@media screen and (max-width: 720px) {
-    tr.standings th:first-child,
-    tr.standings td:first-child {
-        padding-left: 0;
-        padding-right: 0;
+/* Standings Media Queries */
+/*
+ * The padding rules are defined according to the devices,
+ * but the breaking points (max/min-widths) apply when appropriate for the table.
+ */
+
+/* Landscape iPhone 4 */
+@media only screen
+and (max-width: 550px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    tr.standings th,
+    tr.standings td {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+    }
+}
+
+/* Landscape iPhone 5 */
+@media only screen
+and (max-width: 645px)
+and (min-width: 551px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    tr.standings th,
+    tr.standings td {
+        padding-left: 9px !important;
+        padding-right: 9px !important;
+    }
+}
+
+/* Landscape iPhone 6 */
+@media only screen
+and (max-width: 730px)
+and (min-width: 646px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+    tr.standings th,
+    tr.standings td {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
     }
 }
