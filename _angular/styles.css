@@ -117,3 +117,48 @@ and (orientation: landscape) {
         padding-right: 14px !important;
     }
 }
+
+/* All Portraits that can't display the whole table */
+@media only screen
+and (max-device-width: 730px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    tr.standings th:nth-child(4),
+    tr.standings td:nth-child(4),
+    tr.standings th:nth-child(5),
+    tr.standings td:nth-child(5),
+    tr.standings th:nth-child(6),
+    tr.standings td:nth-child(6),
+    tr.standings th:nth-child(7),
+    tr.standings td:nth-child(7),
+    tr.standings th:nth-child(8),
+    tr.standings td:nth-child(8) {
+        display: none !important;
+    }
+}
+
+/* Portrait <iPhone 5 */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    tr.standings th,
+    tr.standings td {
+        padding-left: 9px !important;
+        padding-right: 9px !important;
+    }
+}
+
+/* Portrait >=iPhone 5 */
+@media only screen
+and (min-device-width: 321px)
+and (max-device-width: 730px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    tr.standings th,
+    tr.standings td {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
