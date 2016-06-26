@@ -4,4 +4,5 @@
 
 <h1>{{ 'soe.menu.betting' | translate }}</h1>
 
+<soe-champ-bet *ngIf="loggedIn && champBetAllowed" [finalRoundStart]="finalRoundStart"></soe-champ-bet>
 <soe-fixtures-list></soe-fixtures-list>

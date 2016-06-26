@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DatePipe} from '@angular/common';
 import {TranslatePipe, TranslateService} from 'ng2-translate/ng2-translate';
 import {MDL} from './material-design-lite-upgrade-element.directive';
@@ -11,19 +11,24 @@ import {ToastsManager} from 'ng2-toastr/ng2-toastr';
   directives: [MDL],
   pipes: [TranslatePipe]
 })
-export class ChampBetComponent {
+export class ChampBetComponent implements OnInit {
+  @Input()
+  finalRoundStart:Date;
   teams:any[];
   champBet:any;
   submitting:boolean = false;
   saved:boolean;
-  private startOfFinalStage:Date = new Date('2016-06-25T13:00:00Z');
-  deadline:string = new DatePipe().transform(this.startOfFinalStage, 'fullDate')
-      + ', ' + new DatePipe().transform(this.startOfFinalStage, 'shortTime');
+  deadline:string;
 
   constructor(private userService:UserService, private toastr:ToastsManager,
               private translateService:TranslateService) {
     this.getTeams();
     this.userService.getChampBet().subscribe(champBet => this.champBet = champBet);
+  }
+
+  ngOnInit() {
+    this.deadline = new DatePipe().transform(this.finalRoundStart, 'fullDate')
+        + ', ' + new DatePipe().transform(this.finalRoundStart, 'shortTime');
   }
 
   private getTeams() {

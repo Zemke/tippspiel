@@ -1,5 +1,6 @@
 <?php namespace Todo;
 
+use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -77,5 +78,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         }
 
         return null;
+    }
+
+    public static function isChampBetAllowed($finalRoundStart)
+    {
+        return !Carbon::parse($finalRoundStart)->isPast();
     }
 }

@@ -100,4 +100,14 @@ export class UserService {
         .catch(this.handleError);
 
   }
+
+  checkIfChampBetIsStillAllowed() {
+    return this.http.get(this.userWebServiceUrl + '/champBetAllowed')
+        .map(res => {
+          var json = res.json();
+          json.finalRoundStart = new Date(json.finalRoundStart);
+          return json;
+        })
+        .catch(this.handleError);
+  }
 }

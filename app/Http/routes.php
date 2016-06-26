@@ -34,6 +34,7 @@ Route::get('/api/fixtures/allUsers', 'FixtureController@allUsers');
 Route::post('/api/users/teams', 'UserController@teams');
 Route::get('/api/users/teams', 'UserController@teams');
 Route::get('/api/users/champBet', 'UserController@champBet');
+Route::get('/api/users/champBetAllowed', 'UserController@champBetAllowed');
 
 // Getting RESTful
 Route::resource('/api/todo', 'TodoController');

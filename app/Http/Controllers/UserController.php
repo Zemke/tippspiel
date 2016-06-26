@@ -68,6 +68,15 @@ class UserController extends Controller
         return User::getTeamObjByTeamId($teamId);
     }
 
+    public function champBetAllowed()
+    {
+        $finalRoundStart = env('FINAL_ROUND_START');
+        return [
+            'champBetAllowed' => User::isChampBetAllowed($finalRoundStart),
+            'finalRoundStart' => $finalRoundStart
+        ];
+    }
+
     /**
      * Get a user by the token from the header.
      *
