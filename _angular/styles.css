@@ -1,3 +1,19 @@
+html, body {
+    background-image: url('grassy.jpg');
+}
+
+header {
+    background-color: darkgreen !important;
+}
+
+a {
+    color: darkgreen;
+}
+
+.mdl-badge[data-badge]:after {
+    background-color: darkgreen;
+}
+
 ul.bet-card {
     float: left;
     width: 550px;
