@@ -9,6 +9,13 @@
         <th><soe-bet-result [valuation]="1"></soe-bet-result></th>
         <th><soe-bet-result [valuation]="0"></soe-bet-result></th>
         <th><soe-bet-result [valuation]="-1"></soe-bet-result></th>
+        <th class="mdl-data-table__cell--non-numeric">
+            <div class="material-icons mdl-badge mdl-badge--overlap" id="champBetValuation" data-badge="10">grade</div>
+            <div class="mdl-tooltip" for="champBetValuation">
+                {{ 'soe.betting.reason.pointsFor' | translate:{value:10} }}<br>
+                {{ 'soe.betting.reason.champ' | translate }}
+            </div>
+        </th>
     </tr>
     </thead>
     <tbody>
@@ -29,6 +36,14 @@
         <td>{{ standing.p1 }}</td>
         <td>{{ standing.p0 }}</td>
         <td>{{ standing.missed }}</td>
+        <td>
+            <img *ngIf="standing.team" [attr.id]="'champBet' + rank" [attr.src]="standing.team.crestUrl" class="flag">
+            <div *ngIf="standing.team" class="mdl-tooltip" [attr.for]="'champBet' + rank"
+                 [attr.alt]="'soe.team.' + standing.team.name | translate"
+                 [attr.title]="'soe.team.' + standing.team.name | translate">
+                {{ 'soe.team.' + standing.team.name | translate }}
+            </div>
+        </td>
     </tr>
     </tbody>
 </table>

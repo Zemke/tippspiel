@@ -23,7 +23,7 @@ class StandingController extends Controller
         if (Fixture::isValidCache($standings)) {
             Log::info('Standings from Cache');
             unset($standings['_timestamp']);
-            return $standings;
+            return Standing::populateTeams($standings);
         } else {
             Log::info('Standings from DB');
             Standing::handleJob();
@@ -36,7 +36,7 @@ class StandingController extends Controller
         Cache::forever('standings', $standings);
 
         unset($standings['_timestamp']);
-        return $standings;
+        return Standing::populateTeams($standings);
     }
 
     /**

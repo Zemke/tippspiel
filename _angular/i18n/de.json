@@ -37,7 +37,8 @@
         "goalDifference": "richtige Tordifferenz",
         "result": "richtiges Ergebnis",
         "pointsNone": "0 Punkte, du hast versagt",
-        "missed": "Du hast vergessen zu tippen :("
+        "missed": "Du hast vergessen zu tippen :(",
+        "champ": "richtigen Turniersieger"
       }
     },
     "table": {

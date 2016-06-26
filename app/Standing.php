@@ -84,4 +84,17 @@ class Standing extends Model
 
         return $standing;
     }
+
+    public static function populateTeams($standings)
+    {
+        foreach ($standings as $index => $standing) {
+            if (!$standing['user']['champ_bet']) {
+                $standing['team'] = null;
+                continue;
+            }
+            $standing['team'] = User::getTeamObjByTeamId($standing['user']['champ_bet']);
+        }
+
+        return $standings;
+    }
 }
