@@ -1,6 +1,6 @@
 <table *ngIf="standings" mdl class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
     <thead>
-    <tr>
+    <tr class="standings">
         <th>#</th>
         <th class="mdl-data-table__cell--non-numeric">{{ 'soe.table.head.name' | translate }}</th>
         <th>{{ 'soe.table.head.points' | translate }}</th>
@@ -19,7 +19,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let standing of standings; let rank = index">
+    <tr *ngFor="let standing of standings; let rank = index" class="standings">
         <td>
             <span [ngStyle]="{'color': (rank + 1 <= 3) ? '#DAA520' : ''}">
                 {{ rank + 1 }}
@@ -36,7 +36,7 @@
         <td>{{ standing.p1 }}</td>
         <td>{{ standing.p0 }}</td>
         <td>{{ standing.missed }}</td>
-        <td>
+        <td class="mdl-data-table__cell--non-numeric">
             <img *ngIf="standing.team" [attr.id]="'champBet' + rank" [attr.src]="standing.team.crestUrl" class="flag">
             <div *ngIf="standing.team" class="mdl-tooltip" [attr.for]="'champBet' + rank"
                  [attr.alt]="'soe.team.' + standing.team.name | translate"

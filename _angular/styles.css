@@ -73,3 +73,11 @@ div#bet-champ {
     padding: 0;
     margin: 20px 0;
 }
+
+@media screen and (max-width: 720px) {
+    tr.standings th:first-child,
+    tr.standings td:first-child {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
