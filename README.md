@@ -13,3 +13,11 @@ cp _angular/app/api-endpoint.ts.default _angular/app/api-endpoint.ts
 ```
 
 And adjust the variable in `_angular/app/api-endpoint.ts` as you need. Like when you host your backend somewhere else, you would change `/` to `http://localhost:8080/`.
+
+## Environment conf
+
+There are  two additional environment variables that you probably don’t know from the default `.env` file.
+
+`FINAL_ROUND_START`: An ISO date string. This is basically the deadline for bets of the tournament champion. When this date is past, users won’t be able to submit bets for the champions of the tournament anymore. Most of the times you’d want that to be the start of the final round of the tournament or even the the first game.
+
+`FINALE_MATCHDAY`: The matchday number of the finale of the tournament as seen on football-data.org. You know the final matchday by going to http://api.football-data.org/v1/soccerseasons/{seasonId} and then there’s the attribute `numberOfMatchdays` which is probably the finale. The information is important to know when the points for the bet of the champion on of the tournament should be added.
