@@ -27,7 +27,7 @@
                 <input class="mdl-textfield__input" type="number" pattern="[0-9]*" inputmode="numeric"
                        id="home" [disabled]="!inFuture" [(ngModel)]="fixtureBet.home_goals"
                        (ngModelChange)="checkUnsavedChanges()">
-                <label class="mdl-textfield__label" for="home">
+                <label class="mdl-textfield__label" for="home" *ngIf="!fixtureBet.home_goals">
                     {{ ('soe.team.' + fixture.homeTeamName | translate).substr(0, 3).toUpperCase() }}
                 </label>
             </div>
@@ -36,7 +36,7 @@
                 <input class="mdl-textfield__input" type="number" pattern="[0-9]*" inputmode="numeric"
                        id="away" [disabled]="!inFuture" [(ngModel)]="fixtureBet.away_goals"
                        (ngModelChange)="checkUnsavedChanges()">
-                <label class="mdl-textfield__label" for="home">
+                <label class="mdl-textfield__label" for="home" *ngIf="!fixtureBet.away_goals">
                     {{ ('soe.team.' + fixture.awayTeamName | translate).substr(0, 3).toUpperCase() }}
                 </label>
             </div>
