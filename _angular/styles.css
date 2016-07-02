@@ -14,14 +14,6 @@ a {
     background-color: darkgreen;
 }
 
-ul.bet-card {
-    float: left;
-    width: 550px;
-    border: 1px solid black;
-    margin: 5px;
-    padding: 0;
-}
-
 .mdl-textfield.bet-card {
     width: 40px;
 }
@@ -33,6 +25,16 @@ ul.bet-card {
 
 form.bet-card {
     margin-top: -10px;
+    float: left;
+    margin-bottom: 0;
+}
+.bet-card.result {
+    padding-top: 15px;
+    margin-left: 110px;
+}
+
+.bet-card.actions {
+    margin-top: -5px;
 }
 
 .live {
@@ -47,6 +49,28 @@ form.bet-card {
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: .25em;
+}
+
+.text-muted {
+    color: #777;
+    font-size: 12px;
+}
+
+.bet-card.border {
+    background-color: rgb(255, 255, 255);
+    border-collapse: collapse;
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border: 1px solid rgba(0, 0, 0, 0.117647);
+    box-shadow: rgba(0, 0, 0, 0.137255) 0 2px 2px 0, rgba(0, 0, 0, 0.2) 0 3px 1px -2px, rgba(0, 0, 0, 0.117647) 0 1px 5px 0;
+    color: rgba(0, 0, 0, 0.870588);
+    margin: 5px;
+    padding: 15px 15px 0;
+    width: 245px;
+    float: left;
 }
 
 .mdl-layout__header .mdl-layout__drawer-button {
@@ -118,6 +142,11 @@ and (orientation: landscape) {
     tr.standings td {
         padding-left: 9px !important;
         padding-right: 9px !important;
+    }
+
+    .bet-card.border {
+        padding: 8px 8px 0;
+        margin: 2px;
     }
 }
 

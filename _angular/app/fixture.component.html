@@ -1,56 +1,55 @@
-<ul *ngIf="fixtureBet && fixture" class="demo-list-three mdl-list bet-card" mdl>
-    <li class="mdl-list__item mdl-list__item--three-line">
-        <span class="mdl-list__item-primary-content">
-            <span *ngIf="inFuture">
-                {{ ('soe.team.' + fixture.homeTeamName | translate) }}
-                -
-                {{ ('soe.team.' + fixture.awayTeamName | translate) }}
-            </span>
-            <a [routerLink]="['/fixture-bets', fixture.id]" *ngIf="!inFuture">
-                {{ ('soe.team.' + fixture.homeTeamName | translate) }}
-                <strong>
-                    {{ fixture.result.goalsHomeTeam }}-{{ fixture.result.goalsAwayTeam }}
-                </strong>
-                {{ ('soe.team.' + fixture.awayTeamName | translate) }}
-            </a>
-            <span class="mdl-list__item-text-body">
-                {{ fixture.date | date:'fullDate' }},
-                {{ fixture.date | date:'shortTime' }}
-                <span *ngIf="fixture.status === 'IN_PLAY'" class="live">LIVE</span><br>
-                <a [routerLink]="['/user-bets', user.id]" *ngIf="user">
-                    {{ user.first_name }} {{ user.last_name }}
-                </a>
-            </span>
-        </span>
-        <span class="mdl-list__item-secondary-content">
-            <form (ngSubmit)="onSubmit()" #betForm="ngForm" class="bet-card" novalidate>
-                <div class="mdl-textfield mdl-js-textfield bet-card">
-                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="home"
-                           [disabled]="!inFuture" [(ngModel)]="fixtureBet.home_goals"
-                           (ngModelChange)="checkUnsavedChanges()">
-                    <label class="mdl-textfield__label" for="home">
-                        {{ ('soe.team.' + fixture.homeTeamName | translate).substr(0, 3).toUpperCase() }}
-                    </label>
-                </div>
-                <div class="bet-card firefox hyphen">-</div>
-                <div class="mdl-textfield mdl-js-textfield bet-card">
-                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="away"
-                           [disabled]="!inFuture" [(ngModel)]="fixtureBet.away_goals"
-                           (ngModelChange)="checkUnsavedChanges()">
-                    <label class="mdl-textfield__label" for="home">
-                        {{ ('soe.team.' + fixture.awayTeamName | translate).substr(0, 3).toUpperCase() }}
-                    </label>
-                </div>
-                <button type="submit"
-                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect bet-card firefox"
-                        [ngClass]="{'mdl-button--accent': unsavedChanges}"
-                        [disabled]="!betForm.form.valid" *ngIf="inFuture">
-                    {{ 'soe.betting.submitBet' | translate }}
-                </button>
-            </form>
-        </span>
+<div class="bet-card border">
+    <div>
+    <span *ngIf="inFuture">
+        {{ ('soe.team.' + fixture.homeTeamName | translate) }}
+        -
+        {{ ('soe.team.' + fixture.awayTeamName | translate) }}
+    </span>
+        <a [routerLink]="['/fixture-bets', fixture.id]" *ngIf="!inFuture">
+            {{ ('soe.team.' + fixture.homeTeamName | translate) }}
+            <strong>
+                {{ fixture.result.goalsHomeTeam }}-{{ fixture.result.goalsAwayTeam }}
+            </strong>
+            {{ ('soe.team.' + fixture.awayTeamName | translate) }}
+        </a>
+    </div>
+<span class="text-muted">
+    {{ fixture.date | date:'fullDate' }},
+    {{ fixture.date | date:'shortTime' }}
+    <span *ngIf="fixture.status === 'IN_PLAY'" class="live">LIVE</span><br>
+    <a [routerLink]="['/user-bets', user.id]" *ngIf="user">
+        {{ user.first_name }} {{ user.last_name }}
+    </a>
+</span>
+    <div class="bet-card actions">
+        <form (ngSubmit)="onSubmit()" #betForm="ngForm" class="bet-card" novalidate>
+            <div class="mdl-textfield mdl-js-textfield bet-card">
+                <input class="mdl-textfield__input" type="number" pattern="[0-9]*" inputmode="numeric"
+                       id="home" [disabled]="!inFuture" [(ngModel)]="fixtureBet.home_goals"
+                       (ngModelChange)="checkUnsavedChanges()">
+                <label class="mdl-textfield__label" for="home">
+                    {{ ('soe.team.' + fixture.homeTeamName | translate).substr(0, 3).toUpperCase() }}
+                </label>
+            </div>
+            <div class="bet-card firefox hyphen">-</div>
+            <div class="mdl-textfield mdl-js-textfield bet-card">
+                <input class="mdl-textfield__input" type="number" pattern="[0-9]*" inputmode="numeric"
+                       id="away" [disabled]="!inFuture" [(ngModel)]="fixtureBet.away_goals"
+                       (ngModelChange)="checkUnsavedChanges()">
+                <label class="mdl-textfield__label" for="home">
+                    {{ ('soe.team.' + fixture.awayTeamName | translate).substr(0, 3).toUpperCase() }}
+                </label>
+            </div>
+            <button type="submit"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect bet-card firefox"
+                    [ngClass]="{'mdl-button--accent': unsavedChanges}"
+                    [disabled]="!betForm.form.valid" *ngIf="inFuture">
+                {{ 'soe.betting.submitBet' | translate }}
+            </button>
+        </form>
         <soe-bet-result *ngIf="!inFuture" [id]="fixture.id"
                         [valuation]="fixture._bet ? fixture._bet.valuation : -1">
         </soe-bet-result>
-    </li>
-</ul>
+        <div style="clear:both;"></div>
+    </div>
+</div>

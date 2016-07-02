@@ -1,4 +1,4 @@
-<div mdl [ngSwitch]="valuation">
+<div mdl [ngSwitch]="valuation" class="bet-card result">
     <div *ngSwitchWhen="(-1)">
         <div class="material-icons mdl-badge mdl-badge--overlap" [attr.id]="'thumb_down' + id" data-badge="0">thumb_down</div>
         <div class="mdl-tooltip" [attr.for]="'thumb_down' + id">
