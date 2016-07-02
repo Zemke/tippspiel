@@ -47,7 +47,7 @@
                 {{ 'soe.betting.submitBet' | translate }}
             </button>
         </form>
-        <soe-bet-result *ngIf="!inFuture" [id]="fixture.id"
+        <soe-bet-result *ngIf="!inFuture" [id]="fixture.id" class="bet-card result"
                         [valuation]="fixture._bet ? fixture._bet.valuation : -1">
         </soe-bet-result>
         <div style="clear:both;"></div>

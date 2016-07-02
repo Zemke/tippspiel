@@ -28,7 +28,8 @@ form.bet-card {
     float: left;
     margin-bottom: 0;
 }
-.bet-card.result {
+
+soe-bet-result.bet-card.result > div {
     padding-top: 15px;
     margin-left: 110px;
 }
