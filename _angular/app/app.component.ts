@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+    import {Component, AfterViewInit} from '@angular/core';
 import {Routes, Router, ROUTER_DIRECTIVES} from '@angular/router';
 import {TranslateService, TranslatePipe} from 'ng2-translate/ng2-translate';
 import {RegistrationComponent} from './registration.component';
@@ -29,7 +29,7 @@ import {ChampBetComponent} from './champ-bet.component';
   {path: '/login', component: LoginComponent},
   {path: '/payment', component: PaymentComponent}
 ])
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   user:User;
   userLang:string;
   version:string;
@@ -44,6 +44,12 @@ export class AppComponent {
     this.translate.get('soe.title').subscribe(
         res => this.title.setTitle(res)
     );
+  }
+
+  ngAfterViewInit():any {
+    document.querySelector('.mdl-layout__drawer').addEventListener('click', function () {
+      document.querySelector('.mdl-layout').MaterialLayout.toggleDrawer();
+    });
   }
 
   private getAuthenticatedUser() {
