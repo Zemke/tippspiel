@@ -13,6 +13,7 @@ import {Title} from '@angular/platform-browser';
 import {FixturesListComponent} from './fixtures-list.component';
 import {UsersFixturesListComponent} from './users-fixtures-list.component';
 import {ChampBetComponent} from './champ-bet.component';
+import {MaterialElement} from './material-element';
 
 @Component({
   selector: 'soe-app',
@@ -48,7 +49,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit():any {
     document.querySelector('.mdl-layout__drawer').addEventListener('click', function () {
-      document.querySelector('.mdl-layout').MaterialLayout.toggleDrawer();
+      (<MaterialElement>document.querySelector('.mdl-layout')).MaterialLayout.toggleDrawer();
     });
   }
 
