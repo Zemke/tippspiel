@@ -61,11 +61,11 @@ export class FixtureComponent implements OnInit {
   }
 
   checkUnsavedChanges() {
-    if (!this.fixtureBet.home_goals || !this.fixtureBet.away_goals) {
+    if (this.fixtureBet.home_goals === null || this.fixtureBet.away_goals === null) {
       this.unsavedChanges = false;
     } else {
       this.unsavedChanges = (Number(this.fixtureBet.home_goals) !== Number(this.copyHome)
-      || Number(this.fixtureBet.away_goals) !== Number(this.copyAway));
+          || Number(this.fixtureBet.away_goals) !== Number(this.copyAway));
     }
   }
 
