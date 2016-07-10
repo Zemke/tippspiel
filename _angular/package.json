@@ -1,6 +1,6 @@
 {
   "name": "tippspiel",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Betting game for the UEFA Euro 2016 France",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
