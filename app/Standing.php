@@ -3,7 +3,9 @@
 namespace Todo;
 
 use Cache;
+use Exception;
 use Illuminate\Database\Eloquent\Model;
+use Log;
 
 class Standing extends Model
 {
@@ -31,7 +33,7 @@ class Standing extends Model
         $standings = [];
 
         foreach ($users as $user) {
-            $standing = Standing::calcForUser($user['id'], $fixtures);
+            $standing = Standing::calcForUser($user['id'], $fixtures, $user['champ_bet']);
             $standings[] = $standing->attributesToArray();
         }
 
@@ -39,7 +41,7 @@ class Standing extends Model
         Standing::insert($standings);
     }
 
-    public static function calcForUser($userId, $fixtures)
+    public static function calcForUser($userId, $fixtures, $champBet)
     {
         $fixtures['fixtures'] = array_filter($fixtures['fixtures'], function ($fixture) {
             return !Fixture::isFuture($fixture);
@@ -69,6 +71,7 @@ class Standing extends Model
 
         $standing['user_id'] = $userId;
         $standing['missed'] = $missed;
+        $standing['points'] += Standing::calcTourneyChampBet($fixtures['fixtures'], $champBet);
         return new Standing($standing);
     }
 
@@ -85,6 +88,42 @@ class Standing extends Model
         return $standing;
     }
 
+    private static function calcTourneyChampBet($fixtures, $champBet)
+    {
+        $finalMatchFixture = Fixture::extractFinalMatch($fixtures);
+        if (!$finalMatchFixture) {
+            return 0;
+        }
+
+        $fixtureWinner = Fixture::determineFixtureWinner($finalMatchFixture);
+
+        if (!$fixtureWinner) {
+            $champId = env('CHAMP_ID');
+
+            Log::info('Final match drawn.');
+
+            if (empty($champId)) {
+                if (Fixture::isOver($finalMatchFixture)) {
+                    Log::alert('Please determine the winner manually by changing the environment variable.');
+                }
+                return 0;
+            }
+        } else {
+            $champId = Fixture::extractTeamId($finalMatchFixture, $fixtureWinner);
+        }
+
+        try {
+            if ((int)$champBet === (int)$champId) {
+                Log::info("Champ ID is $champId and bet is $champBet which is right");
+                return 10;
+            }
+        } catch (Exception $e) {
+            Log::warn($e->getTraceAsString());
+            return 0;
+        }
+        Log::info("Champ ID is $champId and bet is $champBet which is wrong");
+    }
+    
     public static function populateTeams($standings)
     {
         foreach ($standings as $index => $standing) {

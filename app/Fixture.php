@@ -2,12 +2,17 @@
 
 namespace Todo;
 
+use Exception;
 use Log;
 use Cache;
 use Illuminate\Database\Eloquent\Model;
 
 class Fixture extends Model
 {
+    const HOME_TEAM_KEY = 'homeTeam';
+
+    const AWAY_TEAM_KEY = 'awayTeam';
+
     public static function getEm()
     {
         $fixturesFromCache = Cache::get('fixtures');
@@ -121,9 +126,66 @@ class Fixture extends Model
         return 0;
     }
 
+    public static function isFinalMatchday($betAndFixture)
+    {
+        try {
+            return (int)$betAndFixture['matchday'] === (int)env('FINALE_MATCHDAY');
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+    public static function extractFinalMatch($fixtures)
+    {
+        $finaleMatchday = env('FINALE_MATCHDAY');
+
+        foreach ($fixtures as $key => $fixture) {
+            if ((int)$fixture['matchday'] === (int)$finaleMatchday) {
+                return $fixture;
+            }
+        }
+
+        return null;
+    }
+
+    public static function determineFixtureWinner($fixture)
+    {
+        $goalsHomeTeam = (int)$fixture['result']['goalsHomeTeam'];
+        $goalsAwayTeam = (int)$fixture['result']['goalsAwayTeam'];
+
+        if ($goalsHomeTeam === $goalsAwayTeam) {
+            return null;
+        }
+
+        if ($goalsHomeTeam > $goalsAwayTeam) {
+            return self::HOME_TEAM_KEY;
+        } else {
+            return self::AWAY_TEAM_KEY;
+        }
+    }
+
     public static function extractFixtureId($fixture)
     {
-        $splitSelfLink = explode('/', $fixture['_links']['self']['href']);
+        return self::extractIdAtLastIndex($fixture, 'self');
+    }
+
+    /**
+     * @param $fixture
+     * @param $teamKey {@link Fixture::HOME_TEAM_KEY} or {@link Fixture::AWAY_TEAM_KEY}
+     * @return mixed
+     */
+    public static function extractTeamId($fixture, $teamKey)
+    {
+        return self::extractIdAtLastIndex($fixture, $teamKey);
+    }
+
+    /**
+     * @param $fixture
+     * @return mixed
+     */
+    public static function extractIdAtLastIndex($fixture, $key)
+    {
+        $splitSelfLink = explode('/', $fixture['_links'][$key]['href']);
         return $splitSelfLink[count($splitSelfLink) - 1];
     }
 
