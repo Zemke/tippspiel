@@ -7,7 +7,7 @@
       "href": "http://api.football-data.org/v1/soccerseasons/424"
     }
   },
-  "count": 36,
+  "count": 51,
   "fixtures": [
     {
       "_links": {
@@ -663,13 +663,17 @@
         }
       },
       "date": "2016-06-18T16:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": 2,
       "homeTeamName": "Iceland",
       "awayTeamName": "Hungary",
       "result": {
         "goalsHomeTeam": 1,
-        "goalsAwayTeam": 0
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -688,13 +692,17 @@
         }
       },
       "date": "2016-06-18T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 2,
       "homeTeamName": "Portugal",
       "awayTeamName": "Austria",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -713,13 +721,17 @@
         }
       },
       "date": "2016-06-19T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 3,
       "homeTeamName": "Romania",
       "awayTeamName": "Albania",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        }
       }
     },
     {
@@ -738,13 +750,17 @@
         }
       },
       "date": "2016-06-19T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 3,
       "homeTeamName": "Switzerland",
       "awayTeamName": "France",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -763,13 +779,17 @@
         }
       },
       "date": "2016-06-20T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 3,
       "homeTeamName": "Slovakia",
       "awayTeamName": "England",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -788,13 +808,17 @@
         }
       },
       "date": "2016-06-20T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 3,
       "homeTeamName": "Russia",
       "awayTeamName": "Wales",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 3,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 2
+        }
       }
     },
     {
@@ -813,13 +837,17 @@
         }
       },
       "date": "2016-06-21T16:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 3,
       "homeTeamName": "Ukraine",
       "awayTeamName": "Poland",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -838,38 +866,17 @@
         }
       },
       "date": "2016-06-21T16:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 3,
       "homeTeamName": "Northern Ireland",
       "awayTeamName": "Germany",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
-      }
-    },
-    {
-      "_links": {
-        "self": {
-          "href": "http://api.football-data.org/v1/fixtures/149869"
-        },
-        "soccerseason": {
-          "href": "http://api.football-data.org/v1/soccerseasons/424"
-        },
-        "homeTeam": {
-          "href": "http://api.football-data.org/v1/teams/798"
-        },
-        "awayTeam": {
-          "href": "http://api.football-data.org/v1/teams/803"
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
         }
-      },
-      "date": "2016-06-21T19:00:00Z",
-      "status": "TIMED",
-      "matchday": 3,
-      "homeTeamName": "Czech Republic",
-      "awayTeamName": "Turkey",
-      "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
       }
     },
     {
@@ -888,38 +895,46 @@
         }
       },
       "date": "2016-06-21T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 3,
       "homeTeamName": "Croatia",
       "awayTeamName": "Spain",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 2,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 1
+        }
       }
     },
     {
       "_links": {
         "self": {
-          "href": "http://api.football-data.org/v1/fixtures/149886"
+          "href": "http://api.football-data.org/v1/fixtures/149869"
         },
         "soccerseason": {
           "href": "http://api.football-data.org/v1/soccerseasons/424"
         },
         "homeTeam": {
-          "href": "http://api.football-data.org/v1/teams/1066"
+          "href": "http://api.football-data.org/v1/teams/798"
         },
         "awayTeam": {
-          "href": "http://api.football-data.org/v1/teams/816"
+          "href": "http://api.football-data.org/v1/teams/803"
         }
       },
-      "date": "2016-06-22T16:00:00Z",
-      "status": "TIMED",
+      "date": "2016-06-21T19:00:00Z",
+      "status": "FINISHED",
       "matchday": 3,
-      "homeTeamName": "Iceland",
-      "awayTeamName": "Austria",
+      "homeTeamName": "Czech Republic",
+      "awayTeamName": "Turkey",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 2,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        }
       }
     },
     {
@@ -938,13 +953,46 @@
         }
       },
       "date": "2016-06-22T16:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 3,
       "homeTeamName": "Hungary",
       "awayTeamName": "Portugal",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 3,
+        "goalsAwayTeam": 3,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 1
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/149886"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/1066"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/816"
+        }
+      },
+      "date": "2016-06-22T16:00:00Z",
+      "status": "FINISHED",
+      "matchday": 3,
+      "homeTeamName": "Iceland",
+      "awayTeamName": "Austria",
+      "result": {
+        "goalsHomeTeam": 2,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -963,13 +1011,17 @@
         }
       },
       "date": "2016-06-22T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 3,
       "homeTeamName": "Sweden",
       "awayTeamName": "Belgium",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     },
     {
@@ -988,13 +1040,480 @@
         }
       },
       "date": "2016-06-22T19:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 3,
       "homeTeamName": "Italy",
       "awayTeamName": "Republic of Ireland",
       "result": {
-        "goalsHomeTeam": null,
-        "goalsAwayTeam": null
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/150457"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/788"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/794"
+        }
+      },
+      "date": "2016-06-25T13:00:00Z",
+      "status": "FINISHED",
+      "matchday": 4,
+      "homeTeamName": "Switzerland",
+      "awayTeamName": "Poland",
+      "result": {
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        },
+        "extraTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 1
+        },
+        "penaltyShootout": {
+          "goalsHomeTeam": 4,
+          "goalsAwayTeam": 5
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/150463"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/833"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/829"
+        }
+      },
+      "date": "2016-06-25T16:00:00Z",
+      "status": "FINISHED",
+      "matchday": 4,
+      "homeTeamName": "Wales",
+      "awayTeamName": "Northern Ireland",
+      "result": {
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/150462"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/799"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/765"
+        }
+      },
+      "date": "2016-06-25T19:00:00Z",
+      "status": "FINISHED",
+      "matchday": 4,
+      "homeTeamName": "Croatia",
+      "awayTeamName": "Portugal",
+      "result": {
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        },
+        "extraTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/150461"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/773"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/806"
+        }
+      },
+      "date": "2016-06-26T13:00:00Z",
+      "status": "FINISHED",
+      "matchday": 4,
+      "homeTeamName": "France",
+      "awayTeamName": "Republic of Ireland",
+      "result": {
+        "goalsHomeTeam": 2,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/150460"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/759"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/768"
+        }
+      },
+      "date": "2016-06-26T16:00:00Z",
+      "status": "FINISHED",
+      "matchday": 4,
+      "homeTeamName": "Germany",
+      "awayTeamName": "Slovakia",
+      "result": {
+        "goalsHomeTeam": 3,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 2,
+          "goalsAwayTeam": 0
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/150459"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/827"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/805"
+        }
+      },
+      "date": "2016-06-26T19:00:00Z",
+      "status": "FINISHED",
+      "matchday": 4,
+      "homeTeamName": "Hungary",
+      "awayTeamName": "Belgium",
+      "result": {
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 4,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/150458"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/784"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/760"
+        }
+      },
+      "date": "2016-06-27T16:00:00Z",
+      "status": "FINISHED",
+      "matchday": 4,
+      "homeTeamName": "Italy",
+      "awayTeamName": "Spain",
+      "result": {
+        "goalsHomeTeam": 2,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 0
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/150464"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/770"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/1066"
+        }
+      },
+      "date": "2016-06-27T19:00:00Z",
+      "status": "FINISHED",
+      "matchday": 4,
+      "homeTeamName": "England",
+      "awayTeamName": "Iceland",
+      "result": {
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 2,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 2
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/151949"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/794"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/765"
+        }
+      },
+      "date": "2016-06-30T19:00:00Z",
+      "status": "FINISHED",
+      "matchday": 5,
+      "homeTeamName": "Poland",
+      "awayTeamName": "Portugal",
+      "result": {
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 1
+        },
+        "extraTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 1
+        },
+        "penaltyShootout": {
+          "goalsHomeTeam": 3,
+          "goalsAwayTeam": 5
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/151950"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/833"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/805"
+        }
+      },
+      "date": "2016-07-01T19:00:00Z",
+      "status": "FINISHED",
+      "matchday": 5,
+      "homeTeamName": "Wales",
+      "awayTeamName": "Belgium",
+      "result": {
+        "goalsHomeTeam": 3,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 1
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/151951"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/759"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/784"
+        }
+      },
+      "date": "2016-07-02T19:00:00Z",
+      "status": "FINISHED",
+      "matchday": 5,
+      "homeTeamName": "Germany",
+      "awayTeamName": "Italy",
+      "result": {
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        },
+        "extraTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 1
+        },
+        "penaltyShootout": {
+          "goalsHomeTeam": 6,
+          "goalsAwayTeam": 5
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/151952"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/773"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/1066"
+        }
+      },
+      "date": "2016-07-03T19:00:00Z",
+      "status": "FINISHED",
+      "matchday": 5,
+      "homeTeamName": "France",
+      "awayTeamName": "Iceland",
+      "result": {
+        "goalsHomeTeam": 5,
+        "goalsAwayTeam": 2,
+        "halfTime": {
+          "goalsHomeTeam": 4,
+          "goalsAwayTeam": 0
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/153663"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/765"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/833"
+        }
+      },
+      "date": "2016-07-06T19:00:00Z",
+      "status": "FINISHED",
+      "matchday": 6,
+      "homeTeamName": "Portugal",
+      "awayTeamName": "Wales",
+      "result": {
+        "goalsHomeTeam": 2,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/153664"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/759"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/773"
+        }
+      },
+      "date": "2016-07-07T19:00:00Z",
+      "status": "FINISHED",
+      "matchday": 6,
+      "homeTeamName": "Germany",
+      "awayTeamName": "France",
+      "result": {
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 2,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        }
+      }
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/153665"
+        },
+        "soccerseason": {
+          "href": "http://api.football-data.org/v1/soccerseasons/424"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/765"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/773"
+        }
+      },
+      "date": "2016-07-10T19:00:00Z",
+      "status": "FINISHED",
+      "matchday": 7,
+      "homeTeamName": "Portugal",
+      "awayTeamName": "France",
+      "result": {
+        "goalsHomeTeam": 2,
+        "goalsAwayTeam": 2,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
       }
     }
   ]
