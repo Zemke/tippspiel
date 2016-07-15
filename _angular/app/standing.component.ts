@@ -7,7 +7,7 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
   selector: 'soe-table',
-  template: require('app/standing.component.html!text'),
+  templateUrl: 'app/standing.component.html',
   directives: [MDL, BetResultComponent, ROUTER_DIRECTIVES],
   pipes: [TranslatePipe]
 })

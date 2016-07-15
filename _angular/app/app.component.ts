@@ -17,7 +17,7 @@ import {MaterialElement} from './material-element';
 
 @Component({
   selector: 'soe-app',
-  template: require('app/app.component.html!text'),
+  templateUrl: 'app/app.component.html',
   pipes: [TranslatePipe],
   directives: [ROUTER_DIRECTIVES, ChampBetComponent]
 })

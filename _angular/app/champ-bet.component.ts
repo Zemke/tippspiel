@@ -7,7 +7,7 @@ import {ToastsManager} from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'soe-champ-bet',
-  template: require('app/champ-bet.component.html!text'),
+  templateUrl: 'app/champ-bet.component.html',
   directives: [MDL],
   pipes: [TranslatePipe]
 })

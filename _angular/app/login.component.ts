@@ -7,7 +7,7 @@ import {ToastsManager} from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: '<soe-login></soe-login>',
-  template: require('app/login.component.html!text'),
+  templateUrl: 'app/login.component.html',
   directives: [MDL],
   pipes: [TranslatePipe]
 })

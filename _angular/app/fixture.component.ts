@@ -12,7 +12,7 @@ import {User} from './user';
 
 @Component({
   selector: 'soe-fixture',
-  template: require('app/fixture.component.html!text'),
+  templateUrl: 'app/fixture.component.html',
   directives: [MDL, BetResultComponent, ROUTER_DIRECTIVES],
   pipes: [TranslatePipe]
 })

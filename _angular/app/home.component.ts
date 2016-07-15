@@ -7,7 +7,7 @@ import {UserService} from './user.service';
 
 @Component({
   selector: 'soe-home',
-  template: require('app/home.component.html!text'),
+  templateUrl: 'app/home.component.html',
   directives: [MDL, FixturesListComponent, ChampBetComponent],
   pipes: [TranslatePipe]
 })
