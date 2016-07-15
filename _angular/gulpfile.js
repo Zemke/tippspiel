@@ -2,11 +2,9 @@ var gulp = require("gulp"),
   concat = require("gulp-concat"),
   tsc = require("gulp-typescript"),
   jsMinify = require("gulp-uglify"),
-  cssPrefixer = require("gulp-autoprefixer"),
   cssMinify = require("gulp-cssnano"),
   del = require("del"),
   merge = require("merge-stream"),
-  minifyHTML = require('gulp-htmlmin'),
   SystemBuilder = require("systemjs-builder");
 
 var appFolder = "./app";
@@ -82,50 +80,7 @@ gulp.task("buildAndMinify", ["system-build"], function () {
     .pipe(cssMinify())
     .pipe(gulp.dest(outFolder + "/css/"));
 
-  return merge(mergeJs, mergeJs);
-});
-
-
-gulp.task("favicon", function () {
-  return gulp.src(appFolder + "/favicon.ico")
-    .pipe(gulp.dest(outFolder));
-});
-
-gulp.task("css", function () {
-  return gulp.src(appFolder + "/**/*.css")
-    .pipe(cssPrefixer())
-    .pipe(cssMinify())
-    .pipe(gulp.dest(outFolder));
-});
-
-gulp.task("templates", function () {
-  return gulp.src(appFolder + "/**/*.html")
-    .pipe(minifyHTML())
-    .pipe(gulp.dest(outFolder));
-});
-
-gulp.task("assets", ["templates", "css", "favicon"], function () {
-  return gulp.src(appFolder + "/**/*.png")
-    .pipe(gulp.dest(outFolder));
-});
-
-
-gulp.task("otherScriptsAndStyles", function () {
-  gulp.src([
-      "jquery/dist/jquery.*js",
-      "bootstrap/dist/js/bootstrap*.js"
-    ], {
-      cwd: "node_modules/**"
-    })
-    .pipe(gulp.dest(outFolder + "/js/"));
-
-  gulp.src([
-    "node_modules/bootstrap/dist/css/bootstrap.css"
-  ]).pipe(cssMinify()).pipe(gulp.dest(outFolder + "/css/"));
-
-  gulp.src([
-    "node_modules/bootstrap/fonts/*.*"
-  ]).pipe(gulp.dest(outFolder + "/fonts/"));
+  return merge(mergeJs, mergeCss);
 });
 
 gulp.task("default", [
