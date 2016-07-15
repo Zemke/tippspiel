@@ -27,6 +27,17 @@ gulp.task("shims", function () {
     .pipe(gulp.dest(outFolder + "/js/"));
 });
 
+gulp.task("intls", function () {
+  return gulp.src([
+      "node_modules/intl/dist/Intl.min.js",
+      "node_modules/intl/locale-data/jsonp/en.js",
+      "node_modules/intl/locale-data/jsonp/de.js"
+    ])
+    .pipe(concat("intls.js"))
+    .pipe(jsMinify())
+    .pipe(gulp.dest(outFolder + "/js/"));
+});
+
 gulp.task("tsc", function () {
   var tsProject = tsc.createProject("./tsconfig.json");
   var tsResult = gulp.src([
@@ -51,6 +62,17 @@ gulp.task("system-build", ["tsc"], function () {
 
 
 gulp.task("buildAndMinify", ["system-build"], function () {
+  return gulp.src([
+      outFolder + "/js/shims.js",
+      outFolder + "/js/intls.js", // https://github.com/angular/angular/issues/3333#issuecomment-188976442
+      "node_modules/material-design-lite/material.min.js",
+      outFolder + "/js/bundle.js",
+    ])
+    .pipe(concat("perf.js"))
+    .pipe(jsMinify())
+    .pipe(gulp.dest(outFolder + "/js/"));
+
+
   var bundle = gulp.src(outFolder + "/js/bundle.js")
     .pipe(jsMinify())
     .pipe(gulp.dest(outFolder + "/js/"));
@@ -115,8 +137,10 @@ gulp.task("otherScriptsAndStyles", function () {
 
 gulp.task("default", [
   "shims",
+  "intls",
   "buildAndMinify",
   "assets",
   "otherScriptsAndStyles"
   //,"watch"
 ]);
+// Yet to concat and minify node_modules/material-design-lite/material.min.js

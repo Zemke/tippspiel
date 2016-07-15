@@ -80,5 +80,6 @@ public/powered-pi.svg
 public/grassy.jpg
 public/bundle.js
 public/shims.js
+public/intls.js
 
 _angular/app/api-endpoint.ts
