@@ -50,21 +50,4 @@
   };
 
   System.config(config);
-
-  // Cache Busting 
-  var systemLocate = System.locate;
-  System.locate = function (load) {
-    var System = this; // its good to ensure exact instance-binding
-    return Promise.resolve(systemLocate.call(this, load)).then(function (address) {
-
-      if (address.endsWith('.html.js')) {
-        //This feels a little hacky, not sure how to allow html files in the main config.
-        address = address.slice(0, -3);
-      }
-
-      return address + System.cacheBust;
-    });
-  };
-  System.cacheBust = '?v=2.2.0'; // This is only the latest version that has HTML and JS changes whose cached files you want to bust. This is necessarily the current release!
-
 })(this);
