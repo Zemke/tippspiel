@@ -16,5 +16,8 @@ _temp
 !text.js
 !typings/typings.d.ts
 !wallaby.js
+!gulpfile.js
 
 npm-debug.log
+
+dist/

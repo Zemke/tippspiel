@@ -78,7 +78,7 @@ public/systemjs.config.js
 public/text.js
 public/powered-pi.svg
 public/grassy.jpg
-
-resources/views
+public/bundle.js
+public/shims.js
 
 _angular/app/api-endpoint.ts
