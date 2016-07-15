@@ -1,22 +1,16 @@
 <html>
-    <head>
-        <base href="/">
+<head>
+    <base href="/">
 
-        <title>Loading…</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loading…</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Material Design Lite -->
-        <link rel="stylesheet" href="node_modules/material-design-lite/material.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="node_modules/ng2-toastr/bundles/ng2-toastr.min.css">
-        <link rel="stylesheet" href="styles.css">
-
-
-        <script src="perf.js"></script>
-    </head>
-    <body>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="perf.css">
+</head>
+<body>
     <soe-app>Loading…</soe-app>
-
-    </body>
+    <script src="perf.js"></script>
+</body>
 </html>

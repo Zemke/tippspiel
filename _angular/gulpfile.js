@@ -62,7 +62,7 @@ gulp.task("system-build", ["tsc"], function () {
 
 
 gulp.task("buildAndMinify", ["system-build"], function () {
-  return gulp.src([
+  var mergeJs = gulp.src([
       outFolder + "/js/shims.js",
       outFolder + "/js/intls.js", // https://github.com/angular/angular/issues/3333#issuecomment-188976442
       "node_modules/material-design-lite/material.min.js",
@@ -72,16 +72,17 @@ gulp.task("buildAndMinify", ["system-build"], function () {
     .pipe(jsMinify())
     .pipe(gulp.dest(outFolder + "/js/"));
 
-
-  var bundle = gulp.src(outFolder + "/js/bundle.js")
-    .pipe(jsMinify())
-    .pipe(gulp.dest(outFolder + "/js/"));
-
-  var css = gulp.src(outFolder + "/css/styles.css")
+  var mergeCss = gulp.src([
+      "node_modules/material-design-lite/material.min.css",
+      "node_modules/ng2-toastr/bundles/ng2-toastr.min.css",
+      "node_modules/material-design-lite/material.min.css",
+      "styles.css",
+    ])
+    .pipe(concat("perf.css"))
     .pipe(cssMinify())
     .pipe(gulp.dest(outFolder + "/css/"));
 
-  return merge(bundle, css);
+  return merge(mergeJs, mergeJs);
 });
 
 
@@ -127,20 +128,8 @@ gulp.task("otherScriptsAndStyles", function () {
   ]).pipe(gulp.dest(outFolder + "/fonts/"));
 });
 
-
-//gulp.task("watch.tsc", ["tsc"], function () {
-//    return gulp.watch(appFolder + "/**/*.ts", ["tsc"]);
-//});
-
-//gulp.task("watch", ["watch.tsc"]);
-
-
 gulp.task("default", [
   "shims",
   "intls",
   "buildAndMinify",
-  "assets",
-  "otherScriptsAndStyles"
-  //,"watch"
 ]);
-// Yet to concat and minify node_modules/material-design-lite/material.min.js
