@@ -5,6 +5,9 @@ var gulp = require("gulp"),
   cssMinify = require("gulp-cssnano"),
   del = require("del"),
   merge = require("merge-stream"),
+  injectString = require("gulp-inject-string"),
+  copy = require("gulp-copy"),
+  rename = require("gulp-rename"),
   SystemBuilder = require("systemjs-builder");
 
 var appFolder = "./app";
@@ -83,8 +86,16 @@ gulp.task("buildAndMinify", ["system-build"], function () {
   return merge(mergeJs, mergeCss);
 });
 
+gulp.task("cacheBust", function () {
+  gulp.src('./../resources/views/layout.blade.php.default')
+    .pipe(rename('./../resources/views/layout.blade.php'))
+    .pipe(injectString.replace('@cacheBustMe@', new Date().getTime().toString()))
+    .pipe(gulp.dest('.'));
+});
+
 gulp.task("default", [
   "shims",
   "intls",
   "buildAndMinify",
+  "cacheBust",
 ]);

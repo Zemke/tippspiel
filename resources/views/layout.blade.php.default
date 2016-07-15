@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="perf.css?rev=1468610114839">
+    <link rel="stylesheet" href="perf.css?rev=@cacheBustMe@">
 </head>
 <body>
     <soe-app>Loading…</soe-app>
-    <script src="perf.js?rev=1468610114839"></script>
+    <script src="perf.js?rev=@cacheBustMe@"></script>
 </body>
 </html>

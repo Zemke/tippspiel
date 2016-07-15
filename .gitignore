@@ -83,3 +83,5 @@ public/perf.js
 public/perf.css
 
 _angular/app/api-endpoint.ts
+
+resources/views/layout.blade.php
