@@ -78,8 +78,8 @@ public/systemjs.config.js
 public/text.js
 public/powered-pi.svg
 public/grassy.jpg
-public/bundle.js
-public/shims.js
-public/intls.js
+
+public/perf.js
+public/perf.css
 
 _angular/app/api-endpoint.ts
