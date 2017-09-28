@@ -1,6 +1,6 @@
 # Tippspiel
 
-This project is basing on two projects: [Zemke/starter-laravel-angular](Zemke/starter-laravel-angular: Laravel and AngularJS…) and [angular/quickstart](https://github.com/angular/quickstart). So you might want to read those two first to know how to set these apps up individually. The PHP part is everything, but the Angular part is in `_angular`.
+This project is basing on two projects: [Zemke/starter-laravel-angular](https://github.com/Zemke/starter-laravel-angular) and [angular/quickstart](https://github.com/angular/quickstart). So you might want to read those two first to know how to set these apps up individually. The PHP part is everything, but the Angular part is in `_angular`.
 
 ## `dist.sh`
 
